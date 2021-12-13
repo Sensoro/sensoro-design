@@ -1,9 +1,6 @@
 import { Config } from '@walrus/types';
 
 const config: Config = {
-  release: {
-    buildCommand: 'build:lib'
-  },
   entry: {
     ignore: [
       '.umi',
