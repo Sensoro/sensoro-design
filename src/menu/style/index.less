@@ -1,0 +1,20 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-menu';
+
+.@{prefix-cls} {
+  padding: 8px 0px;
+
+  .ant-dropdown-menu-item,
+  .ant-dropdown-menu-submenu-title {
+    padding: 5px 24px;
+  }
+  .ant-dropdown-menu-item .ant-dropdown-menu-submenu-arrow,
+  .ant-dropdown-menu-submenu-title .ant-dropdown-menu-submenu-arrow {
+    right: 16px;
+  }
+}
+
+.ant-menu-inline .ant-menu-item::after {
+  display: none;
+}

@@ -1,0 +1,76 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-upload-image';
+
+.@{prefix-cls} {
+  &-button {
+    .anticon {
+      font-size: 28px;
+    }
+  }
+
+  &-text {
+    margin-top: 8px;
+    color: fade(#000, 85%);
+    font-size: 14px;
+  }
+
+  &-desc {
+    color: fade(#000, 25%);
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  &-loading {
+    margin-top: 20px;
+
+    .anticon-loading {
+      font-size: 24px;
+      color: fade(#000, 65%);
+    }
+
+    .ant-spin-text {
+      color: fade(#000, 65%);
+    }
+  }
+
+  .ant-progress {
+    display: none;
+  }
+
+  .ant-upload-list-picture .ant-upload-list-item,
+  .ant-upload-list-picture-card .ant-upload-list-item {
+    padding: 4px;
+  }
+
+  .ant-upload-list-item-error .ant-upload-list-item-info {
+    .anticon {
+      font-size: 28px;
+      color: fade(#000, 15%);
+    }
+
+    .ant-upload-list-item-name {
+      color: #f2555f;
+    }
+  }
+
+  .ant-upload-list-item-done .ant-upload-list-item-info {
+    .anticon {
+      font-size: 28px;
+      color: #2b6de5;
+    }
+
+    .ant-upload-list-item-name {
+      color: fade(#000, 85%);
+    }
+  }
+
+  .ant-upload-list-picture-card .ant-upload-list-item-file + .ant-upload-list-item-name {
+    padding: 0 8px;
+  }
+
+  .ant-upload-list-picture .ant-upload-list-item-thumbnail,
+  .ant-upload-list-picture-card .ant-upload-list-item-thumbnail {
+    line-height: 80px;
+  }
+}

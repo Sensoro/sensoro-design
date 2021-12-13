@@ -1,0 +1,16 @@
+@import '../../style/themes/index';
+
+@tag-prefix-cls: ~'@{sen-prefix}-tag';
+
+.@{tag-prefix-cls} {
+  position: relative;
+
+  &-icon {
+    padding-right: 4px;
+  }
+}
+
+.@{tag-prefix-cls}.ant-tag > .anticon + span,
+.ant-tag > span + .anticon {
+  margin-left: 4px;
+}

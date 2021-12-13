@@ -1,0 +1,170 @@
+@import '../../style/themes/index';
+@import './reset-player';
+@import './volume';
+@import './speed';
+@import './live-mode';
+@import './quality';
+@import './progress';
+@import './prism-play';
+
+@player-prefix-cls: ~'@{sen-prefix}-player';
+
+.@{player-prefix-cls} {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    .@{player-prefix-cls}-controlbar {
+      display: block;
+    }
+  }
+
+  &-controlbar {
+    position: absolute;
+    width: 100%;
+    height: 72px;
+    z-index: 10;
+    display: none;
+    left: 0;
+    bottom: 0;
+  }
+
+  &-controlbar-bg {
+    position: absolute;
+    width: 100%;
+    height: 72px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(13, 16, 20, 0.8), rgba(13, 16, 20, 0));
+  }
+
+  &-controlbar-progress {
+    position: absolute;
+    z-index: 1;
+    top: 22px;
+    width: 100%;
+  }
+
+  &-controlbar-thumbnail {
+    position: absolute;
+    bottom: 55px;
+    margin-left: 0px;
+    margin-top: 0px;
+
+    > span {
+      font-size: 12px;
+      color: #fff;
+      line-height: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      text-shadow: 1px 1px 4px #373d41;
+      padding-left: 5px;
+      padding-right: 5px;
+      display: inline-block;
+    }
+  }
+
+  &-controlbar-live-text {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    width: 40px;
+    font-size: 12px;
+    border-radius: 2px;
+    background-color: #2b6de5;
+  }
+
+  &-controlbar-content {
+    position: relative;
+    margin-top: 36px;
+    padding: 0 16px;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  &-controlbar-extra {
+    float: right;
+    margin-left: auto;
+    color: rgba(0, 0, 0, 0.65);
+    font-weight: 400;
+    font-size: 14px;
+
+    > div + div {
+      margin-left: 16px;
+    }
+  }
+
+  &-controlbar-time-display {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 8px;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  // 全屏样式
+  &-fullscreen,
+  &-download {
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    height: 100%;
+    color: #fff;
+  }
+
+  &-offline,
+  &-retry {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: @white;
+    text-align: center;
+
+    > div {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 22px;
+      margin-bottom: 16px;
+    }
+  }
+
+  // 离线样式
+  &-offline {
+    .anticon {
+      color: fade(#fff, 25%);
+      font-size: 48px;
+    }
+  }
+
+  // 重试样式
+  &-retry {
+    .ant-btn {
+      padding: 4px 12px;
+      // line-height: 23px;
+      line-height: unset;
+    }
+  }
+
+  &-retry-sm {
+    > div {
+      font-size: 12px;
+    }
+
+    .ant-btn {
+      padding: 0 7px;
+      height: 24px;
+    }
+  }
+}

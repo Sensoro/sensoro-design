@@ -1,0 +1,40 @@
+@import '../../style/themes/index';
+
+@empty-prefix-cls: ~'@{sen-prefix}-empty';
+
+.@{empty-prefix-cls} {
+  position: relative;
+  margin: 0 8px;
+  font-size: 14px;
+  line-height: 1.5715;
+  text-align: center;
+
+  &-center.@{empty-prefix-cls} {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-content {
+    position: relative;
+  }
+
+  &-icon {
+    font-size: 88px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+
+  &-description {
+    margin-top: 8px;
+    color: fade(#000, 45%);
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &-footer {
+    margin-top: 24px;
+  }
+}

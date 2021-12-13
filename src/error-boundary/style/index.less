@@ -1,0 +1,21 @@
+@import '../../style/themes/index';
+
+@error-boundary-fallback-prefix-cls: ~'@{sen-prefix}-error-boundary-fallback';
+
+.@{error-boundary-fallback-prefix-cls} {
+  &-content {
+    color: @error-color;
+    font-size: @font-size-base;
+
+    .anticon {
+      margin-right: 5px;
+    }
+  }
+
+  &-popover {
+    .ant-tooltip-content {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  }
+}

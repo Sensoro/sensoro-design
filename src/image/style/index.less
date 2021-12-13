@@ -1,0 +1,31 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-image';
+
+.@{prefix-cls} {
+  position: relative;
+
+  &-fit {
+    .ant-image {
+      height: 100%;
+      width: 100%;
+      background-color: #f5f5f5;
+    }
+
+    .ant-image-img {
+      height: 100%;
+    }
+  }
+
+  &-contain {
+    .ant-image-img {
+      object-fit: contain;
+    }
+  }
+
+  &-cover {
+    .ant-image-img {
+      object-fit: cover;
+    }
+  }
+}

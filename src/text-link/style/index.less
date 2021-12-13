@@ -1,0 +1,13 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-text-link';
+
+.@{prefix-cls} {
+  color: @primary-color;
+  font-size: @font-size-base;
+  cursor: pointer;
+
+  &&-disabled {
+    cursor: not-allowed;
+  }
+}

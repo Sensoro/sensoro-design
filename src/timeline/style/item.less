@@ -1,0 +1,40 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-timeline-item';
+
+.@{prefix-cls} {
+  padding-bottom: 24px;
+  .ant-timeline-item-tail {
+    top: 16px;
+  }
+  .ant-timeline-item-content {
+    top: -5px;
+    font-size: 12px;
+    line-height: 20px;
+    color: fade(#000, 65%);
+  }
+
+  .title {
+    font-size: 14px;
+    line-height: 24px;
+    color: fade(#000, 80%);
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .dot {
+    width: 16px;
+    height: 16px;
+    // background: rgb(243, 243, 243);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .center {
+      width: 6px;
+      height: 6px;
+      // background: rgb(216, 216, 216);
+      border-radius: 50%;
+    }
+  }
+}

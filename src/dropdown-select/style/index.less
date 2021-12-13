@@ -1,0 +1,21 @@
+@import '../../style/themes/default.less';
+
+@dropdown-select-prefix-cls: ~'@{sen-prefix}-dropdown-select';
+
+.@{dropdown-select-prefix-cls} {
+  .ant-dropdown-menu-item {
+    &:hover {
+      background-color: fade(#000, 4%);
+    }
+
+    &:focus,
+    &:active {
+      color: @primary-color;
+    }
+  }
+
+  .ant-dropdown-menu-item-selected {
+    background: #fff;
+    color: @primary-color;
+  }
+}

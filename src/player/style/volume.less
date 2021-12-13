@@ -1,0 +1,89 @@
+@player-volume-prefix-cls: ~'@{sen-prefix}-player-volume';
+
+.@{player-volume-prefix-cls} {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 100%;
+  color: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+
+  &-content {
+    width: 40px;
+    height: 140px;
+    background: fade(#000, 85%);
+  }
+
+  &-value {
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    color: fade(@white, 85%);
+    padding: 8px 0;
+    border-top-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+
+  &-slider {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-popover {
+    .ant-popover {
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .ant-popover-arrow {
+      display: none;
+    }
+
+    .ant-popover-inner {
+      background-color: transparent;
+    }
+
+    .ant-popover-content {
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .ant-popover-inner-content {
+      padding: 0;
+    }
+
+    .ant-slider-vertical .ant-slider-track,
+    .ant-slider-rail {
+      width: 2px !important;
+    }
+
+    .ant-slider-rail {
+      background-color: fade(#fff, 25%) !important;
+    }
+    .ant-slider-vertical {
+      padding: 0 5px;
+    }
+
+    .ant-slider-track {
+      background-color: #2b6de5 !important;
+    }
+
+    .ant-slider-handle {
+      width: 8px;
+      height: 8px;
+      left: 7px;
+      border: none;
+    }
+
+    .ant-slider-handle:focus,
+    .ant-slider-handle:hover {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(#2b6de5, 0.5);
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@player-speed-prefix-cls: ~'@{sen-prefix}-player-speed';
+
+.@{player-speed-prefix-cls} {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 100%;
+  color: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+
+  &-content {
+    width: 40px;
+  }
+
+  &-content-item {
+    position: relative;
+    padding: 4px 0;
+    color: #fff;
+    font-size: 12px;
+    width: 40px;
+    cursor: pointer;
+
+    &:hover {
+      color: #2b6de5;
+    }
+  }
+
+  &-content-row {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &-content-item.is-active {
+    color: #2b6de5;
+  }
+
+  &-popover.is-double-row {
+    .sen-player-speed-content {
+      width: 88px;
+    }
+  }
+
+  &-popover {
+    .ant-popover {
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .ant-popover-arrow {
+      display: none;
+    }
+
+    .ant-popover-content {
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .ant-popover-inner {
+      background-color: transparent;
+    }
+
+    .ant-popover-inner-content {
+      padding: 4px 12px;
+      border-radius: 2px;
+      background: fade(#000, 85%);
+    }
+  }
+}

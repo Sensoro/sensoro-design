@@ -1,0 +1,88 @@
+@import '../../style/themes/index';
+
+@table-prefix-cls: ~'@{sen-prefix}-table';
+
+.@{table-prefix-cls} {
+  .ant-pagination-total-text {
+    margin-right: 8px;
+  }
+
+  .ant-pagination-options-size-changer.ant-select {
+    margin-right: 0px;
+  }
+
+  //防止列固定的时候
+  // .ant-table-content {
+  //   overflow: auto !important;
+  // }
+
+  //小表格样式会被覆盖
+  .ant-table.ant-table-small .ant-table-thead .ant-table-filter-column-title {
+    padding: 8px 4px 8px 8px;
+  }
+  .ant-table-filter-column-title {
+    flex: none;
+    padding: 16px 4px 16px 16px;
+  }
+
+  .ant-table-filter-trigger-container {
+    position: relative;
+  }
+
+  .ant-pagination.mini .ant-pagination-item {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  .ant-pagination.mini .ant-pagination-item:not(.ant-pagination-item-active) {
+    border-color: #d9d9d9;
+  }
+
+  .filtered {
+    color: @primary-color;
+  }
+
+  &-header {
+  }
+
+  &-filter-item {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  &-wrap {
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &-title {
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 16px;
+    font-weight: 500;
+  }
+  &-toolbar {
+    display: flex;
+  }
+  &-batch-option {
+    height: 40px;
+    background: rgba(0, 0, 0, 0.04);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+}
+
+.fixed-table {
+  .ant-table-content {
+    overflow: auto !important;
+  }
+}

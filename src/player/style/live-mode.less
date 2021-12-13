@@ -1,0 +1,60 @@
+@player-live-mode-prefix-cls: ~'@{sen-prefix}-player-live-mode';
+
+.@{player-live-mode-prefix-cls} {
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 22px;
+  text-align: center;
+  height: 100%;
+  color: #fff;
+  overflow: hidden;
+
+  &-content {
+    width: 55px;
+  }
+
+  &-content-item {
+    position: relative;
+    padding: 4px 0;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:hover {
+      color: #2b6de5;
+    }
+  }
+
+  &-content-item.is-active {
+    color: #2b6de5;
+  }
+
+  &-popover {
+    .ant-popover {
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .ant-popover-arrow {
+      display: none;
+    }
+
+    .ant-popover-content {
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .ant-popover-inner {
+      background-color: transparent;
+    }
+
+    .ant-popover-inner-content {
+      padding: 4px 12px;
+      border-radius: 2px;
+      background: fade(#000, 85%);
+    }
+  }
+}

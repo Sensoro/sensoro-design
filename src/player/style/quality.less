@@ -1,0 +1,43 @@
+@player-quality-prefix-cls: ~'@{sen-prefix}-player-quality';
+
+.@{player-quality-prefix-cls} {
+  position: relative;
+  margin-right: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  text-align: center;
+  height: 100%;
+  color: #fff;
+
+  &-popover {
+    .ant-popover-arrow {
+      display: none;
+    }
+
+    .ant-popover-inner-content {
+      padding: 0;
+    }
+
+    .ant-menu {
+      background: @black;
+      opacity: 0.85;
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .ant-menu-item,
+    .ant-menu-item-selected {
+      background: @black !important;
+      opacity: 0.85;
+    }
+
+    .ant-menu-item {
+      margin: 0 !important;
+    }
+  }
+}

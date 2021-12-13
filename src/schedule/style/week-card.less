@@ -1,0 +1,35 @@
+@import '../../style/themes/index';
+
+@week-card-prefix-cls: ~'@{sen-prefix}-schedule-week-card';
+
+.@{week-card-prefix-cls} {
+  position: relative;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  color: fade(@black, 45%);
+  padding: 8px 0;
+  text-align: center;
+  width: 70px;
+  cursor: pointer;
+
+  &.is-active {
+    border: 1px solid @primary-color;
+    color: @primary-color;
+
+    .sen-schedule-week-card-title {
+      color: @primary-color;
+    }
+  }
+
+  &-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: fade(#000, 65%);
+  }
+
+  &-description {
+    text-align: center;
+    font-size: 12px;
+  }
+}

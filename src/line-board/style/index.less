@@ -1,0 +1,31 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-line-board';
+
+@max-line-length: calc(100vmax * 2);
+
+.@{prefix-cls} {
+  @keyframes renderLine {
+    0% {
+      stroke-dasharray: 0 @max-line-length;
+    }
+    100% {
+      stroke-dasharray: @max-line-length @max-line-length;
+    }
+  }
+
+  @keyframes flashing {
+    0% {
+      r: 4;
+      fill-opacity: 0.4;
+    }
+    75% {
+      r: 9;
+      fill-opacity: 0.3;
+    }
+    100% {
+      r: 10;
+      fill-opacity: 0.2;
+    }
+  }
+}

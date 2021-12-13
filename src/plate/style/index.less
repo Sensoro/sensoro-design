@@ -1,0 +1,50 @@
+@import '../../style/themes/index';
+
+@plate-prefix-cls: ~'@{sen-prefix}-plate';
+
+.@{plate-prefix-cls} {
+  position: relative;
+  border-radius: 2px;
+  font-size: 14px;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  height: max-content;
+  padding: 0 8px;
+
+  &-border {
+    position: absolute;
+    border-radius: 2px;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    right: 1px;
+  }
+
+  &-dot {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &-l-t {
+    left: 4px;
+    top: 4px;
+  }
+
+  &-r-t {
+    right: 4px;
+    top: 4px;
+  }
+
+  &-l-b {
+    left: 4px;
+    bottom: 4px;
+  }
+
+  &-r-b {
+    right: 4px;
+    bottom: 4px;
+  }
+}

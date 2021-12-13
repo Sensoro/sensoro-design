@@ -1,0 +1,59 @@
+@import '../../style/themes/index';
+
+@roller-prefix-cls: ~'@{sen-prefix}-number-roller';
+
+.@{roller-prefix-cls} {
+  display: flex;
+  color: fade(#edf6ff, 85);
+
+  ul {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  &-nine li {
+    transform: translateY(0);
+  }
+
+  &-eight li {
+    transform: translateY(-100%);
+  }
+
+  &-seven li {
+    transform: translateY(-200%);
+  }
+
+  &-six li {
+    transform: translateY(-300%);
+  }
+
+  &-five li {
+    transform: translateY(-400%);
+  }
+
+  &-four li {
+    transform: translateY(-500%);
+  }
+
+  &-three li {
+    transform: translateY(-600%);
+  }
+
+  &-two li {
+    transform: translateY(-700%);
+  }
+
+  &-one li {
+    transform: translateY(-800%);
+  }
+
+  &-zero li {
+    transform: translateY(-900%);
+  }
+}

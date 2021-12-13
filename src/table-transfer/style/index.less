@@ -1,0 +1,83 @@
+@import '../../style/themes/index';
+
+@table-transfer-prefix-cls: ~'@{sen-prefix}-table-transfer';
+
+.@{table-transfer-prefix-cls} {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum', "tnum";
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  &-list {
+    flex: 1 1 50%;
+    width: auto;
+    height: auto;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+  }
+
+  &-list + &-list {
+    margin-left: 16px;
+  }
+
+  &-list-header {
+    display: flex;
+    flex: none;
+    align-items: center;
+    height: 40px;
+    padding: 8px 12px 9px;
+    color: rgba(0, 0, 0, 0.85);
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 2px 2px 0 0;
+
+    > *:not(:last-child) {
+      margin-right: 4px;
+    }
+
+    > * {
+      flex: none;
+    }
+  }
+
+  &-list-header-title {
+    flex: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    text-overflow: ellipsis;
+  }
+
+  &-list-body {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 14px;
+  }
+
+  &-list-body-search {
+    position: relative;
+    flex: none;
+    padding: 12px;
+  }
+
+  &-list-content {
+    flex: auto;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    list-style: none;
+  }
+}

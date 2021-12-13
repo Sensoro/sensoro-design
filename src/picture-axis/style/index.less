@@ -1,0 +1,181 @@
+@import '../../style/themes/index';
+
+@picture-axis-prefix-cls: ~'@{sen-prefix}-picture-axis';
+
+.@{picture-axis-prefix-cls} {
+  position: relative;
+  min-width: 200px;
+
+  .sen-image {
+    width: 64px;
+    height: 64px;
+  }
+
+  &-content {
+    position: relative;
+    height: 136px;
+    margin-bottom: 20px;
+  }
+
+  &-images {
+    position: relative;
+    height: 64px;
+    overflow: hidden;
+  }
+
+  &-images-item {
+    position: relative;
+    display: inline-block;
+
+    > div {
+      display: inline-block;
+    }
+
+    > div + div {
+      margin-left: 8px;
+    }
+  }
+
+  &-image {
+    position: relative;
+
+    &:hover {
+      .sen-picture-axis-image-mask {
+        display: block;
+      }
+    }
+  }
+
+  &-image-mask {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    background-color: fade(#000, 25%);
+
+    .anticon {
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+
+  &-empty {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    // text-align: center;
+    padding-top: 16px;
+
+    .anticon {
+      font-size: 80px;
+    }
+
+    p {
+      font-size: 16px;
+      color: fade(@black, 45%);
+    }
+  }
+
+  &-axis {
+    position: relative;
+    height: 36px;
+  }
+
+  &-time {
+    position: absolute;
+    left: -4px;
+    bottom: 16px;
+    font-size: 12px;
+    color: #2b6de5;
+  }
+
+  &-time-scale {
+    position: absolute;
+    left: -3px;
+    bottom: 8px;
+    height: 8px;
+    width: 5px;
+  }
+
+  &-time-scale-barrel {
+    height: 6px;
+    background-color: #2b6de5;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+  }
+
+  &-time-scale-taper::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    border-style: solid;
+    border-width: 2px 2.5px;
+    animation: none;
+    border-color: #2b6de5 transparent transparent transparent;
+  }
+
+  &-marks {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    line-height: 20px;
+    font-size: 12px;
+    color: fade(@black, 45%);
+  }
+
+  &-mark {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &-rail {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background-color: fade(@black, 9%);
+    transition: background-color 0.3s;
+  }
+
+  &-track-content {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: 8px;
+  }
+
+  &-track {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &-track-scale {
+    position: absolute;
+    width: 1px;
+    background-color: fade(@black, 25%);
+    left: 0;
+    height: 6px;
+    top: -6px;
+  }
+
+  &-track-person {
+    height: 8px;
+    background-color: #41d9c5;
+  }
+
+  &-track-car {
+    height: 4px;
+    background-color: #5591f2;
+  }
+}

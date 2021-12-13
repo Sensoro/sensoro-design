@@ -1,0 +1,29 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-switch';
+
+.@{prefix-cls} {
+  width: 42px;
+  height: 22px;
+  background: @primary-color;
+  border-radius: 11px;
+}
+
+.@{prefix-cls}.ant-switch-checked {
+  background: @primary-color;
+}
+
+.@{prefix-cls}.ant-switch-loading, .@{prefix-cls}.ant-switch-disabled {
+  opacity: 1;
+  background: @primary-color;
+}
+
+.@{prefix-cls}.ant-switch-disabled.ant-switch-checked {
+  background: @primary-color;
+}
+
+.@{prefix-cls}.ant-switch-small {
+  width: 28px;
+  height: 16px;
+  border-radius: 8px;
+}

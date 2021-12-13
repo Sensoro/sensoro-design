@@ -1,0 +1,27 @@
+@import '../../style/themes/index';
+
+@week-card-prefix-cls: ~'@{sen-prefix}-schedule-copy-times';
+
+.@{week-card-prefix-cls} {
+  position: relative;
+
+  &-header {
+    position: relative;
+    font-size: 12px;
+    color: fade(@black, 45%);
+    line-height: 22px;
+    text-align: center;
+  }
+
+  &-body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 12px;
+
+    .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+      margin-left: 8px;
+    }
+  }
+}

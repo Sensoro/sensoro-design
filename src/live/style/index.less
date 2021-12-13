@@ -1,0 +1,36 @@
+@import '../../style/themes/index';
+
+@live-prefix-cls: ~'@{sen-prefix}-live';
+
+.@{live-prefix-cls} {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: @black;
+
+  &-error {
+    .pansy-aliplayer.prism-player {
+      display: none;
+    }
+
+    .@{live-prefix-cls}-controlbar {
+      display: none !important;
+    }
+  }
+
+  &-controlbar {
+    display: none;
+  }
+
+  &:hover {
+    .@{live-prefix-cls}-controlbar {
+      display: block;
+    }
+  }
+}
+
+.@{live-prefix-cls}.pansy-fullscreen.fullscreen-enabled {
+  .@{live-prefix-cls}-controlbar {
+    z-index: 999999;
+  }
+}

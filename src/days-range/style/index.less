@@ -1,0 +1,19 @@
+@import '../../style/themes/index';
+
+@days-range-cls: ~'@{sen-prefix}-days-range';
+
+.@{days-range-cls} {
+  position: relative;
+  font-weight: 400;
+
+  .ant-picker-range {
+    margin-left: 8px;
+  }
+
+  &.is-plain {
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+      background: @white;
+      color: @primary-color;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  display: flex;
+
+  &:hover {
+    :global {
+      .sen-scrollable-bar-next,
+      .sen-scrollable-bar-prev {
+        display: block;
+      }
+    }
+  }
+
+  :global {
+    .sen-scrollable-bar-next,
+    .sen-scrollable-bar-prev {
+      position: absolute;
+      display: none;
+      top: calc(50% - 12px);
+      cursor: pointer;
+      color: #fff;
+      background: fade(#000, 35%);
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 2px;
+    }
+
+    .sen-scrollable-bar-prev {
+      left: 10px;
+    }
+
+    .sen-scrollable-bar-next {
+      right: 10px;
+    }
+
+    .sen-scrollable-bar-scrolling {
+      padding: 0;
+    }
+  }
+}
+
+.scrollable {
+  .item {
+    width: 32px;
+  }
+}
+
+.item {
+  position: relative;
+  height: 120px;
+  min-width: 38px;
+  background: fade(#000, 10%);
+  flex: 1 1 auto;
+  margin-right: 2px;
+}

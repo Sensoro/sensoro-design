@@ -1,0 +1,34 @@
+@import '../../style/themes/index';
+
+@schedule-track-prefix-cls: ~'@{sen-prefix}-schedule-track';
+
+.@{schedule-track-prefix-cls} {
+  position: absolute;
+  height: 12px;
+  cursor: pointer;
+  background-color: #5591f2;
+  transition: background-color 0.3s;
+  border: 1px solid #1b4fbf;
+
+  &-move {
+    height: 4px;
+    width: 4px;
+    border: 1px solid #1b4fbf;
+    background-color: #fff;
+    z-index: 3;
+  }
+
+  &-move-left {
+    position: absolute;
+    top: 2px;
+    left: -2px;
+    cursor: w-resize;
+  }
+
+  &-move-right {
+    position: absolute;
+    top: 2px;
+    right: -2px;
+    cursor: e-resize;
+  }
+}

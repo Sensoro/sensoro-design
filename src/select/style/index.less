@@ -1,0 +1,11 @@
+@import '../../style/themes/index.less';
+
+@prefix-cls: ~'@{sen-prefix}-select';
+@prefix-dropdown-cls: ~'@{sen-prefix}-select-dropdown';
+
+.@{prefix-dropdown-cls} {
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background: none;
+    color: @primary-color;
+  }
+}

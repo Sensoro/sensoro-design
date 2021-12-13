@@ -1,0 +1,25 @@
+@import '../../style/themes/index';
+
+@double-player-cls: ~'@{sen-prefix}-double-player';
+
+.@{double-player-cls} {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: @black;
+
+  .pansy-aliplayer.prism-player {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .pansy-aliplayer.prism-fullscreen {
+    width: 50% !important;
+  }
+
+  &:hover {
+    .sen-player-controlbar {
+      display: block;
+    }
+  }
+}

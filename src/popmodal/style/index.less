@@ -1,0 +1,28 @@
+@import '../../style/themes/index';
+
+@popmodal-prefix-cls: ~'@{sen-prefix}-popmodal';
+
+.@{popmodal-prefix-cls} {
+  position: relative;
+  padding: 0;
+
+  &-body {
+    position: relative;
+    padding: 12px 16px;
+  }
+
+  &-body.hidden-footer-border {
+    padding: 12px 16px 0 16px;
+  }
+
+  &-footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+  }
+
+  &-footer.show-border {
+    border-top: 1px solid fade(@black, 15%);
+  }
+}

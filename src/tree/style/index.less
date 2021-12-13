@@ -1,0 +1,88 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-tree';
+
+.@{prefix-cls} {
+  .ant-tree .ant-tree-treenode {
+    align-items: center;
+    padding: 0;
+  }
+
+  .ant-tree.ant-tree-block-node .ant-tree-list-holder-inner .ant-tree-node-content-wrapper {
+    //24是那个小箭头图标的宽度
+    // width: calc(100% - 18px);
+    // flex: 1;
+    // flex-shrink: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .ant-tree-title {
+    flex: auto;
+  }
+
+  .ant-tree .ant-tree-node-content-wrapper .ant-tree-iconEle {
+    font-size: 16px;
+    width: auto;
+    margin-left: 8px;
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  .ant-tree .ant-tree-switcher {
+    width: 18px;
+    line-height: 32px;
+  }
+
+  &-node-title {
+    padding: 0px 8px;
+    height: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &-node-title-with-icon {
+    padding-left: 4px;
+  }
+
+  &-node-title-text {
+    height: 24px;
+    line-height: 24px;
+    color: fade(#000, 65%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    flex: 1;
+    //目前还没弄清楚这里为啥加上这个属性就可以了
+    width: 0px;
+
+    .anticon {
+      font-size: 16px;
+      padding-right: 6px;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    align-content: flex-end;
+
+    .action {
+      margin-left: 8px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .icon {
+        color: rgba(0, 0, 0, 0.65);
+        &:hover {
+          color: @primary-color;
+        }
+      }
+    }
+  }
+}

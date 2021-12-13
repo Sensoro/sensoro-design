@@ -1,0 +1,121 @@
+@import (reference) '~antd/lib/style/themes/default';
+@import (reference) '~antd/lib/style/mixins/index';
+@import '../../style/themes/index';
+
+@card-plus-prefix-cls: ~'@{sen-prefix}-card-plus';
+
+@gradient-min: fade(@card-skeleton-bg, 20%);
+@gradient-max: fade(@card-skeleton-bg, 40%);
+
+.@{card-plus-prefix-cls}-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  .ant-spin-blur {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.@{card-plus-prefix-cls} {
+  position: relative;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: @card-radius;
+  width: 100%;
+
+  &-border {
+    border: @border-width-base @border-style-base @border-color-split;
+  }
+
+  &-split-vertical {
+    border-right: @border-width-base @border-style-base @border-color-split;
+  }
+
+  &-split-horizontal {
+    border-bottom: @border-width-base @border-style-base @border-color-split;
+  }
+
+  &-contain-card {
+    background-color: transparent;
+  }
+
+  &-contain-card > &-body {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: 0;
+  }
+
+  &-contain-card > &-body-column {
+    flex-direction: column;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: @padding-md;
+    padding-bottom: 0;
+    &-border {
+      & {
+        padding-bottom: @padding-md;
+      }
+      border-bottom: @border-width-base @border-style-base @border-color-split;
+    }
+
+    &-collapse {
+      & {
+        padding-bottom: @padding-md;
+      }
+    }
+  }
+
+  &-collapsible-icon {
+    color: @icon-color-hover;
+    margin-left: 8px;
+
+    & svg {
+      transition: transform @animation-duration-base;
+    }
+  }
+
+  &-title {
+    font-weight: bold;
+  }
+
+  &-body {
+    display: block;
+    padding: @padding-md;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-collapse {
+      display: none;
+    }
+  }
+}
+
+.loop-grid-columns(@index) when (@index > 0) {
+  .@{card-plus-prefix-cls}-span-@{index} {
+    display: block;
+    width: percentage((@index / @grid-columns));
+  }
+  .loop-grid-columns((@index - 1));
+}
+
+.loop-grid-columns(@grid-columns);
