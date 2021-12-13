@@ -1,5 +1,7 @@
 import { join } from 'path';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default {
   mode: 'site',
   title: 'Sensoro Design',
@@ -32,6 +34,16 @@ export default {
         libraryDirectory: 'es',
         style: 'css'
       }
+    ],
+    [
+      'import',
+      {
+        libraryName: '@sensoro/sensoro-design',
+        customStyleName: () => {
+          return `../style/index.ts`;
+        }
+      },
+      '@sensoro/sensoro-design'
     ]
   ],
   theme: {
