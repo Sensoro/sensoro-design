@@ -4238,7 +4238,7 @@ __metadata:
     antd: 4.13.1
     d3-path: ^2.0.0
     del: ^6.0.0
-    dumi: ^1.1.7
+    dumi: 1.1.35
     father-build: ^1.19.2
     file-saver: ^2.0.5
     husky: 4.3.8
@@ -9294,7 +9294,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dumi@npm:^1.1.7":
+"dumi@npm:1.1.35":
   version: 1.1.35
   resolution: "dumi@npm:1.1.35"
   dependencies:
