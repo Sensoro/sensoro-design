@@ -1,3 +1,5 @@
+import { join } from 'path';
+
 export default {
   mode: 'site',
   title: 'Sensoro Design',
@@ -7,6 +9,9 @@ export default {
   publicPath: '/design/',
   resolve: {
     includes: ['docs', 'src']
+  },
+  alias: {
+    '@sensoro/sensoro-design': join(__dirname, 'src')
   },
   navs: [
     null,
@@ -29,17 +34,7 @@ export default {
         libraryDirectory: 'es',
         style: 'css'
       }
-    ],
-    [
-      'import',
-      {
-        libraryName: '@sensoro/sensoro-design',
-        customStyleName: () => {
-          return `../style/index.ts`;
-        },
-      },
-      '@sensoro/sensoro-design',
-    ],
+    ]
   ],
   theme: {
     '@primary-color': '#2B6DE5'
