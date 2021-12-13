@@ -5,8 +5,6 @@ export default {
   title: 'Sensoro Design',
   favicon: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
-  base: '/design/',
-  publicPath: '/design/',
   resolve: {
     includes: ['docs', 'src']
   },
@@ -16,8 +14,8 @@ export default {
   navs: [
     null,
     {
-      title: 'GitLab',
-      path: 'https://gitlab.sensoro.com/IoTApps/frontend/sensoro-design'
+      title: 'GitHub',
+      path: 'https://github.com/SensoroFE/sensoro-design'
     }
   ],
   dynamicImport: {},
