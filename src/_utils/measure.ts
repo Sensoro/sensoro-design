@@ -14,7 +14,7 @@ export const useMeasure = (
     right: 0,
     top: 0,
     width: 0
-  });
+  } as any);
   const ref = React.useCallback((node) => {
     if (node !== null) {
       setRect(node.getBoundingClientRect());
