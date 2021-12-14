@@ -1,7 +1,8 @@
 import React, { useEffect, useContext, useState, useRef } from 'react';
 import classNames from '@pansy/classnames';
 import { arrayToTree } from '@pansy/array-to-tree';
-import { Spin, Divider } from 'antd';
+import { Spin, Divider, Tooltip, Space } from 'antd';
+import IconFont from '../icon';
 import Tree from '../tree';
 import Empty from '../empty';
 import { ConfigContext } from '../config-provider';
@@ -47,33 +48,27 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
 
   const prefixCls = getPrefixCls('permission-tree-select');
 
-  useEffect(
-    () => {
-      const { treeData, treeMap } = arrayToTree<Permission>(list, {
-        rootId: '0',
-        transformItem: (item) => {
-          return {
-            ...item,
-            key: `${item.parentId}_${item.id}`,
-            title: item.name,
-          };
-        },
-        getTreeMapKey: (item) => `${item.parentId}_${item.id}`
-      });
+  useEffect(() => {
+    const { treeData, treeMap } = arrayToTree<Permission>(list, {
+      rootId: '0',
+      transformItem: (item) => {
+        return {
+          ...item,
+          key: `${item.parentId}_${item.id}`,
+          title: item.name
+        };
+      },
+      getTreeMapKey: (item) => `${item.parentId}_${item.id}`
+    });
 
-      permissionMap.current = treeMap;
-      setTreeData(treeData);
-      linkageValue(value);
-    },
-    [JSON.stringify(list)]
-  )
+    permissionMap.current = treeMap;
+    setTreeData(treeData);
+    linkageValue(value);
+  }, [JSON.stringify(list)]);
 
-  useEffect(
-    () => {
-      linkageValue(value);
-    },
-    [JSON.stringify(value)]
-  );
+  useEffect(() => {
+    linkageValue(value);
+  }, [JSON.stringify(value)]);
 
   /**
    * 同步值变化
@@ -120,7 +115,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
         const key = info.parentIds[0];
 
         if (!prev[key]) {
-          prev[key] = [cur]
+          prev[key] = [cur];
         } else {
           prev[key].push(cur);
         }
@@ -145,12 +140,11 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
     };
 
     /** 获取所有选中的节点 */
-    const allKeys = Object.keys(checkedData.current)
-      .reduce((prev: string[], current) => {
-        const currentKeys = checkedData.current[current];
+    const allKeys = Object.keys(checkedData.current).reduce((prev: string[], current) => {
+      const currentKeys = checkedData.current[current];
 
-        return [...prev, ...currentKeys];
-      }, []);
+      return [...prev, ...currentKeys];
+    }, []);
 
     /** 补全选中节点的父节点 */
     const latestAllKeys = allKeys.reduce((prev: string[], current) => {
@@ -189,7 +183,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
    * 值变化的回调
    * @param keys
    */
-   const handleChange = (keys: string[] = []) => {
+  const handleChange = (keys: string[] = []) => {
     onChange?.(
       keys.map((item) => ({
         id: item.split('_')[1],
@@ -205,9 +199,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
         {treeData.map((item: any, index) => {
           return (
             <div key={item.key} className={`${prefixCls}-item`}>
-              <div className={`${prefixCls}-title`}>
-                {item.name}
-              </div>
+              <div className={`${prefixCls}-title`}>{item.name}</div>
 
               <Tree
                 checkable
@@ -225,15 +217,29 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
                 onCheck={(checkedKeys) => {
                   handleCheck(item.id, checkedKeys as string[]);
                 }}
+                titleRender={(node) => {
+                  if (node['type'] === 2) {
+                    return (
+                      <Space size={4}>
+                        <div>{node.title}</div>
+                        <Tooltip title="功能授权">
+                          <div className={`${prefixCls}-auth-icon`}>
+                            <IconFont type="icon-auth" />
+                          </div>
+                        </Tooltip>
+                      </Space>
+                    );
+                  }
+
+                  return node.title;
+                }}
               />
 
-              {treeData.length - 1 !== index  && (
-                <Divider dashed />
-              )}
+              {treeData.length - 1 !== index && <Divider dashed />}
             </div>
           );
         })}
       </div>
     </Spin>
-  )
-}
+  );
+};
