@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classnames from '@pansy/classnames';
 import { Table as AntTable } from 'antd';
-import { TableProps, ColumnType, OptionItem } from './types';
+import { TableProps, ColumnType } from './types';
 import Header from './header';
 import Options from '../options';
 import Icon from '../icon';
-import { unionBy, find, findIndex } from 'lodash';
+import { unionBy, find } from 'lodash';
 import NoField from '../no-field';
 import useBatch from './use-batch';
 import moment from 'moment';
@@ -65,6 +65,19 @@ const Table: React.FC<TableProps<any>> = (props) => {
     batch = useBatch(),
     ...restProps
   } = props;
+
+  useEffect(
+    () => {
+      if (dataSource?.length === 0 && table?.queryData?.page !== 1) {
+        // @ts-ignore
+        table.setQueryData({
+          ...table.queryData,
+          page: table.queryData.page - 1,
+        });
+      }
+    },
+    [dataSource]
+  )
 
   const isFixed = columns.some((i) => i.fixed);
 

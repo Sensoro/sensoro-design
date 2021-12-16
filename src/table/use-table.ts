@@ -2,7 +2,6 @@ import React from 'react';
 import { QueryData } from './types';
 import { Moment } from 'moment';
 import { TableProps, TablePaginationConfig } from 'antd/es/table';
-import { PaginationConfig } from 'antd/es/pagination';
 import { UseTableResult } from './types';
 
 export function formatQueryDates(dates: [Moment, Moment]) {
