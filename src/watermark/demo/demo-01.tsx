@@ -14,9 +14,9 @@ export default () => {
         // @ts-ignore
         text={() => {
           return [
-            `${profile.nickname.substr(0, 5)} ${profile.mobile.substr(
+            `${profile.nickname.slice(0, 5)} ${profile.mobile.slice(
               profile.mobile.length - 4,
-              4
+              profile.mobile.length
             )}`,
             moment().format('YYYYMMDDHHmmss')
           ];
