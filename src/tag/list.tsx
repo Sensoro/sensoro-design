@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from '@pansy/classnames';
 import { Popover } from 'antd';
+import { PopoverProps } from 'antd/es/popover';
 import Tag, { TagProps } from './tag';
 import FlexTags from './flex-tags';
 
@@ -17,10 +18,11 @@ export interface TagsProps {
   list?: ItemData[];
   max?: number;
   flexible?: boolean;
+  getPopupContainer?: PopoverProps['getPopupContainer'];
 }
 
 const Tags: React.FC<TagsProps> = (props) => {
-  const { prefixCls, className, style, list = [], max, flexible } = props;
+  const { prefixCls, className, style, list = [], max, flexible, getPopupContainer } = props;
 
   let showList: ItemData[] = [];
   let ishidden: boolean = false;
@@ -63,7 +65,12 @@ const Tags: React.FC<TagsProps> = (props) => {
     >
       {showList.map(renderTags)}
       {ishidden && (
-        <Popover placement="top" content={renderContent} trigger="hover">
+        <Popover
+          placement="top"
+          content={renderContent}
+          trigger="hover"
+          getPopupContainer={getPopupContainer}
+        >
           <Tag>...</Tag>
         </Popover>
       )}
