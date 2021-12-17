@@ -19,6 +19,8 @@ export interface PermissionTreeSelectProps {
   rootId?: string;
   /** 权限列表 */
   list: Permission[];
+  /** 是否是只读模式 */
+  readonly?: boolean;
   /** 是否禁用 */
   disabled?: boolean;
   /** 选中的权限 */
@@ -31,6 +33,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
   className,
   loading,
   list,
+  readonly = false,
   disabled,
   value = [],
   style,
@@ -203,9 +206,9 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
 
               <Tree
                 checkable
-                disabled={disabled}
+                disabled={disabled || readonly}
                 checkedKeys={insideValue[item.id] ?? []}
-                defaultExpandAll
+                defaultExpandAll={readonly ? !!(insideValue[item.id] ?? []).length : true}
                 selectable={false}
                 // TODO: antd 4.17.0 支持
                 // fieldNames={{
