@@ -1,15 +1,14 @@
-import React, { FC } from 'react';
-import { Button } from 'antd';
+import React from 'react';
+import { Space } from 'antd';
+import { Button } from '@sensoro/sensoro-design';
 
-const TypeExample: FC = () => {
+export default () => {
   return (
-    <div>
+    <Space>
       <Button type="primary">Primary</Button>
       <Button>Default</Button>
       <Button type="dashed">Dashed</Button>
       <Button type="link">Link</Button>
-    </div>
+    </Space>
   );
 };
-
-export default TypeExample;
