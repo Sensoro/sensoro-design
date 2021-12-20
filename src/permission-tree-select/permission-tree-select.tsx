@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState, useRef } from 'react';
 import classNames from '@pansy/classnames';
 import { arrayToTree } from '@pansy/array-to-tree';
 import { Spin, Divider, Tooltip, Space } from 'antd';
+import { TreeProps } from 'antd/es/tree';
 import IconFont from '../icon';
 import Tree from '../tree';
 import Empty from '../empty';
@@ -149,13 +150,17 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
       return [...prev, ...currentKeys];
     }, []);
 
-    /** 补全选中节点的父节点 */
-    const latestAllKeys = allKeys.reduce((prev: string[], current) => {
-      return [...prev, current, ...getChildrenParents(current)];
-    }, []);
+    /**
+     * 补全选中节点的父节点，并去重！
+     */
+    const latestAllKeys = new Set(
+      allKeys.reduce((prev: string[], current) => {
+        return [...prev, current, ...getChildrenParents(current)];
+      }, [])
+    );
 
     setInsideValue(checkedData.current);
-    handleChange(latestAllKeys);
+    handleChange(Array.from(latestAllKeys));
   };
 
   /**
@@ -200,23 +205,33 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
       <div className={classNames(prefixCls, className)} style={style}>
         {list.length === 0 && <Empty />}
         {treeData.map((item: any, index) => {
+          const treeProps: TreeProps = {
+            checkable: true,
+            disabled: disabled || readonly,
+            checkedKeys: insideValue[item.id] ?? [],
+            defaultExpandAll: !readonly,
+            selectable: false,
+            treeData: item.children,
+          };
+
+          if (readonly) {
+            treeProps.expandedKeys = (insideValue[item.id] ?? []).reduce((prev: string[], current) => {
+              return [...prev, current, ...getChildrenParents(current)];
+            }, []);
+          }
+
           return (
             <div key={item.key} className={`${prefixCls}-item`}>
               <div className={`${prefixCls}-title`}>{item.name}</div>
 
               <Tree
-                checkable
-                disabled={disabled || readonly}
-                checkedKeys={insideValue[item.id] ?? []}
-                defaultExpandAll={readonly ? !!(insideValue[item.id] ?? []).length : true}
-                selectable={false}
+                {...treeProps}
                 // TODO: antd 4.17.0 支持
                 // fieldNames={{
                 //   key: 'id',
                 //   title: 'name',
                 //   children: 'children',
                 // }}
-                treeData={item.children}
                 onCheck={(checkedKeys) => {
                   handleCheck(item.id, checkedKeys as string[]);
                 }}
