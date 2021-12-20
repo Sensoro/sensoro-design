@@ -13,4 +13,21 @@
   &::after {
     display: none;
   }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: rgba(10, 27, 57, 0.04);
+  }
+
+  > span {
+    color: #0a1b39;
+    font-size: 14px;
+  }
+}
+
+.@{button-cls}-default.ant-btn-lg {
+  > span {
+    font-size: 16px;
+  }
 }
