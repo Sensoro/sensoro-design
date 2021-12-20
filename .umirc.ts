@@ -34,16 +34,6 @@ export default {
         libraryDirectory: 'es',
         style: 'css'
       }
-    ],
-    [
-      'import',
-      {
-        libraryName: '@sensoro/sensoro-design',
-        customStyleName: () => {
-          return `../style/index.ts`;
-        }
-      },
-      '@sensoro/sensoro-design'
     ]
   ],
   theme: {
