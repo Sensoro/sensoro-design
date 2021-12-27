@@ -50,10 +50,6 @@ group:
 
 <code src="./demo/demo-09.tsx" />
 
-### 支持 0
-
-<code src="./demo/demo-09.tsx" />
-
 ## API
 
 | 参数          | 说明                               | 类型                                                             | 默认值   | 版本 |
