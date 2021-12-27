@@ -46,6 +46,14 @@ group:
 
 <code src="./demo/demo-07.tsx" />
 
+### 支持 0
+
+<code src="./demo/demo-09.tsx" />
+
+### 支持 0
+
+<code src="./demo/demo-09.tsx" />
+
 ## API
 
 | 参数          | 说明                               | 类型                                                             | 默认值   | 版本 |
@@ -60,11 +68,11 @@ group:
 
 DaysRange
 
-| 参数          | 说明                                | 类型     | 默认值  | 版本   |
-| ------------- | ----------------------------------- | -------- | ------- | ------ |
-| marks         | 快捷天数数组(大于 0 且为整数)(1 BI) | number[] | [7, 30] | --     |
-| value         | 值                                  | number   | --      | --     |
-| isMountChange | onChange 是否在初始化时执行         | boolean  | true    | v1.1.2 |
+| 参数          | 说明                                              | 类型     | 默认值  | 版本   |
+| ------------- | ------------------------------------------------- | -------- | ------- | ------ |
+| marks         | 快捷天数数组(大于等于 0 且为整数)，0 表示没有限制 | number[] | [7, 30] | --     |
+| value         | 值                                                | number   | --      | --     |
+| isMountChange | onChange 是否在初始化时执行                       | boolean  | true    | v1.1.2 |
 
 **注意** 开启`isMountChange`后会在 组件注册阶段执行 onChange，默认会将 marks 排序后的第一个值作为初始值
 

@@ -59,13 +59,11 @@ const DaysRange: DaysRangeType = ({
   const prefixCls = getPrefixCls('days-range');
 
   marks = marks
-    .filter((item) => item > 0)
+    // .filter((item) => item > 0)
     .filter((item) => isInteger(item))
     .sort((a, b) => a - b);
 
-  marks.indexOf(dayType) === -1
-    ? isCustomize = true
-    : isCustomize = false;
+  marks.indexOf(dayType) === -1 ? (isCustomize = true) : (isCustomize = false);
 
   const Item = type === 'button' ? Button : Radio;
 
@@ -83,6 +81,11 @@ const DaysRange: DaysRangeType = ({
     let timeRange: Moment[];
     let endIsToday = true;
 
+    if (isNumber(val) && val === 0) {
+      onChange?.({});
+      return;
+    }
+
     if (isNumber(val)) {
       timeRange = transformDayToTimeRange(val);
       days = val;
@@ -90,10 +93,7 @@ const DaysRange: DaysRangeType = ({
 
     if (isObject(val) && !isNil(val.startTime) && !isNil(val.endTime)) {
       days = transformTimeRangeToDay(val);
-      timeRange = [
-        moment(val.startTime),
-        moment(val.endTime),
-      ];
+      timeRange = [moment(val.startTime), moment(val.endTime)];
       endIsToday = moment(val.endTime).isSame(moment(), 'day');
     }
 
@@ -123,6 +123,13 @@ const DaysRange: DaysRangeType = ({
 
   const setValueCallback = useCallback(
     (nextValue) => {
+      if (isNumber(nextValue) && nextValue === 0) {
+        onChange?.({});
+
+        setDayType(0);
+        return;
+      }
+
       if (isNumber(nextValue)) {
         const range = transformDayToTimeRange(nextValue);
 
@@ -150,10 +157,7 @@ const DaysRange: DaysRangeType = ({
       if (showCustomize === 'show') {
         const days = moment(result[1]).diff(moment(moment(result[0])), 'd') + 1;
 
-        if (
-          moment(dates[1]).isSame(moment(), 'day') &&
-          marks.includes(days)
-        ) {
+        if (moment(dates[1]).isSame(moment(), 'day') && marks.includes(days)) {
           setDayType(days);
         } else {
           setDayType(undefined);
@@ -174,6 +178,23 @@ const DaysRange: DaysRangeType = ({
     return current && current >= moment().endOf('day');
   }
 
+  const getMarkText = (mark: number): string => {
+    let text;
+    if (formatter && formatter(mark)) {
+      text = formatter(mark);
+    }
+
+    if (!text && mark === 0) {
+      text = '不限';
+    }
+
+    if (!text && mark === 1) {
+      text = '今日';
+    }
+
+    return text || `${mark}天`;
+  };
+
   return (
     <span
       className={classNames(className, {
@@ -187,19 +208,11 @@ const DaysRange: DaysRangeType = ({
         value={isCustomize ? 'customize' : dayType}
         onChange={handleChange}
       >
-        {marks.map((item) => {
-          let text;
-          if (formatter && formatter(item)) {
-            text = formatter(item);
-          }
-          text = text || (item === 1 ? '今日' : `${item}天`);
-
-          return (
-            <Item key={item} value={item}>
-              {text}
-            </Item>
-          );
-        })}
+        {marks.map((item) => (
+          <Item key={item} value={item}>
+            {getMarkText(item)}
+          </Item>
+        ))}
         {showCustomize === true && (
           <Item key="customize" value="customize">
             {formatter?.('customize') ? formatter?.('customize') : '自定义'}
