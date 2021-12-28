@@ -88,28 +88,8 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
       .map((item) => `${item.parentId}_${item.id}`);
 
     // 去除跟节点未全部选中的节点
-    valueList = valueList.filter((item) => {
-      const info = permissionMap.current[item];
-
-      if (!info) return false;
-
-      const children = info.children ?? [];
-
-      if (!children.length) return true;
-
-      // 子节点必须全部选中，否则应该删除
-      const ids = children.map((item) => `${item.parentId}_${item.id}`);
-
-      let result = true;
-
-      for (let i = 0; i < ids.length; i++) {
-        if (!valueList.includes(ids[i])) {
-          result = false;
-          continue;
-        }
-      }
-
-      return result;
+    valueList = valueList.filter((item, index) => {
+      return getChildrenIsAllSelect(item, valueList);
     });
 
     const nextVal = valueList.reduce((prev, cur) => {
@@ -131,6 +111,54 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
     checkedData.current = nextVal;
     setInsideValue(nextVal);
   };
+
+  /**
+   * 使用递归判断所有子节点是否都选中
+   * @param key
+   * @param list
+   * @returns 返回 true 表示所有子节点已经选中
+   */
+  function getChildrenIsAllSelect(key: string, list: string[]): boolean {
+    const info = permissionMap.current[key];
+
+    // 不存在的数据
+    if (!info) return false;
+
+    const children = info.children;
+
+    // 叶子节点直接返回
+    if (!children || children.length === 0) return true;
+
+    let result = true;
+
+    function checkChildrenIsAllSelect(items: Permission[]) {
+      const keys = items.map((item) => `${item.parentId}_${item.id}`);
+
+      for (let i = 0; i < keys.length; i++) {
+        // 存在未选中的节点
+        if (!list.includes(keys[i])) {
+          result = false;
+          return;
+        }
+
+        const childrenInfo = permissionMap.current[keys[i]];
+
+        if (!childrenInfo) {
+          continue;
+        }
+
+        if (!childrenInfo.children || childrenInfo.children.length === 0) {
+          continue;
+        };
+
+        checkChildrenIsAllSelect(childrenInfo.children ?? []);
+      }
+    }
+
+    checkChildrenIsAllSelect(children);
+
+    return result;
+  }
 
   /**
    * 树选择事件回调
