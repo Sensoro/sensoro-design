@@ -19,10 +19,11 @@ export interface Permission {
   parentId: string;
   /** 树路径 */
   parentIds?: string[];
-  /**
-   * 子权限
-   */
+  /** 子权限 */
   children?: Permission[];
+
+  /** 树组件使用 */
+  key?: string;
 }
 
 /**
@@ -32,4 +33,3 @@ export interface PermissionValue {
   id: string;
   parentId: string;
 }
-

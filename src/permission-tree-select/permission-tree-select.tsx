@@ -9,6 +9,11 @@ import Empty from '../empty';
 import { ConfigContext } from '../config-provider';
 import { Permission, PermissionValue } from './types';
 
+export interface CheckedVal {
+  checked: string[];
+  halfChecked: string[];
+}
+
 export interface PermissionTreeSelectProps {
   /** 额外的样式类 */
   className?: string;
@@ -44,8 +49,8 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
   /** 转换后的树数据 */
   const [treeData, setTreeData] = useState<Permission[]>([]);
   /** 内部维护的Value，值为 parentId_id */
-  const [insideValue, setInsideValue] = useState<Record<string, string[]>>({});
-  const checkedData = useRef<Record<string, string[]>>({});
+  const [insideValue, setInsideValue] = useState<Record<string, CheckedVal>>({});
+  const checkedData = useRef<Record<string, CheckedVal>>({});
   const permissionMap = useRef<Record<string, Permission>>({});
 
   const { getPrefixCls } = useContext(ConfigContext);
@@ -83,25 +88,23 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
     if (!Object.keys(permissionMap.current).length) return;
 
     // 去除根节点
-    let valueList = value
-      .filter((item) => item.parentId !== '0')
-      .map((item) => `${item.parentId}_${item.id}`);
-
-    // 去除跟节点未全部选中的节点
-    valueList = valueList.filter((item, index) => {
-      return getChildrenIsAllSelect(item, valueList);
-    });
+    let valueList = value.map((item) => `${item.parentId}_${item.id}`);
 
     const nextVal = valueList.reduce((prev, cur) => {
       const info = permissionMap.current[cur];
 
       if (info) {
-        const key = info.parentIds[0];
+        const key = info.parentIds[0] ?? info.id;
 
-        if (!prev[key]) {
-          prev[key] = [cur];
-        } else {
-          prev[key].push(cur);
+        if (key) {
+          if (!prev[key]) {
+            prev[key] = {
+              checked: [cur],
+              halfChecked: []
+            };
+          } else {
+            prev[key].checked.push(cur);
+          }
         }
       }
 
@@ -109,6 +112,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
     }, {});
 
     checkedData.current = nextVal;
+
     setInsideValue(nextVal);
   };
 
@@ -149,7 +153,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
 
         if (!childrenInfo.children || childrenInfo.children.length === 0) {
           continue;
-        };
+        }
 
         checkChildrenIsAllSelect(childrenInfo.children ?? []);
       }
@@ -161,47 +165,85 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
   }
 
   /**
-   * 树选择事件回调
+   * 树选择事件回调，以为描述中叶子几点为功能节点
+   *  1: 节点选中
+   *   1). 父节点链全选
+   *   2). 子节点全选
+   *  2. 节点取消选中
+   *   1). 父节点如无任何子节点选中且为模块节点，则取消选中 -- 暂不实现
+   *   2). 子节点取消选中
    * @param moduleId
    * @param keys
    */
-  const handleCheck = (moduleId: string, keys: string[]) => {
+  const handleCheck = (
+    selectedKeys: CheckedVal,
+    info: {
+      moduleId: string;
+      checked: boolean;
+      nodeId: string;
+    }
+  ) => {
+    const { moduleId, nodeId, checked } = info;
+
+    const prevChecked = checkedData.current[moduleId]?.checked ?? [];
+    let latestChecked = [...prevChecked];
+
+    const nodeInfo = permissionMap.current[nodeId];
+
+    if (!nodeInfo) return;
+
+    // 选中节点
+    if (checked) {
+      const parentIds = getNodeParentIds(nodeId);
+      const childrenIds = getNodeChildrenIds(nodeId);
+
+      latestChecked = [...prevChecked, ...parentIds, ...childrenIds, nodeId];
+
+      (nodeInfo.children ?? []).forEach((child) => {
+        if (child.type === 1) {
+          latestChecked.push(child.key);
+        }
+      });
+    } else {
+      latestChecked = latestChecked.filter((item) => item !== nodeId);
+
+      const childrenIds = getNodeChildrenIds(nodeId);
+
+      latestChecked = latestChecked.filter((item) => !childrenIds.includes(item));
+    }
+
     checkedData.current = {
       ...checkedData.current,
-      [`${moduleId}`]: keys
+      [`${moduleId}`]: {
+        ...selectedKeys,
+        checked: latestChecked
+      }
     };
 
     /** 获取所有选中的节点 */
-    const allKeys = Object.keys(checkedData.current).reduce((prev: string[], current) => {
-      const currentKeys = checkedData.current[current];
+    const allKeys = new Set(
+      Object.keys(checkedData.current).reduce((prev: string[], current) => {
+        const currentKeys = checkedData.current[current].checked;
 
-      return [...prev, ...currentKeys];
-    }, []);
-
-    /**
-     * 补全选中节点的父节点，并去重！
-     */
-    const latestAllKeys = new Set(
-      allKeys.reduce((prev: string[], current) => {
-        return [...prev, current, ...getChildrenParents(current)];
+        return [...prev, ...currentKeys];
       }, [])
     );
 
     setInsideValue(checkedData.current);
-    handleChange(Array.from(latestAllKeys));
+    handleChange(Array.from(allKeys));
   };
 
   /**
-   * 获取父节点的ID组合
+   * 获取节点的父链ID组合
    * @param key
    * @returns
    */
-  const getChildrenParents = (key: string) => {
-    const permissionInfo = permissionMap.current[key];
+  const getNodeParentIds = (key: string) => {
+    const info = permissionMap.current[key];
 
-    if (!permissionInfo) return [];
+    if (!info) return [];
 
-    const pIds = [rootId, ...permissionInfo.parentIds];
+    const pIds = [rootId, ...info.parentIds];
 
     let index = 0;
     const parentKeys = [];
@@ -213,6 +255,42 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
     }
 
     return parentKeys;
+  };
+
+  /**
+   * 获取节点的子链ID组合
+   * @param key
+   * @returns
+   */
+  const getNodeChildrenIds = (key: string, type?: number) => {
+    const info = permissionMap.current[key];
+
+    if (!info) return [];
+
+    const childrenIds: string[] = [];
+
+    let children = info.children ?? [];
+
+    while (children.length) {
+      const nextChildren: Permission[] = [];
+
+      children.forEach((item) => {
+        nextChildren.push(...(item.children ?? []));
+
+        if (!type) {
+          childrenIds.push(item.key);
+          return;
+        }
+
+        if (type === item.type) {
+          childrenIds.push(item.key);
+        }
+      });
+
+      children = nextChildren;
+    }
+
+    return childrenIds;
   };
 
   /**
@@ -236,16 +314,19 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
           const treeProps: TreeProps = {
             checkable: true,
             disabled: disabled || readonly,
-            checkedKeys: insideValue[item.id] ?? [],
+            checkedKeys: insideValue[item.id],
             defaultExpandAll: !readonly,
             selectable: false,
-            treeData: item.children,
+            treeData: item.children
           };
 
           if (readonly) {
-            treeProps.expandedKeys = (insideValue[item.id] ?? []).reduce((prev: string[], current) => {
-              return [...prev, current, ...getChildrenParents(current)];
-            }, []);
+            treeProps.expandedKeys = (insideValue[item.id]?.checked ?? []).reduce(
+              (prev: string[], current) => {
+                return [...prev, current, ...getNodeParentIds(current)];
+              },
+              []
+            );
           }
 
           return (
@@ -260,9 +341,14 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
                 //   title: 'name',
                 //   children: 'children',
                 // }}
-                onCheck={(checkedKeys) => {
-                  handleCheck(item.id, checkedKeys as string[]);
+                onCheck={(selectedKeys, e) => {
+                  handleCheck(selectedKeys as CheckedVal, {
+                    moduleId: item.id,
+                    nodeId: e.node.key as string,
+                    checked: e.checked
+                  });
                 }}
+                checkStrictly={true}
                 titleRender={(node) => {
                   if (node['type'] === 2) {
                     return (
