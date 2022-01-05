@@ -1,0 +1,49 @@
+@import '../../style/themes/index';
+
+@prefix-cls: ~'@{sen-prefix}-preview-image';
+
+.@{prefix-cls} {
+  position: relative;
+  pointer-events: auto;
+
+  &-container {
+    position: relative;
+    display: grid;
+    min-height: 640px;
+    height: calc(100vh - 88px * 2);
+  }
+
+  &-content {
+    height: 100%;
+    width: 640px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 0 24px 24px;
+  }
+
+  &-header {
+    position: relative;
+    height: 88px;
+    line-height: 88px;
+    font-size: 20px;
+    color: #0a1c39;
+  }
+
+  &-close {
+    float: right;
+    color: #3c4961;
+    font-size: 24px;
+
+    .anticon {
+      cursor: pointer;
+    }
+  }
+
+  &-body {
+    padding: 0;
+    border-radius: 4px;
+    height: calc(100% - 88px);
+    background-color: fade(#0a1c39, 8%);
+  }
+}

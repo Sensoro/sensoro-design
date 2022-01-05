@@ -3979,14 +3979,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pansy/react-hooks@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "@pansy/react-hooks@npm:0.6.0"
+"@pansy/react-hooks@npm:0.7.0":
+  version: 0.7.0
+  resolution: "@pansy/react-hooks@npm:0.7.0"
   dependencies:
     "@juggle/resize-observer": ^3.3.1
-    "@pansy/watermark": ^2.0.3
+    "@pansy/watermark": ^2.0.5
     intersection-observer: ^0.12.0
-  checksum: 0a01bec035ae561bc8d79b522b95095e689693259a4c4e3cd3fe490892c09c1e6dca441dc1be20b1d1f444d4d268e0451f4edc71950b3faf09af9be992f1b0d4
+  checksum: dc6e7cc3f2ac0aedf1c0ee4e24fdac26425b7b3b462968cbfde21029b04f8c937b4c97196e37c0be7c9d23646caba5d7a269d9d341f2879c8116e4464aba3dc2
   languageName: node
   linkType: hard
 
@@ -4016,7 +4016,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pansy/watermark@npm:^2.0.3":
+"@pansy/watermark@npm:^2.0.5":
   version: 2.0.5
   resolution: "@pansy/watermark@npm:2.0.5"
   checksum: 88fc0eea56f74267ca103ea8870c24bda6fdd1112b96da0829fca21ea82068f254e475c2e0b42b4f93ac94a6a1f211b8f3b65d2e8308a26e808b460dd75021ad
@@ -4153,7 +4153,7 @@ __metadata:
     "@pansy/classnames": 1.0.1
     "@pansy/react-aliplayer": 1.3.0
     "@pansy/react-fullscreen": 1.3.0
-    "@pansy/react-hooks": ^0.6.0
+    "@pansy/react-hooks": 0.7.0
     "@pansy/react-watermark": 2.1.0
     "@sensoro/react-amap": 1.3.0
     "@types/d3-path": ^2.0.0

@@ -1,4 +1,4 @@
-// 此文件在构建时会自动更新，请勿手动修改! 
+// 此文件在构建时会自动更新，请勿手动修改!
 import AreaSelector from './area-selector';
 import Avatar from './avatar';
 import Barcode from './barcode';
@@ -38,6 +38,7 @@ import PictureAxis from './picture-axis';
 import Plate from './plate';
 import Player from './player';
 import Popmodal from './popmodal';
+import PreviewImage from './preview-image';
 import Radio from './radio';
 import RangePickerPro from './range-picker-pro';
 import Schedule from './schedule';
@@ -101,6 +102,7 @@ export {
   Plate,
   Player,
   Popmodal,
+  PreviewImage,
   Radio,
   RangePickerPro,
   Schedule,
@@ -165,6 +167,7 @@ export default {
   Plate,
   Player,
   Popmodal,
+  PreviewImage,
   Radio,
   RangePickerPro,
   Schedule,
