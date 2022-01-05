@@ -5,19 +5,19 @@ const { ImageWall } = Viewer;
 const images = [
   {
     url:
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584945152600&di=8205d9722c8a62176520030a75d6b0ab&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3D8390d138923df8dca63d8f99fd1072bf%2F0b61f6246b600c33741b0107174c510fd8f9a1a6.jpg'
+      'https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp'
   },
   {
     url:
-      'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1584931799&di=6f1559d8862a26b3cb987f9fed1033ff&src=http://a3.att.hudong.com/68/61/300000839764127060614318218_950.jpg'
+      'https://gw.alipayobjects.com/zos/antfincdn/cV16ZqzMjW/photo-1473091540282-9b846e7965e3.webp'
   },
   {
     url:
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584953505517&di=a6b7519a1c39c50fd425944011f98182&imgtype=0&src=http%3A%2F%2Fimg8.zol.com.cn%2Fbbs%2Fupload%2F19928%2F19927799_0800.jpg'
+      'https://gw.alipayobjects.com/zos/antfincdn/x43I27A55%26/photo-1438109491414-7198515b166b.webp'
   }
 ];
 
-const Example: React.FC = () => {
+export default () => {
   return (
     <div>
       <ImageWall images={images}>
@@ -37,5 +37,3 @@ const Example: React.FC = () => {
     </div>
   );
 };
-
-export default Example;
