@@ -5,6 +5,7 @@ import { ImageProps as AntdImageProps } from 'antd/es/image';
 import Watermark, { WatermarkProps } from '../watermark';
 import { ConfigContext } from '../config-provider';
 import getWatermarkProps from '../common/utils/get-watermark-props';
+import './style';
 
 export type Fit = 'auto' | 'contain' | 'cover';
 
@@ -13,13 +14,7 @@ export interface ImageProps extends AntdImageProps {
   watermark?: boolean | WatermarkProps;
 }
 
-const Image: React.FC<ImageProps> = ({
-  className,
-  watermark,
-  fit,
-  style,
-  ...rest
-}) => {
+const Image: React.FC<ImageProps> = ({ className, watermark, fit, style, ...rest }) => {
   const { getPrefixCls } = useContext(ConfigContext);
 
   const prefixCls = getPrefixCls('image');
@@ -45,6 +40,6 @@ Image.defaultProps = {
   watermark: false,
   fit: 'auto',
   preview: false
-}
+};
 
 export default Image;

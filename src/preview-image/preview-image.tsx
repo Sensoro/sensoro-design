@@ -1,14 +1,51 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import classNames from '@pansy/classnames';
 import { CloseOutlined, RightOutlined, LeftOutlined } from '@ant-design/icons';
 import { Modal } from 'antd';
 import { PreviewImageProps } from './types';
 import { ConfigContext } from '../config-provider';
+import Image from '../image';
 
-const PreviewImage: React.FC<PreviewImageProps> = ({ visible, className, onClose }) => {
+const PreviewImage: React.FC<PreviewImageProps> = ({
+  visible,
+  className,
+  startIndex = 0,
+  images = [],
+  onClose
+}) => {
+  const [currentIndex, setCurrentIndex] = useState<number>();
   const { getPrefixCls } = useContext(ConfigContext);
 
+  useEffect(() => {
+    if (visible) {
+      setCurrentIndex(startIndex);
+      return;
+    }
+
+    setCurrentIndex(undefined);
+  }, [visible, startIndex]);
+
   const prefixCls = getPrefixCls('preview-image');
+
+  const imageInfo = images[currentIndex];
+
+  const handleRightClick = () => {
+    if (currentIndex === images.length - 1) {
+      return;
+    }
+    setCurrentIndex((prev) => {
+      return prev + 1 < images.length ? prev + 1 : 0;
+    });
+  };
+
+  const handleLeftClick = () => {
+    if (currentIndex === 0) {
+      return;
+    }
+    setCurrentIndex((prev) => {
+      return prev - 1 < 0 ? images.length - 1 : prev - 1;
+    });
+  };
 
   const handleClose = () => {
     onClose?.();
@@ -27,6 +64,28 @@ const PreviewImage: React.FC<PreviewImageProps> = ({ visible, className, onClose
         return (
           <div className={classNames(className, prefixCls)}>
             <div className={`${prefixCls}-container`}>
+              {images.length > 1 && (
+                <>
+                  <div
+                    className={classNames(`${prefixCls}-operation`, {
+                      [`${prefixCls}-operation-left`]: true,
+                      [`${prefixCls}-operation-disabled`]: currentIndex === 0
+                    })}
+                    onClick={handleLeftClick}
+                  >
+                    <LeftOutlined />
+                  </div>
+                  <div
+                    className={classNames(`${prefixCls}-operation`, {
+                      [`${prefixCls}-operation-right`]: true,
+                      [`${prefixCls}-operation-disabled`]: currentIndex === images.length - 1
+                    })}
+                    onClick={handleRightClick}
+                  >
+                    <RightOutlined />
+                  </div>
+                </>
+              )}
               <div className={`${prefixCls}-content`}>
                 <div className={`${prefixCls}-header`}>
                   查看图片
@@ -35,8 +94,13 @@ const PreviewImage: React.FC<PreviewImageProps> = ({ visible, className, onClose
                   </div>
                 </div>
                 <div className={`${prefixCls}-body`}>
-                  123
-                  <div></div>
+                  {imageInfo?.url && <Image fit="contain" src={imageInfo.url} />}
+
+                  {images.length > 1 && (
+                    <div className={`${prefixCls}-pagination`}>
+                      {`${currentIndex + 1} / ${images.length}`}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
