@@ -1,4 +1,10 @@
 /**
+ * 权限类型
+ * 1: 模块 2: 页面 3: 按钮
+ */
+export type PermissionType = 1 | 2 | 3;
+
+/**
  * 权限数据
  */
 export interface Permission {
@@ -10,7 +16,7 @@ export interface Permission {
    * 权限类型
    * 1-页面 2-功能
    */
-  type: 1 | 2;
+  type: PermissionType;
   /** 权限编码 */
   code?: string;
   /** 顺序 */

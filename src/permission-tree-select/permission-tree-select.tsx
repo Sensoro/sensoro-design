@@ -207,9 +207,45 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
     } else {
       latestChecked = latestChecked.filter((item) => item !== nodeId);
 
+      /** 取消选中所有的子节点 */
       const childrenIds = getNodeChildrenIds(nodeId);
-
       latestChecked = latestChecked.filter((item) => !childrenIds.includes(item));
+
+      /** 父节点如无任何子节点选中且为模块节点，则取消选中 */
+      const parentNodeKeys = [rootId, ...nodeInfo.parentIds].reduceRight(
+        (prev, cur, index, list) => {
+          if (index < 1) {
+            return prev;
+          }
+
+          if (index === 1) {
+            return [`${list[0]}_${list[1]}`, ...prev];
+          }
+
+          return [...prev, `${list[index - 1]}_${cur}`];
+        },
+        []
+      );
+
+      while (parentNodeKeys.length > 0) {
+        const currentKey = parentNodeKeys.pop();
+        const parentNodeInfo = permissionMap.current[currentKey];
+
+        if (!parentNodeInfo || parentNodeInfo.type !== 1) {
+          continue;
+        }
+
+        const childrenKeys = (parentNodeInfo.children ?? []).map((item) => item.key);
+
+        // 是否全部未选中
+        const noCheckedChildrenAll =
+          childrenKeys.filter((item) => !latestChecked.includes(item)).length ===
+          childrenKeys.length;
+
+        if (noCheckedChildrenAll) {
+          latestChecked = latestChecked.filter((item) => item !== parentNodeInfo.key);
+        }
+      }
     }
 
     checkedData.current = {
@@ -350,7 +386,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
                 }}
                 checkStrictly={true}
                 titleRender={(node) => {
-                  if (node['type'] === 2) {
+                  if (node['type'] === 3) {
                     return (
                       <Space size={4}>
                         <div>{node.title}</div>
