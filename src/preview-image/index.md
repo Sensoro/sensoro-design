@@ -17,3 +17,7 @@ group:
 ### 单个图片
 
 <code src="./demo/demo01.tsx" />
+
+### 多个图片
+
+<code src="./demo/demo02.tsx" />
