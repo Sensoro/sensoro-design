@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import classNames from '@pansy/classnames';
+import { useSize } from '@pansy/use-size';
 import { CloseOutlined, RightOutlined, LeftOutlined } from '@ant-design/icons';
 import { Modal } from 'antd';
 import { PreviewImageProps } from './types';
@@ -14,7 +15,9 @@ const PreviewImage: React.FC<PreviewImageProps> = ({
   onClose
 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>();
+  const rootRef = useRef<HTMLDivElement>(null);
   const { getPrefixCls } = useContext(ConfigContext);
+  const { height = 640 } = useSize(rootRef) ?? {};
 
   useEffect(() => {
     if (visible) {
@@ -55,14 +58,14 @@ const PreviewImage: React.FC<PreviewImageProps> = ({
     <Modal
       visible={visible}
       footer={null}
-      width={640}
+      width={height}
       style={{
         top: 88,
         padding: 0
       }}
       modalRender={() => {
         return (
-          <div className={classNames(className, prefixCls)}>
+          <div ref={rootRef} className={classNames(className, prefixCls)}>
             <div className={`${prefixCls}-container`}>
               {images.length > 1 && (
                 <>

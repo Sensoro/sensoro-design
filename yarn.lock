@@ -2851,6 +2851,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@juggle/resize-observer@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "@juggle/resize-observer@npm:3.3.1"
+  checksum: ddabc4044276a2cb57d469c4917206c7e39f2463aa8e3430e33e4eda554412afe29c22afa40e6708b49dad5d56768dc83acd68a704b1dcd49a0906bb96b991b2
+  languageName: node
+  linkType: hard
+
 "@lerna/add@npm:4.0.0":
   version: 4.0.0
   resolution: "@lerna/add@npm:4.0.0"
@@ -3937,6 +3944,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pansy/hook-utils@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@pansy/hook-utils@npm:0.2.0"
+  dependencies:
+    "@pansy/use-memoized-fn": ^0.2.0
+    "@pansy/use-unmount": ^0.2.0
+    "@pansy/use-update-effect": ^0.2.0
+  peerDependencies:
+    react: ">=16.9.0"
+    react-dom: ">=16.9.0"
+  checksum: 59723cdc913d180399e14201dbb1a7c3cf717d5c5ba4962e349973e58a903cc26d2428252fcecd8a8b9f927d32ca08f0f1e3d59b85ae2c261866a1288fd03092
+  languageName: node
+  linkType: hard
+
 "@pansy/hooks@npm:^2.2.0":
   version: 2.3.2
   resolution: "@pansy/hooks@npm:2.3.2"
@@ -4002,6 +4023,79 @@ __metadata:
   version: 0.2.0
   resolution: "@pansy/types@npm:0.2.0"
   checksum: 26bac761e1949d2f241d3ce4ae4d25073eee549f3a90027197d4eb8bdc9656be1297720b19cb406b61f6e461cc68927292171f7376f7ceb4b96f5f91d95bacd2
+  languageName: node
+  linkType: hard
+
+"@pansy/use-latest@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@pansy/use-latest@npm:0.2.0"
+  peerDependencies:
+    react: ^16.8.6 || ^17.0
+  checksum: 50d545d89396e62fe88e44bdad121af3ca4831a4094cb43ffa86c4a51c81bce137720a82b8c28521114de6b33c59f27385dda1704ef7d5c18879b80f6d4c7f91
+  languageName: node
+  linkType: hard
+
+"@pansy/use-memoized-fn@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@pansy/use-memoized-fn@npm:0.2.0"
+  dependencies:
+    "@pansy/use-toggle": ^0.2.0
+  peerDependencies:
+    react: ^16.8.6 || ^17.0
+  checksum: 8317a69749d6cb4da591213cc4fa72a1b02baf73f3837e34733ebf6897b7c8e51a3f629d2f9541cf4eedf0a1175760b3dc9874a9a9313ee9569eedf6290fd55d
+  languageName: node
+  linkType: hard
+
+"@pansy/use-raf-state@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@pansy/use-raf-state@npm:0.2.0"
+  dependencies:
+    "@pansy/use-unmount": ^0.2.0
+  peerDependencies:
+    react: ^16.8.6 || ^17.0
+  checksum: 04e6137fa2ef0b87f9a82b654ee31ca0d2a32ffb696efee9a5f573d1cb13b5b77b6497f4bde0adacd85df96dc34bc9b603389de9bebf36d12e196b7a6dfffc9d
+  languageName: node
+  linkType: hard
+
+"@pansy/use-size@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@pansy/use-size@npm:0.2.0"
+  dependencies:
+    "@juggle/resize-observer": ^3.3.1
+    "@pansy/hook-utils": ^0.2.0
+    "@pansy/use-raf-state": ^0.2.0
+  peerDependencies:
+    react: ^16.8.6 || ^17.0
+  checksum: 5e28c7c5aa04b2be5e9df8ff618b2cdf9b778a188905f3894bb4ad751cd21040c8c31a1e91a8f227cff0ecff9dae23073c475a9e2e5a8491ce09c7ad92bd7d81
+  languageName: node
+  linkType: hard
+
+"@pansy/use-toggle@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@pansy/use-toggle@npm:0.2.0"
+  peerDependencies:
+    react: ^16.8.6 || ^17.0
+  checksum: eda1cd6eb3b055016cf0f68b619a2fcead2841dd8c9e74b39d2b67ab3258cb59c51602aa12a3c34d2d957bb15b40bb13ace38f94a4d6cae75f25dc84e50f2c6f
+  languageName: node
+  linkType: hard
+
+"@pansy/use-unmount@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@pansy/use-unmount@npm:0.2.0"
+  dependencies:
+    "@pansy/use-latest": ^0.2.0
+  peerDependencies:
+    react: ^16.8.6 || ^17.0
+  checksum: 5ea67ba6db8dc995e96e99a297a6a18bd9fab5497c8a9a18593d75e7ef769e500f38660c8ae7c30b36d9a66917ecb9c2e7e6029619676dacd2a87b871a13ccd4
+  languageName: node
+  linkType: hard
+
+"@pansy/use-update-effect@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@pansy/use-update-effect@npm:0.2.0"
+  peerDependencies:
+    react: ^16.8.6 || ^17.0
+  checksum: 58f7cf5baffd6423857c07012d062132edd130ec90a33f79ea5ab897c8a54c0b4a53fa7ef97c4fc95b1d53b6cd79c3c2701781584a85ff4fcad1dd7f9ebc21f8
   languageName: node
   linkType: hard
 
@@ -4143,6 +4237,7 @@ __metadata:
     "@pansy/react-aliplayer": 1.3.0
     "@pansy/react-fullscreen": 1.3.0
     "@pansy/react-watermark": 2.1.0
+    "@pansy/use-size": ^0.2.0
     "@sensoro/react-amap": 1.3.0
     "@types/d3-path": ^2.0.0
     "@types/file-saver": ^2.0.1
