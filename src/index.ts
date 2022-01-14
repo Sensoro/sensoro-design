@@ -39,6 +39,7 @@ import Plate from './plate';
 import Player from './player';
 import Popmodal from './popmodal';
 import PreviewImage from './preview-image';
+import ProCard from './pro-card';
 import Radio from './radio';
 import RangePickerPro from './range-picker-pro';
 import Schedule from './schedule';
@@ -103,6 +104,7 @@ export {
   Player,
   Popmodal,
   PreviewImage,
+  ProCard,
   Radio,
   RangePickerPro,
   Schedule,
@@ -168,6 +170,7 @@ export default {
   Player,
   Popmodal,
   PreviewImage,
+  ProCard,
   Radio,
   RangePickerPro,
   Schedule,
