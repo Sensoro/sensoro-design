@@ -32,7 +32,9 @@ const PreviewImage: React.FC<PreviewImageProps> = ({
 
   const imageInfo = images[currentIndex];
 
-  const handleRightClick = () => {
+  const handleRightClick = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     if (currentIndex === images.length - 1) {
       return;
     }
@@ -41,7 +43,9 @@ const PreviewImage: React.FC<PreviewImageProps> = ({
     });
   };
 
-  const handleLeftClick = () => {
+  const handleLeftClick = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     if (currentIndex === 0) {
       return;
     }
