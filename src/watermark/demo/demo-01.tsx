@@ -9,20 +9,21 @@ export default () => {
   };
 
   return (
-    <div style={{ position: 'relative', height: 300 }}>
-      <Watermark
-        // @ts-ignore
-        text={() => {
-          return [
-            `${profile.nickname.slice(0, 5)} ${profile.mobile.slice(
-              profile.mobile.length - 4,
-              profile.mobile.length
-            )}`,
-            moment().format('YYYYMMDDHHmmss')
-          ];
-        }}
-      />
-      <button>123</button>
-    </div>
+    <Watermark
+      // @ts-ignore
+      text={() => {
+        return [
+          `${profile.nickname.slice(0, 5)} ${profile.mobile.slice(
+            profile.mobile.length - 4,
+            profile.mobile.length
+          )}`,
+          moment().format('YYYYMMDDHHmmss')
+        ];
+      }}
+    >
+      <div style={{ position: 'relative', height: 300 }}>
+        <button>123</button>
+      </div>
+    </Watermark>
   );
 };
