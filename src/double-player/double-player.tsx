@@ -76,7 +76,7 @@ const DoublePlayer: React.FC<DoublePlayerProps> = ({
         player = leftPlayer.getPlayer();
       }
 
-      controlPlayer.current = player
+      controlPlayer.current = player;
 
       player.on('timeupdate', () => {
         const time = player.getCurrentTime();
@@ -267,35 +267,36 @@ const DoublePlayer: React.FC<DoublePlayerProps> = ({
         setEnabled(false);
       }}
     >
-      {watermarkProps && <Watermark {...watermarkProps} />}
-      {leftPlayer}
-      {rightPlayer}
+      <Watermark {...watermarkProps} monitor={false} className={`${prefixCls}-watermark`}>
+        {leftPlayer}
+        {rightPlayer}
 
-      {(isLive || (!isLive && duration !== 0)) && !hideController && (
-        <Controlbar
-          isLive={isLive}
-          duration={duration}
-          currentTime={currentTime}
-          download={{
-            visible: true,
-            onClick: onDownload
-          }}
-          volume={{
-            onChange: handleVolumeChange
-          }}
-          progress={{
-            onChange: handleProgressChange
-          }}
-          prismPlay={{
-            status: prismPlay,
-            onChange: handlePrismPlayChange
-          }}
-          fullscreen={{
-            state: enabled,
-            onChange: handleFullscreenChange
-          }}
-        />
-      )}
+        {(isLive || (!isLive && duration !== 0)) && !hideController && (
+          <Controlbar
+            isLive={isLive}
+            duration={duration}
+            currentTime={currentTime}
+            download={{
+              visible: true,
+              onClick: onDownload
+            }}
+            volume={{
+              onChange: handleVolumeChange
+            }}
+            progress={{
+              onChange: handleProgressChange
+            }}
+            prismPlay={{
+              status: prismPlay,
+              onChange: handlePrismPlayChange
+            }}
+            fullscreen={{
+              state: enabled,
+              onChange: handleFullscreenChange
+            }}
+          />
+        )}
+      </Watermark>
     </Fullscreen>
   );
 };
