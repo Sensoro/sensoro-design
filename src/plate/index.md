@@ -4,8 +4,8 @@ nav:
   title: 组件
   path: /components
 group:
-  title: 地图
-  path: /map
+  title: 数据展示
+  path: /data-display
 ---
 
 # Plate 车牌组件

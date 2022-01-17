@@ -1,5 +1,6 @@
 import InternalScrollableBar from './scrollable-bar';
 import Item from './item';
+import './style';
 
 type ScrollableBarType = typeof InternalScrollableBar;
 

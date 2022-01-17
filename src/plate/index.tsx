@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import classNames from '@pansy/classnames';
 import { ConfigContext } from '../config-provider';
+import './style';
 
 export interface PlateProps {
   className?: string;

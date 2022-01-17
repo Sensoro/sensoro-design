@@ -1,4 +1,4 @@
-// 此文件在构建时会自动更新，请勿手动修改! 
+// 此文件在构建时会自动更新，请勿手动修改!
 import AreaSelector from './area-selector';
 import Avatar from './avatar';
 import Barcode from './barcode';
@@ -24,9 +24,6 @@ import Input from './input';
 import LineBoard from './line-board';
 import List from './list';
 import Live from './live';
-import Map from './map';
-import MapDeviceSelection from './map-device-selection';
-import MapPosition from './map-position';
 import Menu from './menu';
 import Monitor from './monitor';
 import NoField from './no-field';
@@ -54,7 +51,6 @@ import Table from './table';
 import TableTransfer from './table-transfer';
 import Tabs from './tabs';
 import Tag from './tag';
-import Tags from './tags';
 import TextLink from './text-link';
 import Timeline from './timeline';
 import Tooltip from './tooltip';
@@ -89,9 +85,6 @@ export {
   LineBoard,
   List,
   Live,
-  Map,
-  MapDeviceSelection,
-  MapPosition,
   Menu,
   Monitor,
   NoField,
@@ -119,7 +112,6 @@ export {
   TableTransfer,
   Tabs,
   Tag,
-  Tags,
   TextLink,
   Timeline,
   Tooltip,
@@ -155,9 +147,6 @@ export default {
   LineBoard,
   List,
   Live,
-  Map,
-  MapDeviceSelection,
-  MapPosition,
   Menu,
   Monitor,
   NoField,
@@ -185,7 +174,6 @@ export default {
   TableTransfer,
   Tabs,
   Tag,
-  Tags,
   TextLink,
   Timeline,
   Tooltip,
