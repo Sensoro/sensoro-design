@@ -5,6 +5,7 @@ on:
     types: [published]
     branches:
       - master
+      - next
 
 jobs:
   build-and-deploy:
