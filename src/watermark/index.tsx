@@ -9,11 +9,9 @@ type TextFun = () => BaseText;
 export interface WatermarkProps extends Partial<Omit<BaseWatermarkProps, 'text'>> {
   /** 水印文案 */
   text?: BaseText | TextFun;
-  /** 水印是否一段时间进行重绘，-1 表示关闭，单位毫秒 */
-  updateTime?: number;
 }
 
-const Watermark: React.FC<WatermarkProps> = ({ text, updateTime, children, ...rest }) => {
+const Watermark: React.FC<WatermarkProps> = ({ text, children, ...rest }) => {
   const latestText: BaseText = typeof text === 'function' ? text() : text;
 
   return (
@@ -38,7 +36,6 @@ Watermark.defaultProps = {
   opacity: 0.09,
   textAlign: 'left',
   mode: 'interval',
-  updateTime: 60 * 1000
 };
 
 export default Watermark;

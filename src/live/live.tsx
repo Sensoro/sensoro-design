@@ -134,16 +134,17 @@ const Live: React.FC<LiveProps> = ({
         [`hide-controlbar`]: hideControlbar
       })}
     >
-      {/* 设备离线 */}
-      {isOffline && <Offline />}
-      {watermarkProps && <Watermark {...watermarkProps} />}
-      {/** 播放器 */}
-      {!isOffline && (
-        <>
-          {playerMome}
-          {!hideControlbar && controlbarMemo}
-        </>
-      )}
+      <Watermark {...watermarkProps} className={`${prefixCls}-watermark`}>
+        {/* 设备离线 */}
+        {isOffline && <Offline />}
+        {/** 播放器 */}
+        {!isOffline && (
+          <>
+            {playerMome}
+            {!hideControlbar && controlbarMemo}
+          </>
+        )}
+      </Watermark>
     </Fullscreen>
   );
 };

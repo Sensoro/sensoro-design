@@ -19,13 +19,14 @@ export default () => {
         moment().format('YYYYMMDDHHmmss')
       ];
     },
-    fontColor: '#fff'
+    opacity: 0.5,
+    fontColor: 'red'
   };
 
   return (
     <Live
       style={style}
-      watermark={watermarkProps as any}
+      watermark={watermarkProps}
       source="https://stream7.iqilu.com/10339/upload_transcode/202002/18/20200218114723HDu3hhxqIT.mp4"
     />
   );
