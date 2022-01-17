@@ -3,7 +3,6 @@ import { Moment } from 'moment';
 import isNumber from 'lodash/isNumber';
 import debounce from 'lodash/debounce';
 import classNames from '@pansy/classnames';
-import { message } from 'antd';
 import CloseOutlined from '@ant-design/icons/CloseOutlined';
 import Player from '@pansy/react-aliplayer';
 import { PlayerConfig } from '@pansy/react-aliplayer/es/types';
@@ -118,20 +117,17 @@ const Monitor: React.FC<MonitorProps> = ({
     };
   }, []);
 
-  useEffect(
-    () => {
-      if (streamType === 'flv' && source?.flv) {
-        setLiveMode('flv');
-        setCurrentLiveSource(source.flv);
-      }
+  useEffect(() => {
+    if (streamType === 'flv' && source?.flv) {
+      setLiveMode('flv');
+      setCurrentLiveSource(source.flv);
+    }
 
-      if (streamType === 'hls' && source?.hls) {
-        setLiveMode('hls');
-        setCurrentLiveSource(source.hls);
-      }
-    },
-    [JSON.stringify(source), streamType]
-  )
+    if (streamType === 'hls' && source?.hls) {
+      setLiveMode('hls');
+      setCurrentLiveSource(source.hls);
+    }
+  }, [JSON.stringify(source), streamType]);
 
   const watermarkProps = getWatermarkProps(watermark);
 
@@ -219,19 +215,19 @@ const Monitor: React.FC<MonitorProps> = ({
 
   const handleSetVisible = (visible: boolean) => {
     if (visible && onShowSelectRangeDate) {
-      setSetMealLoading(true)
+      setSetMealLoading(true);
       onShowSelectRangeDate(id)
         .then((val) => {
           setSetMeal(val);
-          setSetMealLoading(false)
+          setSetMealLoading(false);
         })
         .finally(() => {
-          setSetMealLoading(false)
+          setSetMealLoading(false);
         });
     }
 
     setVisible(visible);
-  }
+  };
 
   const handleVolumeChange = (vol: number) => {
     const player = historyPlayerRef.current || livePlayerRef.current;
@@ -286,7 +282,7 @@ const Monitor: React.FC<MonitorProps> = ({
   };
 
   const handleLiveStreamStop = () => {
-    setLiveMode(prev => {
+    setLiveMode((prev) => {
       const val = prev === 'flv' ? 'hls' : 'flv';
 
       if (source[val]) {
@@ -466,38 +462,38 @@ const Monitor: React.FC<MonitorProps> = ({
 
       {!isOffline && (
         <div ref={rootRef} style={{ position: 'relative', width: '100%', height: '100%' }}>
-          {watermarkProps && <Watermark {...watermarkProps} />}
+          <Watermark {...watermarkProps} monitor={false} style={{ width: '100%', height: '100%' }}>
+            {monitorType === 'live' && livePlayerMemo}
+            {monitorType === 'history' && historyPlayerMemo}
 
-          {monitorType === 'live' && livePlayerMemo}
-          {monitorType === 'history' && historyPlayerMemo}
-
-          <Controlbar
-            prefixCls={`${prefixCls}-controlbar`}
-            type={monitorType}
-            videos={videos}
-            playStatus={historyIsPlay}
-            currentTime={currentTime}
-            isFullscreen={isFullscreen}
-            currentVideoIndex={currentVideoIndex}
-            onChangeType={handleChangeType}
-            liveModeProps={{
-              value: liveMode,
-              onChange: handleLiveModeChange
-            }}
-            isPolling={isPolling}
-            hideTools={hideTools}
-            speedProps={{
-              value: latestHistorySpeed.current,
-              doubleRow: (palyerRect?.height || 0) <= 248,
-              onChange: handleSpeedChange
-            }}
-            onYunTaiClick={onYunTai}
-            onDownloadClick={handleDownloadClick}
-            onVolumeChange={handleVolumeChange}
-            onPalyerChange={handlePalyerChange}
-            onPlayStatusChange={handlePlayStatusChange}
-            onFullscreenChange={handleFullscreenChange}
-          />
+            <Controlbar
+              prefixCls={`${prefixCls}-controlbar`}
+              type={monitorType}
+              videos={videos}
+              playStatus={historyIsPlay}
+              currentTime={currentTime}
+              isFullscreen={isFullscreen}
+              currentVideoIndex={currentVideoIndex}
+              onChangeType={handleChangeType}
+              liveModeProps={{
+                value: liveMode,
+                onChange: handleLiveModeChange
+              }}
+              isPolling={isPolling}
+              hideTools={hideTools}
+              speedProps={{
+                value: latestHistorySpeed.current,
+                doubleRow: (palyerRect?.height || 0) <= 248,
+                onChange: handleSpeedChange
+              }}
+              onYunTaiClick={onYunTai}
+              onDownloadClick={handleDownloadClick}
+              onVolumeChange={handleVolumeChange}
+              onPalyerChange={handlePalyerChange}
+              onPlayStatusChange={handlePlayStatusChange}
+              onFullscreenChange={handleFullscreenChange}
+            />
+          </Watermark>
         </div>
       )}
 
