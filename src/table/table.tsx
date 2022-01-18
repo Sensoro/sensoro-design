@@ -66,18 +66,15 @@ const Table: React.FC<TableProps<any>> = (props) => {
     ...restProps
   } = props;
 
-  useEffect(
-    () => {
-      if (dataSource?.length === 0 && table?.queryData?.page !== 1) {
-        // @ts-ignore
-        table.setQueryData({
-          ...table.queryData,
-          page: table.queryData.page - 1,
-        });
-      }
-    },
-    [dataSource]
-  )
+  useEffect(() => {
+    if (dataSource?.length === 0 && table.queryData && table.queryData.page !== 1) {
+      // @ts-ignore
+      table.setQueryData({
+        ...table.queryData,
+        page: table.queryData.page - 1
+      });
+    }
+  }, [dataSource]);
 
   const isFixed = columns.some((i) => i.fixed);
 
