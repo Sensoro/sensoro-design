@@ -39,6 +39,7 @@ import PreviewImage from './preview-image';
 import ProCard from './pro-card';
 import Radio from './radio';
 import RangePickerPro from './range-picker-pro';
+import ResponsiveCard from './responsive-card';
 import Schedule from './schedule';
 import ScrollableBar from './scrollable-bar';
 import Select from './select';
@@ -100,6 +101,7 @@ export {
   ProCard,
   Radio,
   RangePickerPro,
+  ResponsiveCard,
   Schedule,
   ScrollableBar,
   Select,
@@ -162,6 +164,7 @@ export default {
   ProCard,
   Radio,
   RangePickerPro,
+  ResponsiveCard,
   Schedule,
   ScrollableBar,
   Select,
