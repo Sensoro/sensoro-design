@@ -4098,6 +4098,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pansy/react-responsive-card@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@pansy/react-responsive-card@npm:0.1.2"
+  dependencies:
+    "@pansy/use-size": ^0.2.0
+  peerDependencies:
+    react: ">=16.9.0"
+    react-dom: ">=16.9.0"
+  checksum: 84586d6c60e2be4e76ff9fe6f91e833023d6738750f8bd7367170715302da1501416ea29249b86552f7695dd6ed6de2f7b98ca66d02dc60d95c519adc5b84215
+  languageName: node
+  linkType: hard
+
 "@pansy/react-watermark@npm:^3.1.7":
   version: 3.1.7
   resolution: "@pansy/react-watermark@npm:3.1.7"
@@ -4582,6 +4594,7 @@ __metadata:
     "@pansy/react-aliplayer": 1.3.0
     "@pansy/react-fullscreen": 1.3.0
     "@pansy/react-hooks": ^0.9.0
+    "@pansy/react-responsive-card": ^0.1.2
     "@pansy/react-watermark": ^3.1.7
     "@types/d3-path": ^2.0.0
     "@types/file-saver": ^2.0.1
