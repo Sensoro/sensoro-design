@@ -1,4 +1,4 @@
 import { Modal } from './modal';
-import './styles';
+import './style';
 
 export default Modal;
