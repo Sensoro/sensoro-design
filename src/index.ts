@@ -25,6 +25,7 @@ import LineBoard from './line-board';
 import List from './list';
 import Live from './live';
 import Menu from './menu';
+import Modal from './modal';
 import Monitor from './monitor';
 import NoField from './no-field';
 import NumberRoller from './number-roller';
@@ -87,6 +88,7 @@ export {
   List,
   Live,
   Menu,
+  Modal,
   Monitor,
   NoField,
   NumberRoller,
@@ -150,6 +152,7 @@ export default {
   List,
   Live,
   Menu,
+  Modal,
   Monitor,
   NoField,
   NumberRoller,
