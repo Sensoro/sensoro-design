@@ -4,7 +4,6 @@ on:
   release:
     types: [published]
     branches:
-      - master
       - next
 
 jobs:
@@ -41,7 +40,7 @@ jobs:
           GA_KEY: G-RMBLDHGL1N
           PROGRESS: none
           SITE_DEPLOY: 'TRUE'
-        run: npm run build:site
+        run: npm run site
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
