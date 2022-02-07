@@ -2,32 +2,142 @@
 
 @button-cls: ~'@{sen-prefix}-button';
 
-.@{button-cls}-default.ant-btn {
-  background: rgba(10, 27, 57, 0.04);
-  border-radius: 2px;
+.@{button-cls}.ant-btn {
+  padding: 4px 12px;
   box-shadow: none;
-  font-size: 14px;
-  color: #0a1b39;
-  border: none;
+
+  background: @grey-2;
+  color: @black;
+  border-color: @grey-2;
+
+  &:hover,
+  &:focus {
+    background: @grey-4;
+  }
+
+  &:active {
+    background: @grey-5;
+  }
 
   &::after {
     display: none;
   }
+}
+
+.@{button-cls}.ant-btn[disabled] {
+  color: @grey-7;
+  background: @grey-2;
+  border-color: @grey-2;
+}
+
+.@{button-cls}.ant-btn-primary {
+  background: @primary-color;
+  border-color: @primary-color;
+  color: #fff;
 
   &:hover,
-  &:focus,
-  &:active {
-    background: rgba(10, 27, 57, 0.04);
+  &:focus {
+    background: @primary-hover-color;
+    border-color: @primary-hover-color;
   }
 
-  > span {
-    color: #0a1b39;
-    font-size: 14px;
+  &:active {
+    background: @primary-active-color;
   }
+}
+
+.@{button-cls}.ant-btn-primary[disabled] {
+  background: @primary-disabled-color;
+  border-color: @primary-disabled-color;
+  color: @white;
+}
+
+.@{button-cls}-minor.ant-btn {
+  background: @grey-2;
+  color: @primary-color;
+  border-color: @grey-2;
+
+  &:hover,
+  &:focus {
+    background: @grey-4;
+  }
+
+  &:active {
+    background: @grey-5;
+  }
+}
+
+.@{button-cls}-minor.ant-btn[disabled] {
+  color: @blue-3;
+  background: @grey-2;
+  border-color: @grey-2;
 }
 
 .@{button-cls}-default.ant-btn-lg {
   > span {
     font-size: 16px;
   }
+}
+
+.@{button-cls}.ant-btn-dashed {
+  color: @primary-color;
+  background: @grey-2;
+
+  &:hover,
+  &:focus {
+    background: @grey-4;
+    border-color: @grey-2;
+  }
+
+  &:active {
+    background: @grey-5;
+    border-color: @grey-2;
+  }
+}
+
+.@{button-cls}.ant-btn-dashed[disabled] {
+  color: @blue-3;
+  background: @grey-2;
+  border-color: @grey-2;
+}
+
+.@{button-cls}.ant-btn-link {
+  color: @primary-color;
+  border-color: transparent;
+  background: transparent;
+}
+
+.@{button-cls}.ant-btn-link[disabled] {
+  color: @blue-3;
+  border-color: transparent;
+  background: transparent;
+}
+
+.@{button-cls}.ant-btn-icon-only {
+  padding: 2.4px 0;
+}
+
+.@{button-cls}.ant-btn.ant-btn-dangerous {
+  color: @btn-danger-color;
+  background: @btn-danger-bg;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background: @grey-4;
+  }
+
+  &:active {
+    background: @grey-5;
+  }
+}
+
+.@{button-cls}.ant-btn.ant-btn-dangerous[disabled] {
+  background: @btn-danger-bg;
+  color: @red-3;
+}
+
+.@{button-cls}.ant-btn.ant-btn-dangerous.ant-btn-link {
+  border-color: transparent;
+  background: transparent;
 }

@@ -1,10 +1,16 @@
 import React, { useContext } from 'react';
 import classNames from '@pansy/classnames';
 import { Button as AntButton } from 'antd';
-import { ButtonProps } from 'antd/es/button';
+import { ButtonProps as AntButtonProps, ButtonType as AntButtonType } from 'antd/es/button';
 import { ConfigContext } from '../config-provider';
 
-const Button: React.FC<ButtonProps> = ({ className, ...rest }) => {
+export type ButtonType = AntButtonType & 'minor';
+
+export interface ButtonProps extends Omit<AntButtonProps, 'type'> {
+  type: ButtonType;
+}
+
+export const Button: React.FC<ButtonProps> = ({ className, type = 'default', ...rest }) => {
   const { getPrefixCls } = useContext(ConfigContext);
 
   const prefixCls = getPrefixCls('button');
@@ -13,8 +19,10 @@ const Button: React.FC<ButtonProps> = ({ className, ...rest }) => {
     <AntButton
       {...rest}
       className={classNames(prefixCls, className, {
-        [`${prefixCls}-default`]: !rest.type
+        [`${prefixCls}-default`]: type === 'default',
+        [`${prefixCls}-minor`]: type === 'minor'
       })}
+      type={type as AntButtonType}
     />
   );
 };

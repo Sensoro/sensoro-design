@@ -69,7 +69,7 @@
     "@walrus/plugin-release": "1.14.3",
     "@walrus/plugin-test": "^1.1.0",
     "@walrus/preset-lint": "^1.1.8",
-    "antd": "4.13.1",
+    "antd": "4.18.5",
     "del": "^6.0.0",
     "dumi": "1.1.38",
     "father-build": "^1.19.2",
