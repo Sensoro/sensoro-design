@@ -1,10 +1,11 @@
 name: Deploy CI
 
 on:
-  release:
-    types: [push]
-    branches:
-      - next
+  push:
+    paths-ignore:
+      - 'docs/**'
+      - '**/demo/*'
+      - '**/*.md'
 
 jobs:
   build-and-deploy:
