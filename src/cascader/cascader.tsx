@@ -1,11 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Cascader as AntCascader } from 'antd';
 import { CascaderProps } from 'antd/es/cascader';
 
-const Cascader: FC<CascaderProps> = (props) => {
-  return (
-    <AntCascader {...props} />
-  )
-}
+const Cascader: React.FC<CascaderProps<any>> = (props) => {
+  return <AntCascader {...props} />;
+};
 
-export default Cascader
+export default Cascader;

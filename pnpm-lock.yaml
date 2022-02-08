@@ -37,6 +37,8 @@ specifiers:
   jsbarcode: ^3.11.4
   lodash: ^4.17.21
   moment: ^2.29.1
+  rc-tabs: ^11.10.5
+  rc-tree: ^5.4.3
   rc-util: ^5.8.1
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -59,6 +61,8 @@ dependencies:
   jsbarcode: 3.11.5
   lodash: 4.17.21
   moment: 2.29.1
+  rc-tabs: 11.10.5_react-dom@17.0.2+react@17.0.2
+  rc-tree: 5.4.3_react-dom@17.0.2+react@17.0.2
   rc-util: 5.17.0_react-dom@17.0.2+react@17.0.2
   resize-observer-polyfill: 1.5.1
 
@@ -12460,7 +12464,6 @@ packages:
       {
         integrity: sha512-pHuazgqrsTFrGU2WLDdXxCFabkdQDx72ddkraZNih1KsMcN5qsRSTR9O4VJRlwTPCPb5COYg3LOfiMHHcPInHg==,
       }
-    dev: true
 
   /dom-serializer/0.2.2:
     resolution:
@@ -21771,7 +21774,6 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       resize-observer-polyfill: 1.5.1
-    dev: true
 
   /rc-cascader/3.2.1_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -21872,7 +21874,6 @@ packages:
       rc-trigger: 5.2.10_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-    dev: true
 
   /rc-field-form/1.22.1_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -21961,7 +21962,6 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       shallowequal: 1.1.0
-    dev: true
 
   /rc-motion/2.4.4_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -21977,7 +21977,6 @@ packages:
       rc-util: 5.17.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-    dev: true
 
   /rc-notification/4.5.7_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -22012,7 +22011,6 @@ packages:
       rc-util: 5.17.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-    dev: true
 
   /rc-pagination/3.1.15_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -22099,7 +22097,6 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       resize-observer-polyfill: 1.5.1
-    dev: true
 
   /rc-select/14.0.0-alpha.25_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -22211,7 +22208,6 @@ packages:
       rc-util: 5.17.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-    dev: true
 
   /rc-textarea/0.3.7_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -22281,7 +22277,6 @@ packages:
       rc-virtual-list: 3.4.2_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-    dev: true
 
   /rc-trigger/5.2.10_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -22300,7 +22295,6 @@ packages:
       rc-util: 5.17.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-    dev: true
 
   /rc-upload/4.3.3_react-dom@17.0.2+react@17.0.2:
     resolution:
@@ -22348,7 +22342,6 @@ packages:
       rc-util: 5.17.0_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-    dev: true
 
   /rc/1.2.8:
     resolution:

@@ -26,7 +26,7 @@ const Quality: FC<QualityProps> = (props) => {
   const { prefixCls, maxQuality, quality, getPopupContainer, onChange } = props;
 
   const handleQualityChange: MenuProps['onClick'] = (e) => {
-    onChange?.(e.key as QUALITY);
+    onChange?.((e.key as unknown) as QUALITY);
   };
 
   const menus = (

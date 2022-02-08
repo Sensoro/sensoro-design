@@ -26,7 +26,7 @@ export interface UploadChangeParam<T extends object = UploadImageFile> {
   };
 }
 
-export interface UploadImageProps<T = any> extends UploadProps<T> {
+export interface UploadImageProps<T = any> extends Omit<UploadProps<T>, 'onChange'> {
   value?: UploadImageFile<T>[];
   // 图片大小限制，(单位: K) -1 表示不进行限制
   sizeLimit?: number;
