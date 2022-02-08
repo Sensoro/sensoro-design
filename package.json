@@ -30,7 +30,8 @@
     "release": "walrus release",
     "release:next": "walrus release --tag next",
     "clear:src": "walrus run ./scripts/clear-src.ts",
-    "clear:docs": "walrus run ./scripts/clear-docs.ts"
+    "clear:docs": "walrus run ./scripts/clear-docs.ts",
+    "gh-pages": "gh-pages -d ./dist"
   },
   "peerDependencies": {
     "antd": ">=4.0.0",
@@ -75,6 +76,7 @@
     "@walrus/plugin-test": "^1.1.0",
     "@walrus/preset-lint": "^1.1.8",
     "antd": "4.18.5",
+    "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "dumi": "1.1.38",
     "father-build": "^1.19.2",

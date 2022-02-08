@@ -27,6 +27,7 @@ specifiers:
   '@walrus/plugin-test': ^1.1.0
   '@walrus/preset-lint': ^1.1.8
   antd: 4.18.5
+  cross-env: ^7.0.3
   d3-path: ^2.0.0
   del: ^6.0.0
   dumi: 1.1.38
@@ -83,6 +84,7 @@ devDependencies:
   '@walrus/plugin-test': 1.1.0
   '@walrus/preset-lint': 1.1.8_typescript@4.5.5
   antd: 4.18.5_react-dom@17.0.2+react@17.0.2
+  cross-env: 7.0.3
   del: 6.0.0
   dumi: 1.1.38_3a6359ff0dae16692fd6f0778ea71593
   father-build: 1.21.1
@@ -11711,6 +11713,17 @@ packages:
   /crequire/1.8.1:
     resolution: { integrity: sha1-rIHyBHhrXyARlOsWmM9EGxCktX0= }
     engines: { node: '>= 0.6.0' }
+    dev: true
+
+  /cross-env/7.0.3:
+    resolution:
+      {
+        integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==,
+      }
+    engines: { node: '>=10.14', npm: '>=6', yarn: '>=1' }
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn/5.1.0:

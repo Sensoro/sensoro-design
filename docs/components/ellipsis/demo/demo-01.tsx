@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Ellipsis } from '@sensoro/sensoro-design';
 
-const Example: FC = () => {
+export default () => {
   return (
     <div>
       <Ellipsis length={100}>
@@ -15,5 +15,3 @@ const Example: FC = () => {
     </div>
   );
 };
-
-export default Example;
