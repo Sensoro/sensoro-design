@@ -2,46 +2,36 @@ name: Deploy CI
 
 on:
   push:
-    paths-ignore:
-      - 'docs/**'
-      - '**/demo/*'
-      - '**/*.md'
+    branches:
+      - next
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: Cache yarn cache
-        uses: actions/cache@v2
-        id: cache-yarn-cache
+      - name: 'Checkout'
+        uses: actions/checkout@v2.3.4
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/package.json') }}
-      - name: Cache node_modules
-        id: cache-node-modules
-        uses: actions/cache@v2
+          fetch-depth: 0
+
+      - name: 'Setup Node.js'
+        uses: actions/setup-node@v2.2.0
         with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-nodemodules-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/package.json') }}
-      - run: yarn --ignore-engines
-        if: |
-          steps.cache-yarn-cache.outputs.cache-hit != 'true' ||
-          steps.cache-node-modules.outputs.cache-hit != 'true'
-      - name: site
+          node-version: 14
+
+      - name: Install pnpm
+        run: npm i pnpm -g
+
+      - name: 'Install dependencies'
+        run: pnpm install
+
+      - name: Build
         env:
           CI: true
           GA_KEY: G-RMBLDHGL1N
           PROGRESS: none
           SITE_DEPLOY: 'TRUE'
-        run: npm run site
+        run: pnpm site
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
