@@ -6,8 +6,8 @@ const logo = 'https://cdn.jsdelivr.net/gh/wangxingkang/pictures@latest/imgs/sens
 export default {
   mode: 'site',
   title: 'Sensoro Design',
-  base: baseUrl,
-  publicPath: `${baseUrl}/`,
+  // base: baseUrl,
+  // publicPath: `${baseUrl}/`,
   favicon: logo,
   logo,
   resolve: {
@@ -20,7 +20,7 @@ export default {
     null,
     {
       title: 'GitHub',
-      path: 'https://github.com/SensoroFE/sensoro-design'
+      path: 'https://github.com/sensoro-design/sensoro-design'
     }
   ],
   dynamicImport: {},
