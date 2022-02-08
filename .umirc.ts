@@ -3,6 +3,8 @@ import { join } from 'path';
 export default {
   mode: 'site',
   title: 'Sensoro Design',
+  base: '/sensoro-design',
+  publicPath: '/sensoro-design/',
   favicon: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   resolve: {
