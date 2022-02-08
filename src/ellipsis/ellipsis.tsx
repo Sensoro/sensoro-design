@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import classNames from '@pansy/classnames';
 import { Tooltip } from 'antd';
 import { isStyleSupport } from 'antd/es/_util/styleChecker';
 import ResizeObserver from 'resize-observer-polyfill';

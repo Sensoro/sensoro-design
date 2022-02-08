@@ -1,14 +1,12 @@
 import { join } from 'path';
 
-const isProduction = process.env.NODE_ENV === 'production';
-
 export default {
   mode: 'site',
   title: 'Sensoro Design',
   favicon: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   resolve: {
-    includes: ['docs', 'src']
+    includes: ['docs']
   },
   alias: {
     '@sensoro/sensoro-design': join(__dirname, 'src')
@@ -35,8 +33,5 @@ export default {
         style: 'css'
       }
     ]
-  ],
-  theme: {
-    '@primary-color': '#2B6DE5'
-  }
+  ]
 };
