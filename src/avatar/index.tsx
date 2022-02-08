@@ -1,41 +1,16 @@
-import React, { useContext } from 'react';
-import classNames from '@pansy/classnames';
-import { Avatar as AntAvatar } from 'antd';
-import { ConfigContext } from '../config-provider';
-import Icon from '../icon';
-import './style';
+import React from 'react';
+import Group from 'antd/es/avatar/group';
+import { InternalAvatar } from './avatar';
 
-import type { AvatarProps } from 'antd/es/avatar/avatar';
+import type { AvatarProps } from './avatar';
 
-export type { AvatarProps };
+export interface CompoundedComponent
+  extends React.ForwardRefExoticComponent<AvatarProps & React.RefAttributes<HTMLElement>> {
+  Group: typeof Group;
+}
 
-export const Avatar: React.FC<AvatarProps> = ({
-  src,
-  style,
-  icon,
-  className,
-  children,
-  ...rest
-}) => {
-  const { getPrefixCls } = useContext(ConfigContext);
-  const prefixCls = getPrefixCls('avatar');
+const Avatar = InternalAvatar as CompoundedComponent;
+Avatar.Group = Group;
 
-  const defaultIcon = !children && <Icon type="icon-person-filled" />;
-
-  return (
-    <AntAvatar
-      src={src}
-      icon={icon ?? defaultIcon}
-      style={{
-        border: !!src && 'solid 1px rgba(0, 0, 0, 0.04)',
-        ...style
-      }}
-      className={classNames(prefixCls, className)}
-      {...rest}
-    >
-      {children}
-    </AntAvatar>
-  );
-};
-
+export { Group, Avatar };
 export default Avatar;
