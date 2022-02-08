@@ -1,40 +1,40 @@
-import React from 'react';
-import { Avatar as AntdAvatar } from 'antd';
-import { AvatarProps as AntdAvatarProps } from 'antd/es/avatar/avatar';
+import React, { useContext } from 'react';
+import classNames from '@pansy/classnames';
+import { Avatar as AntAvatar } from 'antd';
+import { ConfigContext } from '../config-provider';
 import Icon from '../icon';
+import './style';
 
-export interface AvatarProps extends AntdAvatarProps {
-  className?: string;
-  style?: React.CSSProperties;
-  defaultIcon?: React.ReactNode;
-}
+import type { AvatarProps } from 'antd/es/avatar/avatar';
 
-const Avatar: React.FC<AvatarProps> = (props) => {
-  const {
-    src,
-    shape,
-    style,
-    icon,
-    defaultIcon = <Icon type={`icon-person`} />,
-    children,
-    ...rest
-  } = props;
+export type { AvatarProps };
+
+export const Avatar: React.FC<AvatarProps> = ({
+  src,
+  style,
+  icon,
+  className,
+  children,
+  ...rest
+}) => {
+  const { getPrefixCls } = useContext(ConfigContext);
+  const prefixCls = getPrefixCls('avatar');
+
+  const defaultIcon = !children && <Icon type="icon-person-filled" />;
+
   return (
-    <AntdAvatar
+    <AntAvatar
       src={src}
-      shape={shape}
       icon={icon ?? defaultIcon}
       style={{
-        borderRadius: shape === 'square' && '2px',
-        backgroundColor: 'rgba(0, 0, 0, 0.04)',
-        color: 'rgba(0, 0, 0, 0.25)',
         border: !!src && 'solid 1px rgba(0, 0, 0, 0.04)',
         ...style
       }}
+      className={classNames(prefixCls, className)}
       {...rest}
     >
       {children}
-    </AntdAvatar>
+    </AntAvatar>
   );
 };
 
