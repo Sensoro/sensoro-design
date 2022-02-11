@@ -6,8 +6,6 @@ const logo = 'https://cdn.jsdelivr.net/gh/wangxingkang/pictures@latest/imgs/sens
 export default {
   mode: 'site',
   title: 'Sensoro Design',
-  // base: baseUrl,
-  // publicPath: `${baseUrl}/`,
   favicon: logo,
   logo,
   resolve: {
@@ -18,6 +16,14 @@ export default {
   },
   navs: [
     null,
+    {
+      title: '友情链接',
+      children: [
+        { title: 'AMap', path: 'https://amap.xingkang.wang' },
+        { title: 'Watermark', path: 'https://watermark.xingkang.wang' },
+        { title: 'Hooks', path: 'https://hooks.xingkang.wang' }
+      ]
+    },
     {
       title: 'GitHub',
       path: 'https://github.com/sensoro-design/sensoro-design'
