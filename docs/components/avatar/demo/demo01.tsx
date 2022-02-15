@@ -11,15 +11,13 @@ export default () => {
     <Space direction="vertical">
       <Space>
         <Avatar size={64} />
-        <Avatar size="large" />
-        <Avatar />
-        <Avatar size="small" />
+        <Avatar size={40} />
+        <Avatar size={32} />
       </Space>
       <Space>
-        <Avatar size={64} shape="square" />
-        <Avatar size="large" shape="square" />
-        <Avatar shape="square" />
-        <Avatar size="small" shape="square" />
+        <Avatar size={64} />
+        <Avatar size={40} />
+        <Avatar size={32} />
       </Space>
     </Space>
   );

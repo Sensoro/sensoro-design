@@ -23,18 +23,6 @@ group:
 
 <code src="./demo/demo02.tsx" />
 
-### 自动调整字符大小
-
-<code src="./demo/demo03.tsx" />
-
-### 带徽标的头像
-
-<code src="./demo/demo04.tsx" />
-
-### Avatar.Group
-
-<code src="./demo/demo05.tsx" />
-
 ## API
 
 本组件只修改了样式以及默认 Icon，具体 API 请移步 [avatar](https://ant-design.gitee.io/components/avatar-cn/#API)
