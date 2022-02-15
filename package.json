@@ -47,7 +47,7 @@
     "@pansy/react-hooks": "^0.9.2",
     "@pansy/react-responsive-card": "^0.1.2",
     "@pansy/react-watermark": "^3.1.8",
-    "d3-path": "^2.0.0",
+    "d3-path": "^3.0.1",
     "file-saver": "^2.0.5",
     "jsbarcode": "^3.11.4",
     "lodash": "^4.17.21",
@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "14.1.0",
-    "@types/d3-path": "^2.0.0",
+    "@types/d3-path": "^3.0.0",
     "@types/file-saver": "^2.0.1",
     "@types/lodash": "^4.14.168",
     "@types/react": "^17",

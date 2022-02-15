@@ -12,7 +12,7 @@ specifiers:
   '@pansy/react-hooks': ^0.9.2
   '@pansy/react-responsive-card': ^0.1.2
   '@pansy/react-watermark': ^3.1.8
-  '@types/d3-path': ^2.0.0
+  '@types/d3-path': ^3.0.0
   '@types/file-saver': ^2.0.1
   '@types/lodash': ^4.14.168
   '@types/react': ^17
@@ -27,7 +27,7 @@ specifiers:
   '@walrus/preset-lint': ^1.1.8
   antd: 4.18.5
   cross-env: ^7.0.3
-  d3-path: ^2.0.0
+  d3-path: ^3.0.1
   del: ^6.0.0
   dumi: 1.1.38
   father-build: ^1.21.1
@@ -55,7 +55,7 @@ dependencies:
   '@pansy/react-hooks': 0.9.2_react-dom@17.0.2+react@17.0.2
   '@pansy/react-responsive-card': 0.1.2_react-dom@17.0.2+react@17.0.2
   '@pansy/react-watermark': 3.1.8_react-dom@17.0.2+react@17.0.2
-  d3-path: 2.0.0
+  d3-path: 3.0.1
   file-saver: 2.0.5
   jsbarcode: 3.11.5
   lodash: 4.17.21
@@ -67,7 +67,7 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli': 14.1.0
-  '@types/d3-path': 2.0.1
+  '@types/d3-path': 3.0.0
   '@types/file-saver': 2.0.5
   '@types/lodash': 4.14.178
   '@types/react': 17.0.39
@@ -8769,10 +8769,10 @@ packages:
       '@types/node': 17.0.16
     dev: true
 
-  /@types/d3-path/2.0.1:
+  /@types/d3-path/3.0.0:
     resolution:
       {
-        integrity: sha512-6K8LaFlztlhZO7mwsZg7ClRsdLg3FJRzIIi6SZXDWmmSJc2x8dd2VkESbLXdk3p8cuvz71f36S0y8Zv2AxqvQw==,
+        integrity: sha512-0g/A+mZXgFkQxN3HniRDbXMN79K3CdTpLsevj+PXiTcb2hVyvkZUBg37StmgCQkaD84cUJ4uaDAWq7UJOQy2Tg==,
       }
     dev: true
 
@@ -13071,11 +13071,12 @@ packages:
       array-find-index: 1.0.2
     dev: true
 
-  /d3-path/2.0.0:
+  /d3-path/3.0.1:
     resolution:
       {
-        integrity: sha512-ZwZQxKhBnv9yHaiWd6ZU4x5BtCQ7pXszEV9CU6kRgwIQVQGLMv1oiL4M+MK/n79sYzsj+gcgpPQSctJUsLN7fA==,
+        integrity: sha512-gq6gZom9AFZby0YLduxT1qmrp4xpBA1YZr19OI717WIdKE2OM5ETq5qrHLb301IgxhLwcuxvGZVLeeWc/k1I6w==,
       }
+    engines: { node: '>=12' }
     dev: false
 
   /dargs/7.0.0:
