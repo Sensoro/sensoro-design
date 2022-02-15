@@ -15,9 +15,9 @@ export default () => {
         <Avatar size={32} />
       </Space>
       <Space>
-        <Avatar size={64} />
-        <Avatar size={40} />
-        <Avatar size={32} />
+        <Avatar size={64} shape="square" />
+        <Avatar size={40} shape="square" />
+        <Avatar size={32} shape="square" />
       </Space>
     </Space>
   );
