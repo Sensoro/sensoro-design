@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import { Radio, DatePicker } from 'antd';
 import { isNumber, isInteger, isObject, isNil } from 'lodash';
-import { RadioChangeEvent } from 'antd/lib/radio/interface';
+import { RadioChangeEvent } from 'antd/es/radio/interface';
+import { RangePickerProps } from 'antd/es/date-picker';
 import moment, { Moment } from 'moment';
 import classNames from '@pansy/classnames';
 import { TimeData, BaseProps } from './interface';
@@ -27,6 +28,8 @@ export interface DaysRangeProps extends BaseProps<number> {
    * 是否支持自定义
    */
   showCustomize?: boolean | 'show';
+  /** 自定义时间输入框 */
+  rangePicker?: RangePickerProps;
 }
 
 export interface DaysRangeType extends React.FC<DaysRangeProps> {
@@ -47,6 +50,7 @@ const DaysRange: DaysRangeType = ({
   formatter,
   showCustomize,
   isMountChange,
+  rangePicker,
   ...rest
 }) => {
   let { marks = [] } = rest;
@@ -225,6 +229,7 @@ const DaysRange: DaysRangeType = ({
           value={timeRange as [Moment, Moment]}
           disabledDate={disabledDate}
           onChange={handleRangePickerChange}
+          {...rangePicker}
         />
       )}
     </span>
