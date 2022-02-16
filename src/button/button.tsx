@@ -4,10 +4,10 @@ import { Button as AntButton } from 'antd';
 import { ButtonProps as AntButtonProps, ButtonType as AntButtonType } from 'antd/es/button';
 import { ConfigContext } from '../config-provider';
 
-export type ButtonType = AntButtonType & 'minor';
+export type ButtonType = AntButtonType | 'minor';
 
 export interface ButtonProps extends Omit<AntButtonProps, 'type'> {
-  type: ButtonType;
+  type?: ButtonType;
 }
 
 export const Button: React.FC<ButtonProps> = ({ className, type = 'default', ...rest }) => {
