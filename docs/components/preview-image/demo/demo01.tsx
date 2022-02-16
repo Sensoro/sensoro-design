@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { PreviewImage } from '@sensoro/sensoro-design';
+import { Space } from 'antd';
+import { useBoolean } from '@pansy/react-hooks';
+import { PreviewImage, Image } from '@sensoro/sensoro-design';
 
 const images = [
   {
@@ -9,32 +11,34 @@ const images = [
 ];
 
 export default () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, visibleAction] = useBoolean();
   const [index, setIndex] = useState(0);
 
   return (
     <div>
-      {images.map((i, idx) => (
-        <img
-          key={idx}
-          src={i.url}
-          style={{
-            width: '84px',
-            height: '84px',
-            cursor: 'pointer',
-            marginRight: '8px'
-          }}
-          onClick={() => {
-            setIndex(idx);
-            setVisible(true);
-          }}
-        />
-      ))}
+      <Space>
+        {images.map((i, idx) => (
+          <Image
+            key={idx}
+            src={i.url}
+            fit="contain"
+            style={{
+              width: '84px',
+              height: '84px',
+              cursor: 'pointer'
+            }}
+            onClick={() => {
+              setIndex(idx);
+              visibleAction.setTrue();
+            }}
+          />
+        ))}
+      </Space>
 
       <PreviewImage
         visible={visible}
         onClose={() => {
-          setVisible(false);
+          visibleAction.setFalse();
         }}
         images={images}
         startIndex={index}

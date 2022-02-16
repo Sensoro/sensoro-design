@@ -14,19 +14,19 @@ export interface WatermarkProps extends Partial<Omit<BaseWatermarkProps, 'text'>
 const Watermark: React.FC<WatermarkProps> = ({ text, children, ...rest }) => {
   const latestText: BaseText = typeof text === 'function' ? text() : text;
 
+  const monitor = latestText && rest.visible && rest.monitor;
+
   return (
-    <BaseWatermark
-      {...rest}
-      text={latestText}
-    >
+    <BaseWatermark {...rest} text={latestText} monitor={false}>
       {children}
     </BaseWatermark>
-  )
+  );
 };
 
 Watermark.defaultProps = {
   isBody: false,
   monitor: true,
+  visible: true,
   fontSize: 14,
   rotate: -20,
   fontColor: '#000',
@@ -35,7 +35,7 @@ Watermark.defaultProps = {
   height: 180,
   opacity: 0.09,
   textAlign: 'left',
-  mode: 'interval',
+  mode: 'interval'
 };
 
 export default Watermark;
