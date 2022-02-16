@@ -1,8 +1,8 @@
 ---
 title: Battery 电池
 nav:
-  title: 组件
-  path: /components
+  title: 业务组件
+  path: /business
 group:
   title: 设备组件
   path: /device

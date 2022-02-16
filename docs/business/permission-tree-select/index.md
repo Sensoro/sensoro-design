@@ -1,8 +1,8 @@
 ---
 title: PermissionTreeSelect 权限树选择组件
 nav:
-  title: 组件
-  path: /components
+  title: 业务组件
+  path: /business
 group:
   title: 数据录入
   path: /data-entry

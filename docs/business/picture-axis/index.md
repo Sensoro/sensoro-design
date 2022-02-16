@@ -1,8 +1,8 @@
 ---
 title: PictureAxis 图片展示轴
 nav:
-  title: 组件
-  path: /components
+  title: 业务组件
+  path: /business
 group:
   title: 数据展示
   path: /data-display
