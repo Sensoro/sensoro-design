@@ -10,7 +10,7 @@ specifiers:
   '@pansy/react-aliplayer': 1.3.0
   '@pansy/react-fullscreen': 1.3.0
   '@pansy/react-hooks': ^0.9.2
-  '@pansy/react-responsive-card': ^0.1.2
+  '@pansy/react-responsive-card': ^0.2.0
   '@pansy/react-watermark': ^3.1.8
   '@types/d3-path': ^3.0.0
   '@types/file-saver': ^2.0.1
@@ -53,7 +53,7 @@ dependencies:
   '@pansy/react-aliplayer': 1.3.0_react-dom@17.0.2+react@17.0.2
   '@pansy/react-fullscreen': 1.3.0_react-dom@17.0.2+react@17.0.2
   '@pansy/react-hooks': 0.9.2_react-dom@17.0.2+react@17.0.2
-  '@pansy/react-responsive-card': 0.1.2_react-dom@17.0.2+react@17.0.2
+  '@pansy/react-responsive-card': 0.2.0_react-dom@17.0.2+react@17.0.2
   '@pansy/react-watermark': 3.1.8_react-dom@17.0.2+react@17.0.2
   d3-path: 3.0.1
   file-saver: 2.0.5
@@ -7787,10 +7787,10 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@pansy/react-responsive-card/0.1.2_react-dom@17.0.2+react@17.0.2:
+  /@pansy/react-responsive-card/0.2.0_react-dom@17.0.2+react@17.0.2:
     resolution:
       {
-        integrity: sha512-D7WtOM6mX12u/R564vYu/Lw9JSM6cC8SLX1sG0ZQxLOJ87mDr8rpNZZFX1ng+ZiaeRLrJonRxnM5ItW/F7SdeQ==,
+        integrity: sha512-LtqKmPC9B+/jzj4GqzI046LmxEY+B5AuPUxIqC8oldf6dwPdNmJNkkAOFZe3GV5oSCcO7bqw+T6jvvKc1oNwCQ==,
       }
     peerDependencies:
       react: '>=16.9.0'
