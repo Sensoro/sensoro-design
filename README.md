@@ -26,13 +26,18 @@ npm install @sensoro/sensoro-design --save
 
 // yarn
 yarn add @sensoro/sensoro-design
+
+// pnpm
+pnpm install @sensoro/sensoro-design
 ```
 
 ## ⌨️ 本地开发
 
+本仓库使用 [pnpm](https://pnpm.io/zh) 进行依赖管理，开发前请保证已安装
+
 ```bash
 # 克隆项目到本地
-git clone git@gitlab.sensoro.com:IoTApps/sensoro-ui.git
+git clone git@github.com:sensoro-design/sensoro-design.git
 
 # 安装依赖
 yarn
@@ -45,13 +50,13 @@ yarn start
 
 ```sh
 # 执行编译
-yarn run build:lib
+pnpm build:lib
 
 # 在组件库项目目录执行
-yarn link
+pnpm link --global
 
 # 在需要调试的项目执行
-yarn link "@sensoro/sensoro-design"
+pnpm link --global @sensoro/sensoro-design
 ```
 
-打开浏览器访问 http://localhost:8000
+打开浏览器访问 http://localhost:8888
