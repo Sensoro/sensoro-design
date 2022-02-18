@@ -1,15 +1,19 @@
-<div align="center">
-  <h1>SENSORO 组件库</h1>
-  
-  <p align="center">
-    <a href="https://npmcharts.com/compare/@sensoro/sensoro-design?minimal=true">
-      <img src="https://img.shields.io/npm/dm/@sensoro/sensoro-design.svg?style=flat" alt="Downloads">
-    </a>
-    <a href="https://npmjs.org/package/@sensoro/sensoro-design">
-      <img src="https://img.shields.io/npm/v/@sensoro/sensoro-design.svg?style=flat" alt="Version">
-    </a>
-  </p>
-</div>
+<p align="center">
+  <a href="https://design.sensoro.com">
+    <img width="200" src="https://cdn.jsdelivr.net/gh/wangxingkang/pictures@latest/imgs/sensoro-design.svg">
+  </a>
+</p>
+
+<h1 align="center">Sensoro Design</h1>
+
+<p align="center">
+  <a href="https://npmcharts.com/compare/@sensoro/sensoro-design?minimal=true">
+    <img src="https://img.shields.io/npm/dm/@sensoro/sensoro-design.svg?style=flat" alt="Downloads">
+  </a>
+  <a href="https://npmjs.org/package/@sensoro/sensoro-design">
+    <img src="https://img.shields.io/npm/v/@sensoro/sensoro-design.svg?style=flat" alt="Version">
+  </a>
+</p>
 
 ## ✨ 特性
 
