@@ -1,7 +1,7 @@
 {
   "name": "@sensoro/sensoro-design",
   "version": "2.3.2",
-  "description": "sensoro design",
+  "description": "基于 AntDesign 的高质量 React 组件，为提效而生。",
   "files": [
     "es",
     "lib"
@@ -27,6 +27,7 @@
     "lint:style": "walrus stylelint --fix 'src/**/*.less' --syntax less",
     "lint:commit": "commitlint --env HUSKY_GIT_PARAMS",
     "release": "walrus release",
+    "prepare": "husky install",
     "release:next": "walrus release --tag next",
     "clear:src": "walrus run ./scripts/clear-src.ts",
     "clear:docs": "walrus run ./scripts/clear-docs.ts"
@@ -77,16 +78,10 @@
     "del": "^6.0.0",
     "dumi": "1.1.38",
     "father-build": "^1.21.1",
-    "husky": "4.3.8",
+    "husky": "7.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "typescript": "4.5.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm prettier",
-      "commit-msg": "pnpm lint:commit"
-    }
   },
   "browserslist": [
     "last 2 version",
