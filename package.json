@@ -1,7 +1,7 @@
 {
   "name": "@sensoro/sensoro-design",
   "version": "2.3.1",
-  "description": "sensoro design",
+  "description": "基于 AntDesign 的高质量 React 组件，为提效而生。",
   "files": [
     "es",
     "lib"
