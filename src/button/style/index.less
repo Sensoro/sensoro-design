@@ -1,142 +1,82 @@
 @import '../../style/themes/index';
+@import './mixin.less';
 
-@button-cls: ~'@{sen-prefix}-button';
+@btn-prefix-cls: ~'@{sen-prefix}-button';
+@icon-prefix-cls: ~'anticon';
 
-.@{button-cls}.ant-btn {
-  padding: 4px 12px;
-  box-shadow: none;
-  border: none;
+.@{btn-prefix-cls} {
+  .btn();
+  .btn-default();
 
-  background: @grey-2;
-  color: @black;
-
-  &:hover,
-  &:focus {
-    background: @grey-4;
-    color: @black;
-  }
-
-  &:active {
-    background: @grey-5;
-  }
-
-  &::after {
-    display: none;
-  }
-}
-
-.@{button-cls}.ant-btn[disabled] {
-  color: @grey-7;
-  background: @grey-2;
-}
-
-.@{button-cls}.ant-btn-primary {
-  background: @primary-color;
-  color: #fff;
-
-  &:hover,
-  &:focus {
-    background: @primary-hover-color;
-    color: #fff;
-  }
-
-  &:active {
-    background: @primary-active-color;
-  }
-}
-
-.@{button-cls}.ant-btn-primary[disabled] {
-  background: @primary-disabled-color;
-  color: @white;
-}
-
-.@{button-cls}-minor.ant-btn {
-  background: @grey-2;
-  color: @primary-color;
-
-  &:hover,
-  &:focus {
-    background: @grey-4;
-    color: @primary-color;
-  }
-
-  &:active {
-    background: @grey-5;
-  }
-}
-
-.@{button-cls}-minor.ant-btn[disabled] {
-  color: @blue-3;
-  background: @grey-2;
-}
-
-.@{button-cls}-default.ant-btn-lg {
   > span {
-    font-size: 16px;
-  }
-}
-
-.@{button-cls}.ant-btn-dashed {
-  color: @primary-color;
-  background: @grey-2;
-
-  &:hover,
-  &:focus {
-    background: @grey-4;
-    color: @primary-color;
+    display: inline-block;
   }
 
-  &:active {
-    background: @grey-5;
-  }
-}
-
-.@{button-cls}.ant-btn-dashed[disabled] {
-  color: @blue-3;
-  background: @grey-2;
-}
-
-.@{button-cls}.ant-btn-link {
-  color: @primary-color;
-  background: transparent;
-
-  &:hover,
-  &:focus {
-    background: transparent;
-    color: @primary-color;
-  }
-}
-
-.@{button-cls}.ant-btn-link[disabled] {
-  color: @blue-3;
-  background: transparent;
-}
-
-.@{button-cls}.ant-btn-icon-only {
-  padding: 2.4px 0;
-}
-
-.@{button-cls}.ant-btn.ant-btn-dangerous {
-  color: @btn-danger-color;
-  background: @btn-danger-bg;
-  border: none;
-
-  &:hover,
-  &:focus {
-    background: @grey-4;
-    color: @btn-danger-color;
+  &-minor {
+    .btn-minor();
   }
 
-  &:active {
-    background: @grey-5;
+  &-primary {
+    .btn-primary();
   }
-}
 
-.@{button-cls}.ant-btn.ant-btn-dangerous[disabled] {
-  background: @btn-danger-bg;
-  color: @red-3;
-}
+  &-dashed {
+    .btn-dashed();
+  }
 
-.@{button-cls}.ant-btn.ant-btn-dangerous.ant-btn-link {
-  background: transparent;
+  &-dangerous {
+    .btn-danger();
+  }
+
+  &-link {
+    .btn-link();
+  }
+
+  &-icon-only {
+    .btn-square(@btn-prefix-cls);
+    vertical-align: -3px;
+
+    > .@{icon-prefix-cls} {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &-circle {
+    .btn-circle(@btn-prefix-cls);
+  }
+
+  &&-loading {
+    position: relative;
+    cursor: default;
+    opacity: 0.35;
+  }
+
+  & > &-loading-icon {
+    transition: width 0.3s @ease-in-out, opacity 0.3s @ease-in-out;
+
+    .@{icon-prefix-cls} {
+      padding-right: @padding-xs;
+      animation: none;
+
+      svg {
+        animation: loadingCircle 1s infinite linear;
+      }
+    }
+
+    &:only-child {
+      .@{icon-prefix-cls} {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &&-block {
+    width: 100%;
+  }
+
+  > .@{icon-prefix-cls} + span,
+  > span + .@{icon-prefix-cls} {
+    margin-left: @margin-xss;
+  }
 }

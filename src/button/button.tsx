@@ -1,30 +1,30 @@
 import React, { useContext } from 'react';
-import classNames from '@pansy/classnames';
 import { Button as AntButton } from 'antd';
 import { ButtonProps as AntButtonProps, ButtonType as AntButtonType } from 'antd/es/button';
 import { ConfigContext } from '../config-provider';
 
 export type ButtonType = AntButtonType | 'minor';
 
+interface CompoundedComponent
+  extends React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLElement>> {
+  __ANT_BUTTON: boolean;
+}
+
 export interface ButtonProps extends Omit<AntButtonProps, 'type'> {
   type?: ButtonType;
 }
 
-export const Button: React.FC<ButtonProps> = ({ className, type = 'default', ...rest }) => {
+export const InternalButton: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
+  { className, type = 'default', ...rest },
+  ref
+) => {
   const { getPrefixCls } = useContext(ConfigContext);
 
   const prefixCls = getPrefixCls('button');
 
-  return (
-    <AntButton
-      {...rest}
-      className={classNames(prefixCls, className, {
-        [`${prefixCls}-default`]: type === 'default',
-        [`${prefixCls}-minor`]: type === 'minor'
-      })}
-      type={type as AntButtonType}
-    />
-  );
+  return <AntButton {...rest} type={type as AntButtonType} prefixCls={prefixCls} ref={ref} />;
 };
 
-export default Button;
+export const Button = React.forwardRef<unknown, ButtonProps>(InternalButton) as CompoundedComponent;
+
+Button.displayName = 'Button';

@@ -32,3 +32,15 @@ group:
 需要谨慎操作的按钮
 
 <code src="./demo/demo03.tsx" />
+
+### 按钮尺寸
+
+<code src="./demo/demo04.tsx" />
+
+### 加载中状态
+
+<code src="./demo/demo05.tsx" />
+
+### Block 按钮
+
+<code src="./demo/demo06.tsx" />

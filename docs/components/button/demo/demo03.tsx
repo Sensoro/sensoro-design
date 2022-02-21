@@ -1,29 +1,30 @@
 import React from 'react';
-import { Space } from 'antd';
+import { useBoolean } from '@pansy/react-hooks';
+import { Space, Switch } from 'antd';
 import PlusOutlined from '@ant-design/icons/PlusOutlined';
 import { Button } from '@sensoro/sensoro-design';
 
 export default () => {
+  const [disabled, disabledAction] = useBoolean();
+
   return (
     <Space direction="vertical">
+      <Switch
+        checked={disabled}
+        onChange={(checked) => {
+          disabledAction.set(checked);
+        }}
+      />
       <Space>
-        <Button danger>Default</Button>
-        <Button danger icon={<PlusOutlined />}>
-          Icon
+        <Button disabled={disabled} danger>
+          Primary
         </Button>
-        <Button danger type="link">
-          Link
-        </Button>
-      </Space>
-      <Space>
-        <Button danger disabled>
+        <Button disabled={disabled} danger icon={<PlusOutlined />}>
           Default
         </Button>
-        <Button danger disabled icon={<PlusOutlined />}>
-          Icon
-        </Button>
-        <Button danger disabled type="link">
-          Link
+        <Button disabled={disabled} danger icon={<PlusOutlined />} />
+        <Button disabled={disabled} danger type="dashed">
+          Dashed
         </Button>
       </Space>
     </Space>
