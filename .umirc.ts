@@ -1,6 +1,5 @@
 import { join } from 'path';
 
-const baseUrl = '/sensoro-design';
 const logo = 'https://cdn.jsdelivr.net/gh/wangxingkang/pictures@latest/imgs/sensoro-design.svg';
 
 export default {
