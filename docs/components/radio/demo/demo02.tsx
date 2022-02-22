@@ -13,10 +13,10 @@ export default () => {
   return (
     <Space direction="vertical" size={16}>
       <div>
-        <Radio disabled={disabled}>Disabled</Radio>
         <Radio defaultChecked disabled={disabled}>
-          Disabled
+          已选禁用
         </Radio>
+        <Radio disabled={disabled}>未选禁用</Radio>
       </div>
 
       <Button
