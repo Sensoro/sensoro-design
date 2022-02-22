@@ -14,9 +14,29 @@ group:
 
 ## 代码演示
 
-### 简单示例
+### 基本
 
-<code src="./demo/simple.tsx" />
+<code src="./demo/demo01.tsx" />
+
+### 不可用
+
+<code src="./demo/demo02.tsx" />
+
+### Radio.Group 垂直
+
+<code src="./demo/demo03.tsx" />
+
+### Radio.Group 组合 - 配置方式
+
+<code src="./demo/demo04.tsx" />
+
+### 按钮样式
+
+<code src="./demo/demo05.tsx" />
+
+### 大小
+
+<code src="./demo/demo06.tsx" />
 
 ## API
 

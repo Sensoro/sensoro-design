@@ -1,16 +1,19 @@
-import React from 'react';
-import classNames from '@pansy/classnames';
-import Radio, { RadioProps } from 'antd/es/radio';
+import React, { useContext } from 'react';
+import { Radio as AntRadio } from 'antd';
+import { ConfigContext } from '../config-provider';
 
-const prefixCls = 'sen-radio';
+import type { RadioProps } from 'antd/es/radio';
 
-const InputPlus: React.FC<RadioProps> = props => {
-  const { className } = props;
-  return (
-    <Radio
-      className={classNames(className, prefixCls)}
-    />
-  );
+const InternalRadio: React.ForwardRefRenderFunction<HTMLElement, RadioProps> = (props, ref) => {
+  const { getPrefixCls } = useContext(ConfigContext);
+
+  const prefixCls = getPrefixCls('radio');
+
+  return <AntRadio prefixCls={prefixCls} {...props} ref={ref} />;
 };
 
-export default InputPlus;
+const Radio = React.forwardRef<unknown, RadioProps>(InternalRadio);
+
+Radio.displayName = 'Radio';
+
+export default Radio;

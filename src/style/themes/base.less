@@ -1,0 +1,134 @@
+@import '../color/colors';
+
+@sen-prefix: sen;
+
+// -------- Colors -----------
+
+// >>> Error
+@error-color: @red-5;
+@error-color-hover: color(~`colorPalette('@{error-color}', 5) `);
+@error-color-active: color(~`colorPalette('@{error-color}', 7) `);
+@error-color-outline: fade(@error-color, @outline-fade);
+@error-color-deprecated-bg: color(~`colorPalette('@{error-color}', 1) `);
+@error-color-deprecated-border: color(~`colorPalette('@{error-color}', 3) `);
+
+@primary-1: color(~`colorPalette('@{primary-color}', 1) `); // replace tint(@primary-color, 90%)
+@primary-2: color(~`colorPalette('@{primary-color}', 2) `); // replace tint(@primary-color, 80%)
+@primary-3: color(~`colorPalette('@{primary-color}', 3) `); // unused
+@primary-4: color(~`colorPalette('@{primary-color}', 4) `); // unused
+@primary-5: color(
+  ~`colorPalette('@{primary-color}', 5) `
+); // color used to control the text color in many active and hover states, replace tint(@primary-color, 20%)
+@primary-6: @primary-color; // color used to control the text color of active buttons, don't use, use @primary-color
+@primary-7: color(~`colorPalette('@{primary-color}', 7) `); // replace shade(@primary-color, 5%)
+@primary-8: color(~`colorPalette('@{primary-color}', 8) `); // unused
+@primary-9: color(~`colorPalette('@{primary-color}', 9) `); // unused
+@primary-10: color(~`colorPalette('@{primary-color}', 10) `); // unused
+
+@primary-color: @blue-6;
+@black: @grey-base;
+@white: #fff;
+
+@primary-hover-color: @blue-5;
+@primary-active-color: @blue-7;
+@primary-disabled-color: @blue-3;
+
+@text-color: fade(@black, 85%);
+@text-color-secondary: fade(@black, 45%);
+
+@body-background: #fff;
+// Base background color for most components
+@component-background: #fff;
+
+// -------- Base Scaffolding Variables -----------
+
+// >>> font
+@font-size-base: 14px;
+@font-size-sm: 12px;
+@font-size-lg: 16px;
+
+@font-variant-base: tabular-nums;
+@font-feature-settings-base: 'tnum';
+
+// >>> border
+@border-color-base: hsv(0, 0, 85%); // base border outline a component
+@border-color-split: hsv(0, 0, 94%); // split border inside a component
+@border-color-inverse: @white;
+
+@border-width-base: 1px;
+@border-width-lg: 2px;
+
+@border-style-base: solid;
+
+// >>> border-radius
+@border-radius-base: 2px;
+@border-radius-sm: @border-radius-base;
+@border-radius-lg: @border-radius-base + 2px;
+
+// >>> height
+@height-base: 32px;
+@height-lg: 40px;
+@height-sm: 24px;
+
+// vertical paddings
+@padding-lg: 16px; // containers
+@padding-md: 8px; // small containers and buttons
+@padding-sm: 8px; // Form controls and items
+@padding-xs: 4px; // small items
+@padding-xss: 0px; // more small
+
+@control-padding-horizontal: @padding-sm;
+@control-padding-horizontal-sm: @padding-xs;
+
+// >>> paddings
+@default-padding-lg: 24px; // containers
+@default-padding-md: 16px; // small containers and buttons
+@default-padding-sm: 12px; // Form controls and items
+@default-padding-xs: 8px; // small items
+@default-padding-xss: 4px; // more small
+
+// >>> margins
+@margin-lg: 24px; // containers
+@margin-md: 16px; // small containers and buttons
+@margin-sm: 12px; // Form controls and items
+@margin-xs: 8px; // small items
+@margin-xss: 4px; // more small
+
+@line-height-base: 1.5715;
+
+@tabs-scrolling-size: 32px;
+
+@background-color-light: hsv(0, 0, 98%);
+@background-color-base: hsv(0, 0, 96%);
+
+// Outline
+@outline-blur-size: 0;
+@outline-width: 2px;
+@outline-color: @primary-color; // No use anymore
+@outline-fade: 20%;
+
+// Disabled states
+@disabled-color: fade(#000, 25%);
+@disabled-bg: @background-color-base;
+@disabled-active-bg: tint(@black, 90%);
+@disabled-color-dark: fade(#fff, 35%);
+
+// Animation
+@ease-base-out: cubic-bezier(0.7, 0.3, 0.1, 1);
+@ease-base-in: cubic-bezier(0.9, 0, 0.3, 0.7);
+@ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+@ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+@ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+@ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+@ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+@ease-in-out-back: cubic-bezier(0.71, -0.46, 0.29, 1.46);
+@ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+@ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+@ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+@ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+@ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+@ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
+@input-disabled-bg: @disabled-bg;
+@input-height-lg: @height-lg;
+@input-height-sm: @height-sm;
