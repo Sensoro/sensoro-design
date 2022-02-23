@@ -1,47 +1,28 @@
 import React from 'react';
-import { Space } from 'antd';
+import { useBoolean } from '@pansy/react-hooks';
+import { Space, Switch } from 'antd';
 import PlusOutlined from '@ant-design/icons/PlusOutlined';
 import { Button } from '@sensoro/sensoro-design';
 
 export default () => {
+  const [disabled, disabledAction] = useBoolean();
+
   return (
     <Space direction="vertical">
+      <Switch
+        checked={disabled}
+        onChange={(checked) => {
+          disabledAction.set(checked);
+        }}
+      />
       <Space>
-        <Button icon={<PlusOutlined />} type="primary">
+        <Button icon={<PlusOutlined />} disabled={disabled} type="primary">
           Primary
         </Button>
-        <Button icon={<PlusOutlined />} type="minor">
-          Minor
-        </Button>
-        <Button icon={<PlusOutlined />}>Default</Button>
-        <Button icon={<PlusOutlined />} type="dashed">
-          Dashed
-        </Button>
-        <Button icon={<PlusOutlined />} type="link">
-          Link
-        </Button>
-
-        <Button type="primary" icon={<PlusOutlined />} />
-        <Button shape="circle" icon={<PlusOutlined />} />
-      </Space>
-      <Space>
-        <Button icon={<PlusOutlined />} disabled type="primary">
-          Primary
-        </Button>
-        <Button icon={<PlusOutlined />} disabled type="minor">
-          Minor
-        </Button>
-        <Button icon={<PlusOutlined />} disabled>
+        <Button icon={<PlusOutlined />} disabled={disabled}>
           Default
         </Button>
-        <Button icon={<PlusOutlined />} disabled type="dashed">
-          Dashed
-        </Button>
-        <Button icon={<PlusOutlined />} disabled type="link">
-          Link
-        </Button>
-        <Button icon={<PlusOutlined />} disabled type="primary" />
-        <Button icon={<PlusOutlined />} disabled shape="circle" />
+        <Button icon={<PlusOutlined />} disabled={disabled} />
       </Space>
     </Space>
   );

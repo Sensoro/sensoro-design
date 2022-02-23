@@ -1,7 +1,13 @@
 @import '../../style/themes/index';
+@import '../../style/mixin/index';
 
-@prefix-cls: ~'@{sen-prefix}-radio';
+@radio-prefix-cls: ~'@{sen-prefix}-radio';
+@radio-group-prefix-cls: ~'@{radio-prefix-cls}-group';
+@radio-inner-prefix-cls: ~'@{radio-prefix-cls}-inner';
 
-.@{prefix-cls} {
-  position: relative;
-}
+@radio-duration: 0.3s;
+@radio-focus-shadow: 0 0 0 3px @primary-1;
+@radio-button-focus-shadow: @radio-focus-shadow;
+
+@import './radio';
+@import './radio-button.less';
