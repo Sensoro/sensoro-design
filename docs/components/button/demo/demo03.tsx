@@ -1,3 +1,7 @@
+/**
+ * title: 危险按钮
+ * desc: 需要谨慎操作的按钮
+ */
 import React from 'react';
 import { useBoolean } from '@pansy/react-hooks';
 import { Space, Switch } from 'antd';
@@ -16,15 +20,14 @@ export default () => {
         }}
       />
       <Space>
-        <Button disabled={disabled} danger>
+        <Button disabled={disabled} type="primary" danger>
           Primary
         </Button>
         <Button disabled={disabled} danger icon={<PlusOutlined />}>
           Default
         </Button>
-        <Button disabled={disabled} danger icon={<PlusOutlined />} />
-        <Button disabled={disabled} danger type="dashed">
-          Dashed
+        <Button disabled={disabled} danger type="link">
+          Text
         </Button>
       </Space>
     </Space>
