@@ -1,11 +1,36 @@
 @import '../../style/themes/index.less';
 
-@prefix-cls: ~'@{sen-prefix}-select';
-@prefix-dropdown-cls: ~'@{sen-prefix}-select-dropdown';
+@select-prefix-cls: ~'@{sen-prefix}-select';
 
-.@{prefix-dropdown-cls} {
-  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
-    background: none;
-    color: @primary-color;
+.@{select-prefix-cls}.ant-select {
+  &:not(.ant-select-customize-input) .ant-select-selector {
+    background-color: @select-bg;
+    border-color: transparent;
+  }
+
+  .ant-select-selection-placeholder {
+    color: @select-placeholder-color;
+  }
+
+  .ant-select-selector {
+    &:hover {
+      border-color: transparent;
+      background-color: @input-hover-bg;
+    }
+
+    // &:active,
+    // &:focus {
+    //   border-color: @input-active-border-color;
+    //   background-color: @input-active-bg;
+    // }
+  }
+}
+
+.@{select-prefix-cls}.ant-select-focused {
+  &:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border-color: @input-active-border-color;
+    background-color: @white;
+    box-shadow: none;
+    outline: 0;
   }
 }
