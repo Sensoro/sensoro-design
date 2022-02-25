@@ -15,9 +15,21 @@ group:
 
 ## 代码演示
 
-### 简单示例
+### 基本使用
 
 <code src="./demo/simple.tsx" />
+
+### 三种大小
+
+<code src="./demo/demo02.tsx" />
+
+### 前置/后置标签
+
+<code src="./demo/demo03.tsx" />
+
+### 输入框组合
+
+<code src="./demo/demo04.tsx" />
 
 ## API
 

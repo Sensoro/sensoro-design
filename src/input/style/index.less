@@ -1,7 +1,79 @@
 @import '../../style/themes/index';
 
-@prefix-cls: ~'@{sen-prefix}-input';
+@input-prefix-cls: ~'@{sen-prefix}-input';
 
-.@{prefix-cls} {
-  position: relative;
+.@{input-prefix-cls}.ant-input {
+  border-color: transparent;
+  background-color: @input-bg;
+  color: @input-color;
+  box-shadow: none;
+  padding: 4px 12px;
+
+  &::placeholder {
+    color: @input-placeholder-color;
+    font-size: 14px;
+  }
+
+  &:hover {
+    border-color: transparent;
+    background-color: @input-hover-bg;
+  }
+
+  &:active,
+  &:focus {
+    border-color: @input-active-border-color;
+    background-color: @input-active-bg;
+  }
+}
+
+.@{input-prefix-cls} {
+  .ant-input-group-addon:first-child,
+  .ant-input-group-addon:last-child,
+  .ant-input-group .ant-input {
+    border-color: transparent;
+    background-color: @input-bg;
+  }
+
+  .ant-input-group-addon {
+    &:first-child {
+      border-right: 1px solid @grey-4;
+    }
+
+    &:last-child {
+      border-left: 1px solid @grey-4;
+    }
+
+    &:first-child,
+    &:last-child {
+      color: @grey-8;
+    }
+  }
+
+  .ant-input-group .ant-input {
+    background-color: @input-bg;
+    box-shadow: none;
+    color: @input-color;
+
+    &:active,
+    &:focus {
+      border-color: @input-active-border-color;
+      background-color: @input-active-bg;
+    }
+  }
+}
+
+.@{input-prefix-cls}.ant-input-sm {
+  padding: 2px 8px;
+
+  &::placeholder {
+    font-size: 12px;
+  }
+}
+
+.@{input-prefix-cls}.ant-input-lg {
+  padding: 8px 16px;
+
+  &::placeholder {
+    font-size: 14px;
+  }
 }
