@@ -1,3 +1,7 @@
+/**
+ * title: 图标按钮
+ * desc: 在普通按钮基础上增加icon，用于突出按钮功能。部分界面考虑排版，也可使用不带文字的图标按钮，但在icon可能表意不明的情况下，建议使用普通文字按钮。
+ */
 import React from 'react';
 import { useBoolean } from '@pansy/react-hooks';
 import { Space, Switch } from 'antd';
