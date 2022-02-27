@@ -47,6 +47,7 @@ export default {
       }
     ]
   ],
+  ssr: isDeploy ? {} : undefined,
   webpack5: {},
   exportStatic: {},
   mfsu: !isDeploy ? {} : undefined
