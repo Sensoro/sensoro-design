@@ -23,6 +23,10 @@ group:
 
 <code src="./demo/demo02.tsx" />
 
+### 警告按钮
+
+<code src="./demo/demo08.tsx" />
+
 ### 危险按钮
 
 <code src="./demo/demo03.tsx" />

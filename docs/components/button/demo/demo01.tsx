@@ -24,9 +24,6 @@ export default () => {
         <Button disabled={disabled} type="primary">
           Primary
         </Button>
-        <Button disabled={disabled} type="warning">
-          Primary
-        </Button>
         <Button disabled={disabled} type="minor">
           Minor
         </Button>
