@@ -12,6 +12,7 @@
   line-height: @btn-height-base;
   background: @radio-button-bg;
   cursor: pointer;
+  border-radius: 2px;
   transition: color 0.3s, background-color 0.3s;
 
   &:first-child {
@@ -23,7 +24,8 @@
   }
 
   > span:not([class]) {
-    padding: 4px 12px;
+    padding: 5px 12px;
+    border-radius: 2px;
   }
 
   > span:not([class]):hover,
@@ -53,15 +55,19 @@
     height: @input-height-lg;
     font-size: @font-size-lg;
     line-height: @input-height-lg - 2px;
+
+    > span:not([class]) {
+      padding: 6.5px 12px;
+    }
   }
 
   .@{radio-group-prefix-cls}-small & {
-    height: @input-height-sm;
-    padding: 0 @control-padding-horizontal-sm - 1px;
-    line-height: @input-height-sm - 2px;
+    height: 28px;
+    padding: 0 3px;
+    line-height: 26px;
 
     > span:not([class]) {
-      padding: 0 4px;
+      padding: 3px 4px;
     }
   }
 
@@ -112,14 +118,18 @@
   }
 
   &-disabled {
-    color: @disabled-color;
+    color: @grey-7;
     background-color: @input-disabled-bg;
     border-color: @border-color-base;
     cursor: not-allowed;
 
+    > span:not([class]) {
+      background-color: transparent;
+    }
+
     &:first-child,
     &:hover {
-      color: @disabled-color;
+      color: @grey-7;
       background-color: @input-disabled-bg;
       border-color: @border-color-base;
     }

@@ -1,6 +1,8 @@
 .@{radio-group-prefix-cls} {
   .reset-component();
   display: inline-block;
+  border-radius: 2px;
+  overflow: hidden;
   font-size: 0;
 
   .@{sen-prefix}-badge-count {
@@ -49,25 +51,6 @@
 
   &-input:focus + .@{radio-inner-prefix-cls} {
     box-shadow: @radio-focus-shadow;
-  }
-
-  &-checked::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid @radio-dot-color;
-    border-radius: 50%;
-    visibility: hidden;
-    animation: antRadioEffect 0.36s ease-in-out;
-    animation-fill-mode: both;
-    content: '';
-  }
-
-  &:hover::after,
-  .@{radio-prefix-cls}-wrapper:hover &::after {
-    visibility: visible;
   }
 
   &-inner {
@@ -152,7 +135,7 @@
   }
 
   & + span {
-    color: @disabled-color;
+    color: @grey-7;
     cursor: not-allowed;
   }
 }
