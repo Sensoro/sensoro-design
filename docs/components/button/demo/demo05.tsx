@@ -23,15 +23,15 @@ export default () => {
         <Button loading={loading} type="primary">
           Primary
         </Button>
-        <Button loading={loading} type="minor">
-          Minor
+        <Button loading={loading} type="secondary">
+          Secondary
         </Button>
         <Button loading={loading}>Default</Button>
         <Button loading={loading} type="primary" icon={<PlusOutlined />}>
           Primary Icon
         </Button>
-        <Button loading={loading} type="minor" icon={<PlusOutlined />}>
-          Minor Icon
+        <Button loading={loading} type="secondary" icon={<PlusOutlined />}>
+          Secondary Icon
         </Button>
         <Button loading={loading} icon={<PlusOutlined />}>
           Loading

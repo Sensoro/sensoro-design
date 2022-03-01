@@ -4,7 +4,7 @@ import { ButtonProps as AntButtonProps, ButtonType as AntButtonType } from 'antd
 import { ConfigContext } from '../config-provider';
 import { ButtonGroup } from './button-group';
 
-export type ButtonType = AntButtonType | 'minor' | 'warning';
+export type ButtonType = AntButtonType | 'secondary' | 'warning';
 
 export interface CompoundedComponent
   extends React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLElement>> {

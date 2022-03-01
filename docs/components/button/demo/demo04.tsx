@@ -29,8 +29,8 @@ export default () => {
         <Button size={size} type="primary">
           Primary
         </Button>
-        <Button size={size} type="minor">
-          Minor
+        <Button size={size} type="secondary">
+          Secondary
         </Button>
         <Button size={size}>Default</Button>
         <Button size={size} type="dashed">
