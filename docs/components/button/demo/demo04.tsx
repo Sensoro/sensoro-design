@@ -41,11 +41,6 @@ export default () => {
         </Button>
       </Space>
       <Space>
-        <Button size={size} type="link">
-          Link
-        </Button>
-      </Space>
-      <Space>
         <Button size={size} icon={<PlusOutlined />} type="primary" />
         <Button size={size} shape="circle" icon={<PlusOutlined />} type="primary" />
         <Button size={size} icon={<PlusOutlined />} type="primary">

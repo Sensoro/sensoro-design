@@ -5,7 +5,6 @@
 import React from 'react';
 import { useBoolean } from '@pansy/react-hooks';
 import { Space, Switch } from 'antd';
-import PlusOutlined from '@ant-design/icons/PlusOutlined';
 import { Button } from '@sensoro/sensoro-design';
 
 export default () => {
@@ -23,7 +22,7 @@ export default () => {
         <Button disabled={disabled} type="primary" danger>
           Primary
         </Button>
-        <Button disabled={disabled} danger icon={<PlusOutlined />}>
+        <Button disabled={disabled} danger>
           Default
         </Button>
         <Button disabled={disabled} danger type="link">
