@@ -1,23 +1,37 @@
-import React from 'react';
-import { Select as AntSelect } from 'antd';
-import { SelectProps } from 'antd/es/select';
+import React, { useContext } from 'react';
 import classnames from '@pansy/classnames';
+import { Select as AntSelect } from 'antd';
+import { ConfigContext } from '../config-provider';
 
-const defaultPrefixCls = 'sen-select';
-const defaultDropdownClassName = 'sen-select-dropdown';
+import type { SelectProps } from 'antd/es/select';
+import type { CompoundedComponent } from './types';
 
-const Select: React.FC<SelectProps<any>> = (props) => {
-  const { className, prefixCls, dropdownClassName, children, ...restProps } = props;
+export const InternalSelect: React.ForwardRefRenderFunction<any, SelectProps> = (
+  { className, children, dropdownClassName, ...restProps },
+  ref
+) => {
+  const { getPrefixCls } = useContext(ConfigContext);
+
+  const prefixCls = getPrefixCls('select');
+
   return (
     <AntSelect
-      className={classnames(defaultPrefixCls, className)}
-      prefixCls={prefixCls}
-      dropdownClassName={dropdownClassName ?? defaultDropdownClassName}
       {...restProps}
+      ref={ref}
+      className={classnames(prefixCls, className)}
+      dropdownClassName={classnames(`${prefixCls}-dropdown`, dropdownClassName)}
     >
       {children}
     </AntSelect>
   );
 };
+
+const Select = React.forwardRef<unknown, SelectProps>(InternalSelect) as CompoundedComponent;
+
+Select.displayName = 'Input';
+Select.__SEN_SELECT = true;
+
+Select.OptGroup = AntSelect.OptGroup;
+Select.Option = AntSelect.Option;
 
 export default Select;
