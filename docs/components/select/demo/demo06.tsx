@@ -9,14 +9,16 @@ const { Option, OptGroup } = Select;
 
 export default () => {
   return (
-    <Select defaultValue="lucy" open style={{ width: 200 }}>
-      <OptGroup label="Manager">
-        <Option value="jack">Jack</Option>
-        <Option value="lucy">Lucy</Option>
-      </OptGroup>
-      <OptGroup label="Engineer">
-        <Option value="Yiminghe">yiminghe</Option>
-      </OptGroup>
-    </Select>
+    <div style={{ height: 180 }}>
+      <Select defaultValue="lucy" open style={{ width: 200 }}>
+        <OptGroup label="Manager">
+          <Option value="jack">Jack</Option>
+          <Option value="lucy">Lucy</Option>
+        </OptGroup>
+        <OptGroup label="Engineer">
+          <Option value="Yiminghe">yiminghe</Option>
+        </OptGroup>
+      </Select>
+    </div>
   );
 };
