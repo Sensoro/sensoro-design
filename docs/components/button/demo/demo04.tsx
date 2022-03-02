@@ -5,9 +5,9 @@
  *   通过设置 size 为 large small 分别把按钮设为大、小尺寸。若不设置 size，则尺寸为中。
  */
 import React, { useState } from 'react';
-import { Space, Radio } from 'antd';
+import { Space } from 'antd';
 import PlusOutlined from '@ant-design/icons/PlusOutlined';
-import { Button } from '@sensoro/sensoro-design';
+import { Button, Radio } from '@sensoro/sensoro-design';
 
 import type { ButtonSize } from 'antd/es/button';
 

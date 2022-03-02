@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import { useBoolean } from '@pansy/react-hooks';
-import { Space, Switch } from 'antd';
+import { Space } from 'antd';
 import { Button } from '@sensoro/sensoro-design';
 
 export default () => {
@@ -12,12 +12,13 @@ export default () => {
 
   return (
     <Space direction="vertical">
-      <Switch
-        checked={disabled}
-        onChange={(checked) => {
-          disabledAction.set(checked);
+      <Button
+        onClick={() => {
+          disabledAction.toggle();
         }}
-      />
+      >
+        Toggle disabled
+      </Button>
       <Space>
         <Button disabled={disabled} type="primary" danger>
           Primary

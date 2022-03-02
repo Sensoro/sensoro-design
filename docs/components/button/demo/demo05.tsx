@@ -13,12 +13,13 @@ export default () => {
 
   return (
     <Space direction="vertical" size={16}>
-      <Switch
-        checked={loading}
-        onChange={(checked) => {
-          loadingAction.set(checked);
+      <Button
+        onClick={() => {
+          loadingAction.toggle();
         }}
-      />
+      >
+        Toggle loading
+      </Button>
       <Space>
         <Button loading={loading} type="primary">
           Primary
