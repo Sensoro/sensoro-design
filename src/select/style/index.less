@@ -43,7 +43,7 @@
 .@{select-prefix-cls}.ant-select-multiple {
   .ant-select-selection-item {
     background-color: @white;
-    border-radius: 12px;
+    border-radius: 11px;
     color: @grey-9;
     border: none;
     height: 22px;
@@ -63,7 +63,7 @@
   .ant-select-selection-item-remove {
     position: relative;
     display: inline-flex;
-    top: 52%;
+    top: 50%;
     transform: translateY(-50%);
     align-items: center;
     justify-content: center;
@@ -78,12 +78,17 @@
     &:focus {
       background-color: @grey-4;
     }
+
+    > * {
+      line-height: 0;
+    }
   }
 }
 
 .@{select-prefix-cls}.ant-select-multiple.ant-select-lg {
   .ant-select-selection-item {
     padding-inline-start: 10px;
+    border-radius: 15px;
     padding-inline-end: 6px;
     height: 28px;
     line-height: 28px;
