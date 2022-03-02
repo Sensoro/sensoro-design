@@ -12,21 +12,19 @@ export default () => {
 
   return (
     <Space direction="vertical" size={16}>
-      <div>
-        <Radio defaultChecked disabled={disabled}>
-          已选禁用
-        </Radio>
-        <Radio disabled={disabled}>未选禁用</Radio>
-      </div>
-
       <Button
-        type="primary"
         onClick={() => {
           disabledAction.toggle();
         }}
       >
         Toggle disabled
       </Button>
+      <div>
+        <Radio defaultChecked disabled={disabled}>
+          已选禁用
+        </Radio>
+        <Radio disabled={disabled}>未选禁用</Radio>
+      </div>
     </Space>
   );
 };

@@ -5,7 +5,7 @@ const { Option } = Select;
 
 export default () => {
   return (
-    <Select placeholder="请选择" style={{ width: 240 }}>
+    <Select placeholder="请选择" allowClear defaultValue="1" style={{ width: 240 }}>
       <Option value="1">选项一</Option>
       <Option value="2">选项二</Option>
     </Select>
