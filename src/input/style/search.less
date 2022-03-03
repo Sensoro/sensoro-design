@@ -2,14 +2,54 @@
 
 @prefix-cls: ~'@{sen-prefix}-input-search';
 
-.@{prefix-cls} {
+.@{prefix-cls}.ant-input-search {
+  background-color: @input-bg;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: @input-hover-bg;
+  }
+
+  &:active,
+  &:focus {
+    border-color: @input-active-border-color;
+    background-color: @input-active-bg;
+  }
+
+  .ant-input,
+  .ant-input-group-addon,
+  .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  .ant-input:focus,
+  .ant-input-focused {
+    box-shadow: none;
+  }
+
+  .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+    box-shadow: none;
+
+    &::after {
+      display: none;
+    }
+  }
+
   .ant-input-suffix {
     margin-left: 0px;
   }
+
   .ant-input-search-icon {
     margin-left: 0px;
   }
+
   .ant-input-search-icon::before {
     border-left: none;
   }
+}
+
+.@{prefix-cls}.@{prefix-cls}-focused.ant-input-search {
+  border-color: @input-active-border-color;
+  background-color: @input-active-bg;
 }

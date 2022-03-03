@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import classNames from '@pansy/classnames';
 import { Input as AntInput } from 'antd';
 import { ConfigContext } from '../config-provider';
-import Search from './search';
+import { Search } from './search';
+import { Group } from './group';
+import { Password } from './password';
 
 import type { InputProps } from 'antd/es/input';
 import type { CompoundedComponent } from './types';
-
-const { Group } = AntInput;
 
 export const InternalInput: React.ForwardRefRenderFunction<AntInput, InputProps> = (
   { className, ...rest },
@@ -27,5 +27,6 @@ Input.__SEN_INPUT = true;
 
 Input.Group = Group;
 Input.Search = Search;
+Input.Password = Password;
 
 export default Input;

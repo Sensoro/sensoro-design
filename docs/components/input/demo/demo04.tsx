@@ -3,8 +3,8 @@
  * desc: 输入框的组合展现。
  */
 import React from 'react';
-import { Space, Row, Col, Select } from 'antd';
-import { Input } from '@sensoro/sensoro-design';
+import { Space, Row, Col } from 'antd';
+import { Input, Select } from '@sensoro/sensoro-design';
 
 const { Option } = Select;
 
@@ -26,7 +26,7 @@ export default () => {
         <Input style={{ width: '30%' }} defaultValue="26888888" />
       </Input.Group>
       <Input.Group compact>
-        <Select defaultValue="Zhejiang">
+        <Select style={{ width: 100 }} defaultValue="Zhejiang">
           <Option value="Zhejiang">Zhejiang</Option>
           <Option value="Jiangsu">Jiangsu</Option>
         </Select>

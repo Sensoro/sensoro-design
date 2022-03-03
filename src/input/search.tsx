@@ -1,15 +1,34 @@
-import React, { FC } from 'react';
+import React, { useContext } from 'react';
 import classnames from '@pansy/classnames';
 import { Input } from 'antd';
+import { useBoolean } from '@pansy/react-hooks';
 import { SearchProps } from 'antd/es/input';
-import './style/search.less';
+import { ConfigContext } from '../config-provider';
 
-const { Search } = Input;
-const prefixCls = 'sen-input-search';
+const InternalSearch: React.ForwardRefRenderFunction<any, SearchProps> = (
+  { className, ...rest },
+  ref
+) => {
+  const [focused, focusedAction] = useBoolean();
+  const { getPrefixCls } = useContext(ConfigContext);
 
-const InternalSearch: FC<SearchProps> = (props) => {
-  const { className } = props;
-  return <Search className={classnames(className, prefixCls)} {...props} />;
+  const prefixCls = getPrefixCls('input-search');
+
+  return (
+    <Input.Search
+      className={classnames(className, prefixCls, {
+        [`${prefixCls}-focused`]: focused
+      })}
+      {...rest}
+      ref={ref}
+      onFocus={() => {
+        focusedAction.setTrue();
+      }}
+      onBlur={() => {
+        focusedAction.setFalse();
+      }}
+    />
+  );
 };
 
-export default InternalSearch;
+export const Search = React.forwardRef<unknown, SearchProps>(InternalSearch);

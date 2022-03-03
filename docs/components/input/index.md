@@ -31,6 +31,18 @@ group:
 
 <code src="./demo/demo04.tsx" />
 
+### 搜索框
+
+<code src="./demo/demo05.tsx" />
+
+### 密码输入
+
+<code src="./demo/demo06.tsx" />
+
+### 字数提示
+
+<code src="./demo/demo07.tsx" />
+
 ## API
 
 文本链接的属性说明如下：
