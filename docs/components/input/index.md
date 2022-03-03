@@ -43,6 +43,10 @@ group:
 
 <code src="./demo/demo07.tsx" />
 
+### 文本域
+
+<code src="./demo/demo08.tsx" />
+
 ## API
 
 文本链接的属性说明如下：

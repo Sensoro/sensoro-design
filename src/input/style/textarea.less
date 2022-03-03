@@ -1,0 +1,70 @@
+@import '../../style/themes/index';
+
+@input-textarea-prefix-cls: ~'@{sen-prefix}-input-textarea';
+
+.@{input-textarea-prefix-cls}.ant-input {
+  padding: 4px 12px;
+  border-color: transparent;
+  background-color: @input-bg;
+  color: @input-color;
+
+  &:hover {
+    border-color: transparent;
+    background-color: @input-hover-bg;
+  }
+
+  &:active,
+  &:focus {
+    border-color: @input-active-border-color;
+    background-color: @input-active-bg;
+  }
+}
+
+.@{input-textarea-prefix-cls}.ant-input-textarea {
+  position: relative;
+
+  .ant-input {
+    padding: 4px 12px;
+    border-color: transparent;
+    background-color: @input-bg;
+    color: @input-color;
+
+    &:hover {
+      border-color: transparent;
+      background-color: @input-hover-bg;
+    }
+
+    &:active,
+    &:focus {
+      border-color: @input-active-border-color;
+      background-color: @input-active-bg;
+    }
+  }
+
+  .ant-input-textarea-show-count::after {
+    position: absolute;
+    float: right;
+    bottom: 0;
+    right: 16px;
+    color: @grey-7;
+  }
+
+  .ant-input:focus,
+  .ant-input-focused {
+    box-shadow: none;
+  }
+}
+
+.@{input-textarea-prefix-cls}.ant-input-textarea-show-count {
+  .ant-input {
+    padding: 4px 12px 20px;
+  }
+
+  &::after {
+    position: absolute;
+    float: right;
+    bottom: 0;
+    right: 16px;
+    color: @grey-7;
+  }
+}

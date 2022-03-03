@@ -1,6 +1,7 @@
 import { Search } from './search';
 import { Group } from './group';
 import { Password } from './password';
+import { TextArea } from './TextArea';
 
 import type { InputProps } from 'antd/es/input';
 
@@ -10,4 +11,5 @@ export interface CompoundedComponent
   Search: typeof Search;
   Group: typeof Group;
   Password: typeof Password;
+  TextArea: typeof TextArea;
 }

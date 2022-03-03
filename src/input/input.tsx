@@ -5,6 +5,7 @@ import { ConfigContext } from '../config-provider';
 import { Search } from './search';
 import { Group } from './group';
 import { Password } from './password';
+import { TextArea } from './TextArea';
 
 import type { InputProps } from 'antd/es/input';
 import type { CompoundedComponent } from './types';
@@ -28,5 +29,6 @@ Input.__SEN_INPUT = true;
 Input.Group = Group;
 Input.Search = Search;
 Input.Password = Password;
+Input.TextArea = TextArea;
 
 export default Input;

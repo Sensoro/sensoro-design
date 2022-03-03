@@ -2,6 +2,43 @@
 
 @input-prefix-cls: ~'@{sen-prefix}-input';
 
+.@{input-prefix-cls}.ant-input-affix-wrapper {
+  border-color: transparent;
+  background-color: @input-bg;
+  color: @input-color;
+  box-shadow: none;
+  padding: 4px 12px;
+
+  &::placeholder {
+    color: @input-placeholder-color;
+    font-size: 14px;
+  }
+
+  &:hover {
+    border-color: transparent;
+    background-color: @input-hover-bg;
+  }
+
+  &:active,
+  &:focus {
+    border-color: @input-active-border-color;
+    background-color: @input-active-bg;
+  }
+
+  .ant-input {
+    background-color: transparent;
+  }
+
+  .ant-input-show-count-suffix {
+    color: @grey-7;
+  }
+}
+
+.@{input-prefix-cls}.ant-input-affix-wrapper.ant-input-affix-wrapper-focused {
+  border-color: @input-active-border-color;
+  background-color: @input-active-bg;
+}
+
 .@{input-prefix-cls}.ant-input {
   border-color: transparent;
   background-color: @input-bg;
