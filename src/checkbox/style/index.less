@@ -2,6 +2,49 @@
 
 @prefix-cls: ~'@{sen-prefix}-checkbox';
 
-.@{prefix-cls} {
-  position: relative;
+.@{prefix-cls},
+.@{prefix-cls}-group {
+  .ant-checkbox-checked {
+    &::after {
+      display: none;
+    }
+  }
+
+  .ant-checkbox-inner {
+    border-color: @grey-6;
+
+    &:hover,
+    &:focus {
+      background-color: @grey-2;
+      border-color: @primary-color;
+    }
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: @primary-color;
+  }
+
+  .ant-checkbox-disabled .ant-checkbox-inner {
+    border-color: @grey-5;
+    background-color: @grey-4;
+  }
+
+  .ant-checkbox-disabled.ant-checkbox-checked .ant-checkbox-inner {
+    border-color: @primary-color-disable !important;
+    background-color: @primary-color-disable;
+
+    &::after {
+      border-color: @white;
+    }
+  }
+
+  .ant-checkbox-indeterminate .ant-checkbox-inner {
+    border-color: @primary-color;
+    background-color: @primary-color;
+
+    &::after {
+      background-color: @white;
+      height: 2px;
+    }
+  }
 }

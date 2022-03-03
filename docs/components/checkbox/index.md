@@ -18,6 +18,14 @@ group:
 
 <code src="./demo/simple.tsx" />
 
+### 不可用
+
+<code src="./demo/demo02.tsx" />
+
+### Checkbox 组
+
+<code src="./demo/demo03.tsx" />
+
 ## API
 
 文本链接的属性说明如下：

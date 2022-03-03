@@ -1,16 +1,13 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { Space } from 'antd';
 import { Checkbox } from '@sensoro/sensoro-design';
 
-const BasicExample: FC = () => {
-  const handleChange = (e) => {
-    console.log(`checked = ${e.target.checked}`);
-  };
-
+export default () => {
   return (
-    <div>
-      <Checkbox onChange={handleChange}>Checkbox</Checkbox>
-    </div>
+    <Space direction="vertical" size={16}>
+      <Checkbox>Checkbox</Checkbox>
+
+      <Checkbox indeterminate>Indeterminate</Checkbox>
+    </Space>
   );
 };
-
-export default BasicExample;
