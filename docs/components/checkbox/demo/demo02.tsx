@@ -20,7 +20,8 @@ export default () => {
         Change Disabled
       </Button>
       <Checkbox disabled={disabled} />
-      <Checkbox defaultChecked disabled={disabled} />
+      <Checkbox disabled={disabled} defaultChecked />
+      <Checkbox disabled={disabled} indeterminate />
     </Space>
   );
 };

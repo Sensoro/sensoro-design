@@ -10,26 +10,30 @@
     }
   }
 
-  .ant-checkbox-inner {
-    border-color: @grey-6;
-
+  .ant-checkbox {
     &:hover,
     &:focus {
-      background-color: @grey-2;
-      border-color: @primary-color;
+      .ant-checkbox-inner {
+        background-color: @grey-2;
+        border-color: @primary-color;
+      }
     }
   }
 
-  .ant-checkbox-checked .ant-checkbox-inner {
+  .ant-checkbox-inner {
+    border-color: @grey-6;
+  }
+
+  .ant-checkbox.ant-checkbox-checked .ant-checkbox-inner {
     background-color: @primary-color;
   }
 
-  .ant-checkbox-disabled .ant-checkbox-inner {
+  .ant-checkbox.ant-checkbox-disabled .ant-checkbox-inner {
     border-color: @grey-5;
     background-color: @grey-4;
   }
 
-  .ant-checkbox-disabled.ant-checkbox-checked .ant-checkbox-inner {
+  .ant-checkbox.ant-checkbox-disabled.ant-checkbox-checked .ant-checkbox-inner {
     border-color: @primary-color-disable !important;
     background-color: @primary-color-disable;
 
@@ -38,13 +42,22 @@
     }
   }
 
-  .ant-checkbox-indeterminate .ant-checkbox-inner {
+  .ant-checkbox.ant-checkbox-indeterminate .ant-checkbox-inner {
     border-color: @primary-color;
     background-color: @primary-color;
 
     &::after {
       background-color: @white;
       height: 2px;
+    }
+  }
+
+  .ant-checkbox.ant-checkbox-disabled.ant-checkbox-indeterminate .ant-checkbox-inner {
+    background-color: @primary-color-disable;
+    border-color: @primary-color-disable !important;
+
+    &::after {
+      background-color: @white;
     }
   }
 }
