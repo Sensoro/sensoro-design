@@ -12,7 +12,7 @@ export default () => {
   return (
     <Space direction="vertical" size={16}>
       <Input.Group size="large">
-        <Row gutter={8}>
+        <Row gutter={12}>
           <Col span={5}>
             <Input defaultValue="0571" />
           </Col>

@@ -7,6 +7,7 @@
   border-color: transparent;
   background-color: @input-bg;
   color: @input-color;
+  box-shadow: none;
 
   &:hover {
     border-color: transparent;
@@ -63,8 +64,22 @@
   &::after {
     position: absolute;
     float: right;
-    bottom: 0;
+    bottom: 2px;
+    font-size: 12px;
     right: 16px;
     color: @grey-7;
+  }
+}
+
+.anticon.ant-input-clear-icon {
+  color: @grey-7 !important;
+
+  &:hover,
+  &:focus {
+    color: @grey-8 !important;
+  }
+
+  &:active {
+    color: @grey-9 !important;
   }
 }

@@ -47,6 +47,10 @@ group:
 
 <code src="./demo/demo08.tsx" />
 
+### 可清空
+
+<code src="./demo/demo09.tsx" />
+
 ## API
 
 文本链接的属性说明如下：
