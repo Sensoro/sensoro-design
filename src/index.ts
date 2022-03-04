@@ -30,6 +30,7 @@ import Monitor from './monitor';
 import NoField from './no-field';
 import NumberRoller from './number-roller';
 import Options from './options';
+import Pagination from './pagination';
 import Palette from './palette';
 import PermissionTreeSelect from './permission-tree-select';
 import PictureAxis from './picture-axis';
@@ -93,6 +94,7 @@ export {
   NoField,
   NumberRoller,
   Options,
+  Pagination,
   Palette,
   PermissionTreeSelect,
   PictureAxis,
@@ -157,6 +159,7 @@ export default {
   NoField,
   NumberRoller,
   Options,
+  Pagination,
   Palette,
   PermissionTreeSelect,
   PictureAxis,
