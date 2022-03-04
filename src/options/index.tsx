@@ -6,6 +6,7 @@ export { default as LinkOption } from './link-options';
 export { default as ButtonOption } from './button-options';
 
 type InternalOptionsType = typeof InternalOptions;
+
 interface Options extends InternalOptionsType {
   Item: typeof Item;
 }

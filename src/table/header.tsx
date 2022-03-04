@@ -1,38 +1,34 @@
 import React from 'react';
 import { find } from 'lodash';
-//到时候换成自己的input
-import { Input, Select, Button, Checkbox, DatePicker, Dropdown, Menu } from 'antd';
+import { Select, Button, Checkbox, DatePicker, Dropdown, Menu } from 'antd';
+import Input from '../input';
 import Options from '../options';
-import { HeaderProps, OptionItem } from './types';
+import { HeaderProps } from './types';
 import classnames from '@pansy/classnames';
 import Icon from '../icon';
+
 import './style/index.less';
+
 const { Search } = Input;
-const { Option } = Select;
 const { RangePicker } = DatePicker;
 
-const Header: React.FC<HeaderProps> = (props) => {
-  const {
-    className,
-    prefixCls,
-    style,
-    title,
-    batchOption = { options: null, onOptionClick: null },
-    mainOption = { options: null, onOptionClick: null },
-    searchProps,
-    rangePickerProps,
-    columns,
-    selectedRows,
-    setEnableColumns,
-    batchMode,
-    setBatchMode,
-    batchOptionSelected,
-    setBatchOptionSelected
-  } = props;
-
-  //转为受控
-  // const [batchOptionSelected, setBatchOptionSelected] = React.useState<OptionItem>();
-
+const Header: React.FC<HeaderProps> = ({
+  className,
+  prefixCls,
+  style,
+  title,
+  batchOption = { options: null, onOptionClick: null },
+  mainOption = { options: null, onOptionClick: null },
+  searchProps,
+  rangePickerProps,
+  columns,
+  selectedRows,
+  setEnableColumns,
+  batchMode,
+  setBatchMode,
+  batchOptionSelected,
+  setBatchOptionSelected
+}) => {
   const { options, onOptionClick } = batchOption;
 
   const cancel = () => {
@@ -123,7 +119,6 @@ const Header: React.FC<HeaderProps> = (props) => {
             <Options
               type={'button'}
               options={mainOption?.options}
-              // style={{ marginLeft: 8 }}
               onClick={mainOption?.onOptionClick}
             />
           )}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import classnames from '@pansy/classnames';
 import { Table as AntTable } from 'antd';
 import { TableProps, ColumnType } from './types';
@@ -7,12 +7,10 @@ import Options from '../options';
 import Icon from '../icon';
 import { unionBy, find } from 'lodash';
 import NoField from '../no-field';
+import { ConfigContext } from '../config-provider';
 import useBatch from './use-batch';
 import moment from 'moment';
 import './style/index.less';
-
-//这个基本不会有重名的情况发生，先简单这样写
-const defaultPrefixCls = 'sen-table';
 
 //把columns分类,最后得到一个数组，第一项存放一直显示的列，第二项存放筛选的列，第三列存放option列
 const useColumns = (
@@ -42,7 +40,6 @@ const Table: React.FC<TableProps<any>> = (props) => {
   const {
     className,
     style,
-    prefixCls,
     dataSource,
     columns,
     pagination,
@@ -65,6 +62,10 @@ const Table: React.FC<TableProps<any>> = (props) => {
     batch = useBatch(),
     ...restProps
   } = props;
+
+  const { getPrefixCls } = useContext(ConfigContext);
+
+  const perfixCls = getPrefixCls('table');
 
   useEffect(() => {
     if (dataSource?.length === 0 && table.queryData && table.queryData.page !== 1) {
@@ -266,13 +267,12 @@ const Table: React.FC<TableProps<any>> = (props) => {
           rangePickerProps={_rangePickerProps}
           columns={filterColumns}
           setEnableColumns={setEnableColumns}
-          prefixCls={defaultPrefixCls}
+          prefixCls={perfixCls}
         />
       )}
 
       <AntTable
-        className={classnames(defaultPrefixCls, isFixed && 'fixed-table', prefixCls)}
-        prefixCls={prefixCls}
+        className={classnames(perfixCls, isFixed && 'fixed-table')}
         dataSource={dataSource}
         columns={sortColumns(
           simpleColumns.concat(
