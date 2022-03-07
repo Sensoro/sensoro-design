@@ -43,3 +43,20 @@ export default () => {
   return <Palette color={{ name: 'grey', count: 10 }} direction="horizontal" />;
 };
 ```
+
+### 在代码中使用色板
+
+- **Less**
+
+```less
+@import '~@sensoro/sensoro-design/es/style/themes/default.less';
+
+.selector {
+  color: @blue-5;
+  background-color: @gold-2;
+}
+```
+
+## 产品级色彩体系
+
+### 品牌色的应用
