@@ -1,6 +1,5 @@
 import React from 'react';
 import { Palette } from '../Palette';
-import '../../style';
 
 const colors = [
   {
