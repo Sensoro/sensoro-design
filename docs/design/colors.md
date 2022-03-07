@@ -14,6 +14,8 @@ Sensoro Design 将色彩体系解读成两个层面：系统级色彩体系和�
 
 ### 基础色板
 
+<code src="../site/components/Palettes" inline compact />
+
 ### 中性色板
 
 中性色包含灵思中后台的网页设计中大量使用的灰色，合理地选择中性色能够令页面信息具备良好的主次关系，助力阅读体验。
