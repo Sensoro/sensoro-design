@@ -59,6 +59,8 @@ export const Palette: React.FC<PaletteProps> = ({
       };
     });
 
+    console.log(colors);
+
     setHexColors(colors);
   }, []);
 
