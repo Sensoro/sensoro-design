@@ -9,7 +9,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "lib/index.d.ts",
-  "homepage": "https://design.sensoro.com",
+  "homepage": "http://design.sensoro.com",
   "bugs": {
     "url": "https://github.com/sensoro-design/sensoro-design/issues"
   },
