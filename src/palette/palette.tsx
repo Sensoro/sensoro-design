@@ -1,8 +1,7 @@
 import React from 'react';
-import { Checkbox } from 'antd';
 import classNames from '@pansy/classnames';
 import Item from './item';
-import { ToolTipCondition } from '../_utils/condition-component';
+import Checkbox from '../checkbox';
 import './style/index.less';
 
 const prefixCls = 'sen-palette';
