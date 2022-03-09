@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
-import { Radio, DatePicker } from 'antd';
+import { DatePicker } from 'antd';
 import { isObject } from 'lodash';
 import { RadioChangeEvent } from 'antd/lib/radio/interface';
 import { RangePickerProps } from 'antd/es/date-picker';
@@ -7,6 +7,7 @@ import moment from 'moment';
 import classNames from '@pansy/classnames';
 import { TimeData, BaseProps } from './interface';
 import { ConfigContext } from '../config-provider';
+import Radio from '../radio';
 import { processQueryTimeRange } from './utils';
 
 export type Mark = 'day' | 'week' | 'month' | 'year';
