@@ -122,46 +122,45 @@ const Player = React.forwardRef<AliPlayer, PlayerProps>(
 
     return (
       <Fullscreen enabled={fullscreenStatus} className={prefixCls} onClose={handleFullscreenClose}>
-        <Watermark {...watermarkProps} style={{ width: '100%', height: '100%' }}>
-          <AliPlayer
-            version={aliplayerVersion}
-            {...rest}
-            source={source}
-            onReady={handleReady}
-            onPlaying={handlePlaying}
-            onPlay={handlePlay}
-            onEnded={handleEnded}
-            onWaiting={handleWaiting}
-            onTimeupdate={handleTimeupdate}
-            ref={playerRef}
-          />
+        <Watermark {...watermarkProps} />
+        <AliPlayer
+          version={aliplayerVersion}
+          {...rest}
+          source={source}
+          onReady={handleReady}
+          onPlaying={handlePlaying}
+          onPlay={handlePlay}
+          onEnded={handleEnded}
+          onWaiting={handleWaiting}
+          onTimeupdate={handleTimeupdate}
+          ref={playerRef}
+        />
 
-          {!hideControlbar && (
-            <Controlbar
-              startTime={startTime}
-              duration={duration}
-              currentTime={currentTime}
-              volume={{
-                onChange: handleVolumeChange
-              }}
-              download={{
-                visible: showDownload,
-                onClick: onDownload
-              }}
-              progress={{
-                onChange: handleProgressChange
-              }}
-              prismPlay={{
-                status: playStatus,
-                onChange: handlePlayChange
-              }}
-              fullscreen={{
-                state: fullscreenStatus,
-                onChange: handleFullscreenChange
-              }}
-            />
-          )}
-        </Watermark>
+        {!hideControlbar && (
+          <Controlbar
+            startTime={startTime}
+            duration={duration}
+            currentTime={currentTime}
+            volume={{
+              onChange: handleVolumeChange
+            }}
+            download={{
+              visible: showDownload,
+              onClick: onDownload
+            }}
+            progress={{
+              onChange: handleProgressChange
+            }}
+            prismPlay={{
+              status: playStatus,
+              onChange: handlePlayChange
+            }}
+            fullscreen={{
+              state: fullscreenStatus,
+              onChange: handleFullscreenChange
+            }}
+          />
+        )}
       </Fullscreen>
     );
   }

@@ -267,36 +267,35 @@ const DoublePlayer: React.FC<DoublePlayerProps> = ({
         setEnabled(false);
       }}
     >
-      <Watermark {...watermarkProps} monitor={false} className={`${prefixCls}-watermark`}>
-        {leftPlayer}
-        {rightPlayer}
+      <Watermark {...watermarkProps} />
+      {leftPlayer}
+      {rightPlayer}
 
-        {(isLive || (!isLive && duration !== 0)) && !hideController && (
-          <Controlbar
-            isLive={isLive}
-            duration={duration}
-            currentTime={currentTime}
-            download={{
-              visible: true,
-              onClick: onDownload
-            }}
-            volume={{
-              onChange: handleVolumeChange
-            }}
-            progress={{
-              onChange: handleProgressChange
-            }}
-            prismPlay={{
-              status: prismPlay,
-              onChange: handlePrismPlayChange
-            }}
-            fullscreen={{
-              state: enabled,
-              onChange: handleFullscreenChange
-            }}
-          />
-        )}
-      </Watermark>
+      {(isLive || (!isLive && duration !== 0)) && !hideController && (
+        <Controlbar
+          isLive={isLive}
+          duration={duration}
+          currentTime={currentTime}
+          download={{
+            visible: true,
+            onClick: onDownload
+          }}
+          volume={{
+            onChange: handleVolumeChange
+          }}
+          progress={{
+            onChange: handleProgressChange
+          }}
+          prismPlay={{
+            status: prismPlay,
+            onChange: handlePrismPlayChange
+          }}
+          fullscreen={{
+            state: enabled,
+            onChange: handleFullscreenChange
+          }}
+        />
+      )}
     </Fullscreen>
   );
 };

@@ -462,38 +462,37 @@ const Monitor: React.FC<MonitorProps> = ({
 
       {!isOffline && (
         <div ref={rootRef} style={{ position: 'relative', width: '100%', height: '100%' }}>
-          <Watermark {...watermarkProps} monitor={false} style={{ width: '100%', height: '100%' }}>
-            {monitorType === 'live' && livePlayerMemo}
-            {monitorType === 'history' && historyPlayerMemo}
+          <Watermark {...watermarkProps} />
+          {monitorType === 'live' && livePlayerMemo}
+          {monitorType === 'history' && historyPlayerMemo}
 
-            <Controlbar
-              prefixCls={`${prefixCls}-controlbar`}
-              type={monitorType}
-              videos={videos}
-              playStatus={historyIsPlay}
-              currentTime={currentTime}
-              isFullscreen={isFullscreen}
-              currentVideoIndex={currentVideoIndex}
-              onChangeType={handleChangeType}
-              liveModeProps={{
-                value: liveMode,
-                onChange: handleLiveModeChange
-              }}
-              isPolling={isPolling}
-              hideTools={hideTools}
-              speedProps={{
-                value: latestHistorySpeed.current,
-                doubleRow: (palyerRect?.height || 0) <= 248,
-                onChange: handleSpeedChange
-              }}
-              onYunTaiClick={onYunTai}
-              onDownloadClick={handleDownloadClick}
-              onVolumeChange={handleVolumeChange}
-              onPalyerChange={handlePalyerChange}
-              onPlayStatusChange={handlePlayStatusChange}
-              onFullscreenChange={handleFullscreenChange}
-            />
-          </Watermark>
+          <Controlbar
+            prefixCls={`${prefixCls}-controlbar`}
+            type={monitorType}
+            videos={videos}
+            playStatus={historyIsPlay}
+            currentTime={currentTime}
+            isFullscreen={isFullscreen}
+            currentVideoIndex={currentVideoIndex}
+            onChangeType={handleChangeType}
+            liveModeProps={{
+              value: liveMode,
+              onChange: handleLiveModeChange
+            }}
+            isPolling={isPolling}
+            hideTools={hideTools}
+            speedProps={{
+              value: latestHistorySpeed.current,
+              doubleRow: (palyerRect?.height || 0) <= 248,
+              onChange: handleSpeedChange
+            }}
+            onYunTaiClick={onYunTai}
+            onDownloadClick={handleDownloadClick}
+            onVolumeChange={handleVolumeChange}
+            onPalyerChange={handlePalyerChange}
+            onPlayStatusChange={handlePlayStatusChange}
+            onFullscreenChange={handleFullscreenChange}
+          />
         </div>
       )}
 

@@ -30,9 +30,8 @@ const Image: React.FC<ImageProps> = ({ className, watermark, fit, style, ...rest
       })}
       style={{ ...style, position: 'relative' }}
     >
-      <Watermark {...watermarkProps} style={{ width: '100%', height: '100%' }}>
-        <AntdImage {...rest} />
-      </Watermark>
+      <Watermark {...watermarkProps} />
+      <AntdImage {...rest} />
     </div>
   );
 };
