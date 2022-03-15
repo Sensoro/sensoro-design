@@ -1,4 +1,4 @@
-// 此文件在构建时会自动更新，请勿手动修改!
+// 此文件在构建时会自动更新，请勿手动修改! 
 import AreaSelector from './area-selector';
 import Avatar from './avatar';
 import Barcode from './barcode';
