@@ -19,6 +19,19 @@ interface SelectRangeDateProps {
 
 const { RangePicker } = DatePicker;
 
+const dictionary = {
+  0: '无云录像',
+  1: '7*24全天录像',
+  2: '7*24活动录像',
+  3: '7*24报警录像',
+  4: '30*24全天录像',
+  5: '30*24活动录像',
+  6: '30*24报警录像',
+  7: '24小时全天录像',
+  8: '60*24全天录像',
+  9: '90*24全天录像',
+}
+
 const SelectRangeDate: FC<SelectRangeDateProps> = (props) => {
   const {
     className,
@@ -108,7 +121,7 @@ const SelectRangeDate: FC<SelectRangeDateProps> = (props) => {
           <div>
             {name}
             {setMeal?.value > 0 && (
-              <Tag>{`${setMeal.value}*24${setMeal.isEventRecord ? '活动' : '全天'}`}录像</Tag>
+              <Tag>{dictionary[setMeal.value]}</Tag>
             )}
           </div>
           <RangePicker
