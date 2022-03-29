@@ -26,14 +26,23 @@ group:
 
 <code src="./demo/demo-03.tsx" />
 
+### 空状态
+
+<code src="./demo/demo-04.tsx" />
+
+### 自定义空状态
+
+<code src="./demo/demo-05.tsx" />
+
 ## API
 
-| 参数      | 说明         | 类型                        | 默认值 | 版本 |
-| --------- | ------------ | --------------------------- | ------ | ---- |
-| className | 额外的样式类 | `string`                    | --     | --   |
-| style     | 额外的样式   | `CSSProperties`             | --     | --   |
-| list      | 数据源       | `object[]`                  | --     | --   |
-| loading   | 加载数据中   | `boolean`                   | --     | --   |
-| disabled  | 是否禁用     | `boolean`                   | --     | --   |
-| value     | 选中的权限值 | object[]                    | --     | --   |
-| onChange  | 选中的权限值 | `(value: object[]) => void` | --     | --   |
+| 参数      | 说明              | 类型                        | 默认值 | 版本 |
+| --------- | ----------------- | --------------------------- | ------ | ---- |
+| className | 额外的样式类      | `string`                    | --     | --   |
+| style     | 额外的样式        | `CSSProperties`             | --     | --   |
+| list      | 数据源            | `object[]`                  | --     | --   |
+| loading   | 加载数据中        | `boolean`                   | --     | --   |
+| disabled  | 是否禁用          | `boolean`                   | --     | --   |
+| value     | 选中的权限值      | object[]                    | --     | --   |
+| empty     | 数据为空展示的 UI | `React.ReactNode`           | --     | --   |
+| onChange  | 选中的权限值      | `(value: object[]) => void` | --     | --   |

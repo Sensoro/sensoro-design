@@ -31,6 +31,8 @@ export interface PermissionTreeSelectProps {
   disabled?: boolean;
   /** 选中的权限 */
   value?: PermissionValue[];
+  /** 自定义空状态 */
+  empty?: React.ReactNode;
   /** 权限改变的回调 */
   onChange?: (value: PermissionValue[]) => void;
 }
@@ -43,6 +45,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
   disabled,
   value = [],
   style,
+  empty,
   rootId = '0',
   onChange
 }) => {
@@ -345,7 +348,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
   return (
     <Spin spinning={!!loading}>
       <div className={classNames(prefixCls, className)} style={style}>
-        {list.length === 0 && <Empty />}
+        {list.length === 0 && (empty ? empty : <Empty />)}
         {treeData.map((item: any, index) => {
           const treeProps: TreeProps = {
             checkable: true,
