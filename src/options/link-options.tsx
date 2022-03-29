@@ -106,7 +106,7 @@ const LinkOptions: React.FC<OptionsRenderProps> = (props) => {
 };
 
 LinkOptions.defaultProps = {
-  shrinkIndex: 1
+  shrinkIndex: 2
 };
 
 export default LinkOptions;
