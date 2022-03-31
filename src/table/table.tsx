@@ -68,7 +68,8 @@ const Table: React.FC<TableProps<any>> = (props) => {
 
   useEffect(
     () => {
-      if (dataSource?.length === 0 && table?.queryData?.page !== 1) {
+      if (dataSource?.length === 0 && table.queryData && table.queryData.page !== 1) {
+
         // @ts-ignore
         table.setQueryData({
           ...table.queryData,
