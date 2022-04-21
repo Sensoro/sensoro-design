@@ -62,7 +62,7 @@ const PreviewImage: React.FC<PreviewImageProps> = ({
     <Modal
       visible={visible}
       footer={null}
-      width={height}
+      width={height - 64}
       style={{
         top: 88,
         padding: 0
