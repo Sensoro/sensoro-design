@@ -1,2 +1,2 @@
 import './index.less';
-import '../../input/style/index.less';
+import '../../input/style/search.less';
