@@ -42,6 +42,16 @@
   }
 
   &-header {
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      background: rgba(0, 0, 0, 0.04);
+
+      padding: 0;
+      text-align: center;
+      border-color: transparent;
+    }
+    .ant-select-selection-placeholder {
+      color: #000 !important;
+    }
   }
 
   &-filter-item {
@@ -69,6 +79,12 @@
   }
   &-toolbar {
     display: flex;
+  }
+  &-checkbox-tip {
+    font-size: 12px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 12px 14px 0px;
   }
   &-batch-option {
     height: 40px;

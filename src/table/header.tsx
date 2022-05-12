@@ -81,31 +81,41 @@ const Header: React.FC<HeaderProps> = (props) => {
           {rangePickerProps && <RangePicker style={{ marginLeft: 8 }} {...rangePickerProps} />}
           {columns && columns.length > 0 && (
             <Select
-              style={{ width: 110, marginLeft: 8 }}
-              placeholder="项目显示"
+              style={{ width: 32, marginLeft: 8, padding: 0 }}
+              placeholder={<Icon type={'icon-liebiao'} />}
+              showArrow={false}
               dropdownMatchSelectWidth={false}
               dropdownRender={(menus) => {
                 return (
-                  <Checkbox.Group
-                    style={{ padding: '8px 0px', width: '100%' }}
-                    defaultValue={
-                      columns &&
-                      (columns.filter((i) => i.defaultFilter).map((i) => i.dataIndex) as any)
-                    }
-                    onChange={(checkedValues: string[]) => setEnableColumns(checkedValues)}
-                  >
-                    {columns &&
-                      columns.map((i, idx) => (
-                        <div
-                          key={idx}
-                          className={classnames({
-                            [`${prefixCls}-filter-item`]: true
-                          })}
-                        >
-                          <Checkbox value={i.dataIndex}>{i.title}</Checkbox>
-                        </div>
-                      ))}
-                  </Checkbox.Group>
+                  <div>
+                    <div
+                      className={classnames({
+                        [`${prefixCls}-checkbox-tip`]: true
+                      })}
+                    >
+                      在表格中展示
+                    </div>
+                    <Checkbox.Group
+                      style={{ padding: '8px 0px', width: '100%' }}
+                      defaultValue={
+                        columns &&
+                        (columns.filter((i) => i.defaultFilter).map((i) => i.dataIndex) as any)
+                      }
+                      onChange={(checkedValues: string[]) => setEnableColumns(checkedValues)}
+                    >
+                      {columns &&
+                        columns.map((i, idx) => (
+                          <div
+                            key={idx}
+                            className={classnames({
+                              [`${prefixCls}-filter-item`]: true
+                            })}
+                          >
+                            <Checkbox value={i.dataIndex}>{i.title}</Checkbox>
+                          </div>
+                        ))}
+                    </Checkbox.Group>
+                  </div>
                 );
               }}
             ></Select>
