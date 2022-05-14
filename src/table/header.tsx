@@ -1,7 +1,8 @@
 import React from 'react';
 import { find } from 'lodash';
-import { Select, Button, Checkbox, DatePicker, Dropdown, Menu } from 'antd';
+import { Select, Checkbox, DatePicker, Dropdown, Menu } from 'antd';
 import Options from '../options';
+import Button from '../button';
 import { HeaderProps, OptionItem } from './types';
 import classnames from '@pansy/classnames';
 import Icon from '../icon';
@@ -80,14 +81,14 @@ const Header: React.FC<HeaderProps> = (props) => {
           {searchProps && <Search style={{ width: 224 }} {...searchProps} />}
           {rangePickerProps && <RangePicker style={{ marginLeft: 8 }} {...rangePickerProps} />}
           {columns && columns.length > 0 && (
-            <Select
-              style={{ width: 32, marginLeft: 8, padding: 0 }}
-              placeholder={<Icon type={'icon-liebiao'} />}
-              showArrow={false}
-              dropdownMatchSelectWidth={false}
-              dropdownRender={(menus) => {
+            <Dropdown
+              overlay={() => {
                 return (
-                  <div>
+                  <div
+                    className={classnames({
+                      [`${prefixCls}-checkbox-panel`]: true
+                    })}
+                  >
                     <div
                       className={classnames({
                         [`${prefixCls}-checkbox-tip`]: true
@@ -118,7 +119,18 @@ const Header: React.FC<HeaderProps> = (props) => {
                   </div>
                 );
               }}
-            ></Select>
+              placement="bottomRight"
+              trigger={['click']}
+            >
+              <Button style={{ marginLeft: 8 }} icon={<Icon type={'icon-liebiao'} />}></Button>
+            </Dropdown>
+            // <Select
+            //   style={{ width: 32, marginLeft: 8, padding: 0 }}
+            //   placeholder={<Icon type={'icon-liebiao'} />}
+            //   showArrow={false}
+            //   dropdownMatchSelectWidth={false}
+            //   dropdownRender={}
+            // ></Select>
           )}
 
           {options && options.length > 0 && (
