@@ -1,2 +1,3 @@
 import './index.less';
-import '../../input/style/search.less';
+import '../../input/style';
+import '../../button/style';

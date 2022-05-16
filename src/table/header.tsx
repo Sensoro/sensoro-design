@@ -1,15 +1,14 @@
 import React from 'react';
 import { find } from 'lodash';
-import { Select, Checkbox, DatePicker, Dropdown, Menu } from 'antd';
+import { Checkbox, DatePicker, Dropdown, Menu } from 'antd';
 import Options from '../options';
 import Button from '../button';
-import { HeaderProps, OptionItem } from './types';
+import { HeaderProps } from './types';
 import classnames from '@pansy/classnames';
 import Icon from '../icon';
 import './style/index.less';
 import { Search } from '../input/search';
 
-const { Option } = Select;
 const { RangePicker } = DatePicker;
 
 const Header: React.FC<HeaderProps> = (props) => {

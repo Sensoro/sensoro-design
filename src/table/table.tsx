@@ -9,7 +9,6 @@ import { unionBy, find } from 'lodash';
 import NoField from '../no-field';
 import useBatch from './use-batch';
 import moment from 'moment';
-import './style/index.less';
 
 //这个基本不会有重名的情况发生，先简单这样写
 const defaultPrefixCls = 'sen-table';
