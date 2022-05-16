@@ -9,7 +9,7 @@ import { Input } from '@sensoro/sensoro-design';
 export default () => {
   return (
     <Space direction="vertical" size={16}>
-      <Input.Search />
+      <Input.Search placeholder="请输入" />
     </Space>
   );
 };
