@@ -134,6 +134,7 @@ const UploadImage: React.FC<UploadImageProps> = (props) => {
     });
 
     const imgs = await Promise.all(
+      // @ts-ignore
       (result.base64 || []).map(async (item) => {
         if (!item.url && !item.preview && isImageUrl(item)) {
           item.preview = (await getImgBase64(item.originFileObj as File)) as string;
