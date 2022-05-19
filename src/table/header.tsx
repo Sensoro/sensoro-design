@@ -1,6 +1,7 @@
 import React from 'react';
 import { find } from 'lodash';
 import { Checkbox, DatePicker, Dropdown, Menu } from 'antd';
+import { useBoolean } from '@pansy/react-hooks';
 import Options from '../options';
 import Button from '../button';
 import { HeaderProps } from './types';
@@ -32,6 +33,7 @@ const Header: React.FC<HeaderProps> = (props) => {
 
   //转为受控
   // const [batchOptionSelected, setBatchOptionSelected] = React.useState<OptionItem>();
+  const [visibleColumnDropdown, setVisibleColumnDropdown] = useBoolean();
 
   const { options, onOptionClick } = batchOption;
 
@@ -120,8 +122,15 @@ const Header: React.FC<HeaderProps> = (props) => {
               }}
               placement="bottomRight"
               trigger={['click']}
+              visible={visibleColumnDropdown}
             >
-              <Button style={{ marginLeft: 8 }} icon={<Icon type={'icon-liebiao'} />}></Button>
+              <Button
+                onClick={() => {
+                  setVisibleColumnDropdown.toggle();
+                }}
+                style={{ marginLeft: 8 }}
+                icon={<Icon type={'icon-liebiao'} />}
+              ></Button>
             </Dropdown>
             // <Select
             //   style={{ width: 32, marginLeft: 8, padding: 0 }}
