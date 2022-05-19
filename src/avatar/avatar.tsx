@@ -3,7 +3,6 @@ import classNames from '@pansy/classnames';
 import { Avatar as AntAvatar } from 'antd';
 import { ConfigContext } from '../config-provider';
 import Icon from '../icon';
-import './style';
 
 import type { AvatarProps } from 'antd/es/avatar/avatar';
 

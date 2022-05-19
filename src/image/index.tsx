@@ -5,7 +5,6 @@ import { ImageProps as AntdImageProps } from 'antd/es/image';
 import Watermark, { WatermarkProps } from '../watermark';
 import { ConfigContext } from '../config-provider';
 import getWatermarkProps from '../common/utils/get-watermark-props';
-import './style';
 
 export type Fit = 'auto' | 'contain' | 'cover';
 

@@ -6,7 +6,6 @@ import { RightOutlined } from '@ant-design/icons';
 import useMergedState from 'rc-util/es/hooks/useMergedState';
 import { ConfigContext } from '../config-provider';
 import { CardPlusType, CardPlusChildType, Gutter, Breakpoint } from './interface';
-import './style';
 
 const { useBreakpoint } = Grid;
 

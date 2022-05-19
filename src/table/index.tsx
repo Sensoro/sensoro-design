@@ -1,7 +1,6 @@
 import InternalTable from './table';
 import useTable from './use-table';
 import useBatch from './use-batch';
-import './style';
 
 type InternalTableType = typeof InternalTable;
 interface Table extends InternalTableType {
