@@ -45,9 +45,21 @@ export default {
         libraryDirectory: 'es',
         style: 'css'
       }
+    ],
+    [
+      'import',
+      {
+        libraryName: '@sensoro/sensoro-design',
+        libraryDirectory: '',
+        style: true
+        // style: (name: string) => {
+        //   return `${name}/style/index.ts`;
+        // },
+      },
+      '@sensoro/sensoro-design'
     ]
   ],
-  // ssr: isDeploy ? {} : undefined,
+  ssr: isDeploy ? {} : undefined,
   webpack5: {},
   exportStatic: {},
   mfsu: !isDeploy ? {} : undefined
