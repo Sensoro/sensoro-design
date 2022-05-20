@@ -52,9 +52,6 @@ export default {
         libraryName: '@sensoro/sensoro-design',
         libraryDirectory: '',
         style: true
-        // style: (name: string) => {
-        //   return `${name}/style/index.ts`;
-        // },
       },
       '@sensoro/sensoro-design'
     ]
