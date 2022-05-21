@@ -1,7 +1,10 @@
 import React, { FC, ReactNode, CSSProperties } from 'react';
-import Icon from '../icon';
 import isString from 'lodash/isString';
 import classNames from '@pansy/classnames';
+
+import NoDataPurely from '@sensoro-design/icons/NoDataPurely';
+import NoImagePurely from '@sensoro-design/icons/NoImagePurely';
+import NoDevicePurely from '@sensoro-design/icons/NoDevicePurely';
 
 export interface EmptyProps {
   prefixCls?: string;
@@ -16,6 +19,22 @@ export interface EmptyProps {
 const Empty: FC<EmptyProps> = (props) => {
   const { prefixCls, className, style, iconStyle, icon, center, description, children } = props;
 
+  let iconDom = null;
+
+  if (isString(icon)) {
+    switch (icon) {
+      case 'device':
+        iconDom = <NoDevicePurely />;
+        break;
+      case 'data':
+        iconDom = <NoDataPurely />;
+        break;
+      case 'image':
+        iconDom = <NoImagePurely />;
+        break;
+    }
+  }
+
   return (
     <div
       className={classNames(className, {
@@ -27,7 +46,7 @@ const Empty: FC<EmptyProps> = (props) => {
       <div className={`${prefixCls}-content`}>
         {icon && (
           <div className={`${prefixCls}-icon`} style={iconStyle}>
-            {isString(icon) ? <Icon type={`icon-empty-${icon}`} /> : icon}
+            {iconDom ?? icon}
           </div>
         )}
         {description && <div className={`${prefixCls}-description`}>{description}</div>}

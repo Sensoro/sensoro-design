@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import classNames from '@pansy/classnames';
 import { Avatar as AntAvatar } from 'antd';
+import UserFilled from '@sensoro-design/icons/UserFilled';
 import { ConfigContext } from '../config-provider';
-import Icon from '../icon';
 
 import type { AvatarProps } from 'antd/es/avatar/avatar';
 
@@ -19,7 +19,7 @@ export const InternalAvatar: React.FC<AvatarProps> = ({
   const { getPrefixCls } = useContext(ConfigContext);
   const prefixCls = getPrefixCls('avatar');
 
-  const defaultIcon = !children && <Icon type="icon-person-filled" />;
+  const defaultIcon = !children && <UserFilled />;
 
   return (
     <AntAvatar

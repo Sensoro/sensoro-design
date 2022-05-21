@@ -3,7 +3,7 @@ import classNames from '@pansy/classnames';
 import { arrayToTree } from '@pansy/array-to-tree';
 import { Spin, Divider, Tooltip, Space } from 'antd';
 import { TreeProps } from 'antd/es/tree';
-import IconFont from '../icon';
+import AuthOutlined from '@sensoro-design/icons/AuthOutlined';
 import Tree from '../tree';
 import Empty from '../empty';
 import { ConfigContext } from '../config-provider';
@@ -395,7 +395,7 @@ export const PermissionTreeSelect: React.FC<PermissionTreeSelectProps> = ({
                         <div>{node.title}</div>
                         <Tooltip title="功能授权">
                           <div className={`${prefixCls}-auth-icon`}>
-                            <IconFont type="icon-auth" />
+                            <AuthOutlined />
                           </div>
                         </Tooltip>
                       </Space>

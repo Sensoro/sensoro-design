@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { OptionsRenderProps } from './types';
-import Icon from '../icon';
+import MoreOutlined from '@sensoro-design/icons/MoreOutlined';
+import PlusOutlined from '@sensoro-design/icons/PlusOutlined';
 import { Dropdown, Button } from 'antd';
 import { createMenu, createMenuWithOptions } from './util';
 
@@ -36,7 +37,7 @@ const ButtonOptions: React.FC<OptionsRenderProps> = (props) => {
               placement="bottomRight"
               disabled={dropdownDisable}
             >
-              <Button icon={<Icon type={'icon-more'} />}></Button>
+              <Button icon={<MoreOutlined />}></Button>
             </Dropdown>
           }
         </>
@@ -52,7 +53,7 @@ const ButtonOptions: React.FC<OptionsRenderProps> = (props) => {
             key={o.value}
             type={idx === 0 ? 'primary' : 'default'}
             style={{ marginLeft: 8 }}
-            icon={o?.icon ?? (idx === 0 && <Icon type={'icon-plus'} />)}
+            icon={o?.icon ?? (idx === 0 && <PlusOutlined />)}
             onClick={() => onClick && onClick(options[0].value)}
           >
             {o.label}
@@ -66,7 +67,7 @@ const ButtonOptions: React.FC<OptionsRenderProps> = (props) => {
               <Button
                 key={i.value}
                 type="primary"
-                icon={i?.icon ?? <Icon type={'icon-plus'} />}
+                icon={i?.icon ?? <PlusOutlined />}
                 style={{ marginLeft: 8 }}
                 onClick={() => onClick && onClick(i.value)}
               >
@@ -80,11 +81,7 @@ const ButtonOptions: React.FC<OptionsRenderProps> = (props) => {
                 disabled={dropdownDisable}
                 getPopupContainer={() => btnEl.current}
               >
-                <Button
-                  ref={btnEl}
-                  icon={<Icon type={'icon-more'} />}
-                  style={{ marginLeft: 8 }}
-                ></Button>
+                <Button ref={btnEl} icon={<MoreOutlined />} style={{ marginLeft: 8 }}></Button>
               </Dropdown>
             }
           </>

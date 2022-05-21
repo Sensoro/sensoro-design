@@ -1,6 +1,7 @@
 import React, { FC, CSSProperties, useState, useEffect } from 'react';
 import classNames from '@pansy/classnames';
-import Icon from '../../icon';
+import PauseOutlined from '@sensoro-design/icons/PauseOutlined';
+import PlayOutlined from '@sensoro-design/icons/PlayOutlined';
 
 export interface PrismPlayProps {
   prefixCls?: string;
@@ -30,7 +31,7 @@ const PrismPlay: FC<PrismPlayProps> = (props) => {
       })}
       style={style}
     >
-      <Icon onClick={handleChange} type={`icon-${isPlay ? 'pause' : 'caret'}`} />
+      <span onClick={handleChange}>{isPlay ? <PauseOutlined /> : <PlayOutlined />}</span>
     </div>
   );
 };

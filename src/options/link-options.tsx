@@ -1,7 +1,7 @@
 import React from 'react';
 import { OptionsRenderProps } from './types';
-import Icon from '../icon';
 import { Dropdown } from 'antd';
+import DownOutlined from '@sensoro-design/icons/DownOutlined';
 import { createMenu, createMenuWithOptions } from './util';
 import TextButton from './text-button';
 
@@ -47,7 +47,7 @@ const LinkOptions: React.FC<OptionsRenderProps> = (props) => {
             >
               <TextButton style={{ color: '#2B6DE5' }}>
                 更多
-                <Icon type={'icon-down'} style={{ marginLeft: 4 }} />
+                <DownOutlined style={{ marginLeft: 4 }} />
               </TextButton>
             </Dropdown>
           }
@@ -86,7 +86,7 @@ const LinkOptions: React.FC<OptionsRenderProps> = (props) => {
                 placement="bottomRight"
               >
                 <TextButton style={{ color: '#2B6DE5' }}>
-                  更多 <Icon type={'icon-down'} style={{ marginLeft: 4 }} />
+                  更多 <DownOutlined style={{ marginLeft: 4 }} />
                 </TextButton>
               </Dropdown>
             }

@@ -5,7 +5,7 @@ import { UploadProps, RcFile } from 'antd/es/upload';
 import { UploadFile } from 'antd/es/upload/interface';
 import { PlusOutlined, LoadingOutlined } from '@ant-design/icons';
 import groupBy from 'lodash/groupBy';
-import Icon from '../icon';
+import VideoOutlined from '@sensoro-design/icons/VideoOutlined';
 import { ConfigContext } from '../config-provider';
 import Viewer from '../viewer';
 import Image from '../image';
@@ -232,7 +232,7 @@ const UploadImage: React.FC<UploadImageProps> = (props) => {
           if (isImageUrl(file)) {
             return <img src={file.url || file.preview} />;
           }
-          return <Icon type="icon-video" />;
+          return <VideoOutlined />;
         }}
         {...rest}
         fileList={fileList}

@@ -5,7 +5,8 @@ import floor from 'lodash/floor';
 import ceil from 'lodash/ceil';
 import classNames from '@pansy/classnames';
 import Image from '../image';
-import Icon from '../icon';
+import CarOutlined from '@sensoro-design/icons/CarOutlined';
+import UserOutlined from '@sensoro-design/icons/UserOutlined';
 import Empty from '../empty';
 import { PictureInfo, PictureType, PictureMap, PictureResult } from './interface';
 
@@ -303,17 +304,15 @@ class PictureAxis extends Component<PictureAxisProps, PictureAxisState> {
                     style={imageStyle}
                     className={`${prefixCls}-image`}
                   >
-                    {(
-                      info.subtype === 'human' ||
-                      (info.subtype === 'motovehicle' && info.plateText)
-                    ) && (
+                    {(info.subtype === 'human' ||
+                      (info.subtype === 'motovehicle' && info.plateText)) && (
                       <div
                         className={`${prefixCls}-image-mask`}
                         onClick={() => {
                           this.handleImageClick(info);
                         }}
                       >
-                        <Icon type={`icon-search-${type}`} />
+                        {type === 'person' ? <UserOutlined /> : <CarOutlined />}
                       </div>
                     )}
                     <Image fit="contain" preview={false} src={info.url} />

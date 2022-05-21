@@ -3,14 +3,14 @@ import { Moment } from 'moment';
 import isNumber from 'lodash/isNumber';
 import debounce from 'lodash/debounce';
 import classNames from '@pansy/classnames';
-import CloseOutlined from '@ant-design/icons/CloseOutlined';
+import CloseOutlined from '@sensoro-design/icons/CloseOutlined';
+import OfflineOutlined from '@sensoro-design/icons/OfflineOutlined';
 import Player from '@pansy/react-aliplayer';
 import { PlayerConfig } from '@pansy/react-aliplayer/es/types';
 import SelectRangeDate from './select-range-date';
 import { VideoInfo, SetMealInfo } from './types';
 import Fullscreen from '../fullscreen';
 import { ConfigContext, SizeType } from '../config-provider';
-import Icon from '../icon';
 import Watermark, { WatermarkProps } from '../watermark';
 import Empty from '../empty';
 import Controlbar from './controlbar';
@@ -456,7 +456,7 @@ const Monitor: React.FC<MonitorProps> = ({
           center
           className={`${prefixCls}-offline`}
           description="设备已离线，请检查设备或网络"
-          icon={<Icon type="icon-offline" />}
+          icon={<OfflineOutlined />}
         />
       )}
 

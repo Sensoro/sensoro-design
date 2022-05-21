@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from '../icon';
 import classNames from '@pansy/classnames';
 import { Checkbox } from 'antd';
 import './style/item.less';

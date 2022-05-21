@@ -6,8 +6,7 @@ import Options from '../options';
 import Button from '../button';
 import { HeaderProps } from './types';
 import classnames from '@pansy/classnames';
-import Icon from '../icon';
-import './style/index.less';
+import DownOutlined from '@sensoro-design/icons/DownOutlined';
 import { Search } from '../input/search';
 
 const { RangePicker } = DatePicker;
@@ -145,7 +144,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             <Dropdown overlay={createMenu()}>
               <Button style={{ width: 110, marginLeft: 8 }}>
                 批量操作
-                <Icon type={'icon-down'} />
+                <DownOutlined />
               </Button>
             </Dropdown>
           )}

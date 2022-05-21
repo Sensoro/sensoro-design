@@ -4,7 +4,7 @@ import { Table as AntTable } from 'antd';
 import { TableProps, ColumnType } from './types';
 import Header from './header';
 import Options from '../options';
-import Icon from '../icon';
+import FilterFilled from '@sensoro-design/icons/FilterFilled';
 import { unionBy, find } from 'lodash';
 import NoField from '../no-field';
 import useBatch from './use-batch';
@@ -92,9 +92,7 @@ const Table: React.FC<TableProps<any>> = (props) => {
           }
         }
       },
-      filterIcon: (filtered) => (
-        <Icon type={'icon-filter'} className={classnames({ ['filtered']: filtered })} />
-      )
+      filterIcon: (filtered) => <FilterFilled className={classnames({ ['filtered']: filtered })} />
     }));
 
   const [simpleColumns, filterColumns, optionColumns] = useColumns(modifiedFilterIconColumns);

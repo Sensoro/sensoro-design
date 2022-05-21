@@ -1,5 +1,5 @@
 import React, { FC, memo } from 'react';
-import Icon from '../../icon';
+import DownloadOutlined from '@sensoro-design/icons/DownloadOutlined';
 
 export interface DownloadProps {
   prefixCls?: string;
@@ -16,7 +16,7 @@ const Download: FC<DownloadProps> = (props) => {
 
   return (
     <div className={`${prefixCls}`} onClick={handleClick}>
-      <Icon type="icon-download" />
+      <DownloadOutlined />
     </div>
   );
 };

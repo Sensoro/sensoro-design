@@ -1,5 +1,6 @@
 import React, { FC, memo } from 'react';
-import Icon from '../../icon';
+import FullscreenExitOutlined from '@sensoro-design/icons/FullscreenExitOutlined';
+import FullscreenOutlined from '@sensoro-design/icons/FullscreenOutlined';
 
 export interface FullscreenUIProps {
   prefixCls?: string;
@@ -16,7 +17,7 @@ const FullscreenUI: FC<FullscreenUIProps> = (props) => {
 
   return (
     <div className={`${prefixCls}`} onClick={handleChangeFullscreen}>
-      <Icon type={`icon-${state ? 'fullscreen-exit' : 'fullscreen'}`} />
+      {state ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
     </div>
   );
 };

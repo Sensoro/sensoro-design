@@ -1,6 +1,6 @@
 import React, { FC, useRef } from 'react';
 import { Radio, Badge, Tooltip } from 'antd';
-import Icon from '../icon';
+import YuntaiOutlined from '@sensoro-design/icons/YuntaiOutlined';
 import { Volume, FullscreenUI, PrismPlay, Download, Speed, LiveMode } from '../player/common';
 import Progress from './progress';
 import { MonitorType } from './monitor';
@@ -79,31 +79,30 @@ const Controlbar: FC<ControlbarProps> = ({
       </div>
       <div className={`${prefixCls}-wrapper`}>
         <div className={`${prefixCls}-content`}>
-          {isPolling
-            ? (<Badge className={`${prefixCls}-polling`} color="#1DCCBB" text="轮巡中" />)
-            : (
-              <Radio.Group value={type} size="small" buttonStyle="solid">
-                <Radio.Button value="live" onClick={() => onChangeType('live')}>
-                  直播
+          {isPolling ? (
+            <Badge className={`${prefixCls}-polling`} color="#1DCCBB" text="轮巡中" />
+          ) : (
+            <Radio.Group value={type} size="small" buttonStyle="solid">
+              <Radio.Button value="live" onClick={() => onChangeType('live')}>
+                直播
+              </Radio.Button>
+              {hideTools.indexOf('history') === -1 && (
+                <Radio.Button value="history" onClick={() => onChangeType('history')}>
+                  历史
                 </Radio.Button>
-                {hideTools.indexOf('history') === -1 && (
-                  <Radio.Button value="history" onClick={() => onChangeType('history')}>
-                    历史
-                  </Radio.Button>
-                )}
-              </Radio.Group>
-            )
-          }
+              )}
+            </Radio.Group>
+          )}
           {type === 'history' && <PrismPlay status={playStatus} onChange={onPlayStatusChange} />}
         </div>
         <div className={`${prefixCls}-extra`}>
-          {(hideTools.indexOf('changeLiveSource') === -1) && type === 'live' && (
+          {hideTools.indexOf('changeLiveSource') === -1 && type === 'live' && (
             <LiveMode {...liveModeProps} getPopupContainer={() => rootRef.current} />
           )}
           {hideTools.indexOf('yuntai') === -1 && (
             <Tooltip title="云台">
               <div className="sen-player-download" onClick={onYunTaiClick}>
-                <Icon type="icon-yuntai" />
+                <YuntaiOutlined />
               </div>
             </Tooltip>
           )}
