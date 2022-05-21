@@ -1,6 +1,7 @@
 import React from 'react';
 import { find } from 'lodash';
 import { Checkbox, DatePicker, Dropdown, Menu } from 'antd';
+import UnorderedListOutlined from '@sensoro-design/icons/UnorderedListOutlined';
 import Options from '../options';
 import Button from '../button';
 import { HeaderProps } from './types';
@@ -121,7 +122,7 @@ const Header: React.FC<HeaderProps> = (props) => {
               placement="bottomRight"
               trigger={['click']}
             >
-              <Button style={{ marginLeft: 8 }} icon={<Icon type={'icon-liebiao'} />}></Button>
+              <Button style={{ marginLeft: 8 }} icon={<UnorderedListOutlined />} />
             </Dropdown>
             // <Select
             //   style={{ width: 32, marginLeft: 8, padding: 0 }}
