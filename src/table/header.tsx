@@ -6,6 +6,7 @@ import Options from '../options';
 import Button from '../button';
 import { HeaderProps } from './types';
 import classnames from '@pansy/classnames';
+import UnorderedListOutlined from '@sensoro-design/icons/UnorderedListOutlined';
 import DownOutlined from '@sensoro-design/icons/DownOutlined';
 import { Search } from '../input/search';
 
@@ -30,7 +31,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     setBatchOptionSelected
   } = props;
 
-  //转为受控
+  // 转为受控
   // const [batchOptionSelected, setBatchOptionSelected] = React.useState<OptionItem>();
   const [visibleColumnDropdown, setVisibleColumnDropdown] = useBoolean();
 
@@ -128,7 +129,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                   setVisibleColumnDropdown.toggle();
                 }}
                 style={{ marginLeft: 8 }}
-                icon={<Icon type={'icon-liebiao'} />}
+                icon={<UnorderedListOutlined />}
               ></Button>
             </Dropdown>
             // <Select
