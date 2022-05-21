@@ -13,7 +13,7 @@ specifiers:
   '@pansy/react-hooks': ^0.9.10
   '@pansy/react-responsive-card': ^0.2.0
   '@pansy/react-watermark': ^3.1.10
-  '@sensoro-design/icons': ^1.4.2
+  '@sensoro-design/icons': ^1.4.3
   '@types/d3-path': ^3.0.0
   '@types/file-saver': ^2.0.1
   '@types/lodash': ^4.14.168
@@ -59,7 +59,7 @@ dependencies:
   '@pansy/react-hooks': 0.9.10_react@17.0.2
   '@pansy/react-responsive-card': 0.2.0_react-dom@17.0.2+react@17.0.2
   '@pansy/react-watermark': 3.1.10_react-dom@17.0.2+react@17.0.2
-  '@sensoro-design/icons': 1.4.2_react-dom@17.0.2+react@17.0.2
+  '@sensoro-design/icons': 1.4.3_react-dom@17.0.2+react@17.0.2
   d3-path: 3.0.1
   file-saver: 2.0.5
   jsbarcode: 3.11.5
@@ -170,7 +170,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.17.0
       antd: 4.18.5_react-dom@17.0.2+react@17.0.2
-      rc-util: 5.17.0_react-dom@17.0.2+react@17.0.2
+      rc-util: 5.21.4_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       swr: 1.1.0_react@17.0.2
     transitivePeerDependencies:
@@ -8669,17 +8669,17 @@ packages:
       rollup: 2.33.3
     dev: true
 
-  /@sensoro-design/icons-svg/1.4.2:
+  /@sensoro-design/icons-svg/1.4.3:
     resolution:
       {
-        integrity: sha512-G/ReGw+9pJLHAvsPRRuCmTTo8OMTBow2qr6DMGb6gXJuE0BPOV5hzyR9uVeXna42bRp2I92q2zyyVQVfmtG85g==,
+        integrity: sha512-roo9ujnlUD9UT9tHkazxp8J9ilk/OjWSBisfvMKKzCkFN3A4sftvpjTvmIjztZICxbV05KWLglHbw4C6rTqGZw==,
       }
     dev: false
 
-  /@sensoro-design/icons/1.4.2_react-dom@17.0.2+react@17.0.2:
+  /@sensoro-design/icons/1.4.3_react-dom@17.0.2+react@17.0.2:
     resolution:
       {
-        integrity: sha512-vkMp5YOMlWgVESxhLOIrPtWfoaY56FfT3n4y3vp4rVm7Jm6/xhPWrMV0PWPnik5C1IwawxtZc3RlXW0DSsBAww==,
+        integrity: sha512-6qyRHNYAxeNRAf3I4c8AcijsvmpF2CSKZOx2ZC6rW81ktDZLEokLwiKsZSVUhDYgFHdhClnlBqHGNwzmYLK8OA==,
       }
     peerDependencies:
       react: '>=16.0.0'
@@ -8688,7 +8688,7 @@ packages:
       '@ant-design/colors': 6.0.0
       '@babel/runtime': 7.17.0
       '@pansy/classnames': 1.0.1
-      '@sensoro-design/icons-svg': 1.4.2
+      '@sensoro-design/icons-svg': 1.4.3
       rc-util: 5.21.4_react-dom@17.0.2+react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2

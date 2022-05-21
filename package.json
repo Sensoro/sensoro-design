@@ -49,7 +49,7 @@
     "@pansy/react-hooks": "^0.9.10",
     "@pansy/react-responsive-card": "^0.2.0",
     "@pansy/react-watermark": "^3.1.10",
-    "@sensoro-design/icons": "^1.4.2",
+    "@sensoro-design/icons": "^1.4.3",
     "d3-path": "^3.0.1",
     "file-saver": "^2.0.5",
     "jsbarcode": "^3.11.4",
