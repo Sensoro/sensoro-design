@@ -26,6 +26,10 @@ export interface LiveProps {
   watermark?: WatermarkProps | boolean;
   /** 播放器配置 */
   options?: Partial<PlayerConfig>;
+  fullscreen?: {
+    state: boolean;
+    onChange: (state: boolean) => void;
+  };
   onReady?: PlayerProps['onReady'];
   /** 播放中，会触发多次 */
   onPlaying?: PlayerProps['onPlaying'];
@@ -42,6 +46,7 @@ const Live: React.FC<LiveProps> = ({
   isGB,
   watermark,
   isOffline,
+  fullscreen,
   hideControlbar,
   options: playerOptions,
   onReady,
@@ -116,10 +121,12 @@ const Live: React.FC<LiveProps> = ({
         volume={{
           onChange: handleChangeVolume
         }}
-        fullscreen={{
-          state: isFullscreen,
-          onChange: handleChangeFullscreen
-        }}
+        fullscreen={
+          fullscreen ?? {
+            state: isFullscreen,
+            onChange: handleChangeFullscreen
+          }
+        }
       />
     );
   }, [isFullscreen]);

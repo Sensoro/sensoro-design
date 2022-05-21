@@ -12,13 +12,26 @@ export interface PlayerProps extends AliPlayerProps {
   startTime?: number;
   watermark?: WatermarkProps | boolean;
   showDownload?: boolean;
-  onDownload?: () => void;
   hideControlbar?: boolean;
+  fullscreen?: {
+    state: boolean;
+    onChange: (state: boolean) => void;
+  };
+  onDownload?: () => void;
 }
 
 const Player = React.forwardRef<AliPlayer, PlayerProps>(
   (
-    { watermark, source, startTime, hideControlbar, showDownload = true, onDownload, ...rest },
+    {
+      watermark,
+      source,
+      startTime,
+      hideControlbar,
+      showDownload = true,
+      fullscreen,
+      onDownload,
+      ...rest
+    },
     ref
   ) => {
     const playerRef = useRef<AliPlayer>(null);
@@ -155,10 +168,12 @@ const Player = React.forwardRef<AliPlayer, PlayerProps>(
               status: playStatus,
               onChange: handlePlayChange
             }}
-            fullscreen={{
-              state: fullscreenStatus,
-              onChange: handleFullscreenChange
-            }}
+            fullscreen={
+              fullscreen ?? {
+                state: fullscreenStatus,
+                onChange: handleFullscreenChange
+              }
+            }
           />
         )}
       </Fullscreen>
