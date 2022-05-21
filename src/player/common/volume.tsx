@@ -1,12 +1,20 @@
 import React, { FC, useState, memo } from 'react';
 import { Slider, Popover } from 'antd';
-import Icon from '../../icon';
+import MuteOutlined from '@sensoro-design/icons/MuteOutlined';
+import SoundOutlined from '@sensoro-design/icons/SoundOutlined';
+import SoundSmallOutlined from '@sensoro-design/icons/SoundSmallOutlined';
 
 export interface VolumeProps {
   prefixCls?: string;
   onChange?: (value: number) => void;
   getPopupContainer?: (triggerNode: HTMLElement) => HTMLElement;
 }
+
+const volumeIcons = {
+  0: <MuteOutlined />,
+  1: <SoundSmallOutlined />,
+  2: <SoundOutlined />
+};
 
 const Volume: FC<VolumeProps> = (props) => {
   const { prefixCls, getPopupContainer, onChange } = props;
@@ -43,9 +51,7 @@ const Volume: FC<VolumeProps> = (props) => {
         </div>
       }
     >
-      <div className={`${prefixCls}`}>
-        <Icon type={`icon-volume-${volumeStatus === 0 ? 'x' : volumeStatus}`} />
-      </div>
+      <div className={`${prefixCls}`}>{volumeIcons[volumeStatus]}</div>
     </Popover>
   );
 };
