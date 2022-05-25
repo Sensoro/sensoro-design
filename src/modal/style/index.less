@@ -29,4 +29,15 @@
     line-height: 70px;
     font-size: 24px;
   }
+  .ant-modal-footer {
+    border-top: none;
+    padding: 24px;
+    .ant-btn + .ant-btn:not(.ant-dropdown-trigger) {
+      margin-left: 12px;
+    }
+  }
+  .ant-modal-body {
+    max-height: calc(100vh - 80px - 70px - 80px);
+    overflow-y: overlay;
+  }
 }
