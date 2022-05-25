@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import { OptionsRenderProps } from './types';
 import MoreOutlined from '@sensoro-design/icons/MoreOutlined';
 import PlusOutlined from '@sensoro-design/icons/PlusOutlined';
-import { Dropdown, Button } from 'antd';
+import { Dropdown } from 'antd';
+import Button from '../button';
 import { createMenu, createMenuWithOptions } from './util';
 
 const ButtonOptions: React.FC<OptionsRenderProps> = (props) => {
