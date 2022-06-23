@@ -13,7 +13,7 @@ specifiers:
   '@pansy/react-hooks': ^0.9.13
   '@pansy/react-responsive-card': ^0.2.0
   '@pansy/react-watermark': ^3.1.10
-  '@sensoro-design/icons': ^1.12.0
+  '@sensoro-design/icons': ^1.13.0
   '@types/d3-path': ^3.0.0
   '@types/file-saver': ^2.0.1
   '@types/lodash': ^4.14.168
@@ -58,7 +58,7 @@ dependencies:
   '@pansy/react-hooks': 0.9.13_react@17.0.2
   '@pansy/react-responsive-card': 0.2.0_react-dom@17.0.2+react@17.0.2
   '@pansy/react-watermark': 3.1.10_react-dom@17.0.2+react@17.0.2
-  '@sensoro-design/icons': 1.12.0_react-dom@17.0.2+react@17.0.2
+  '@sensoro-design/icons': 1.13.0_react-dom@17.0.2+react@17.0.2
   d3-path: 3.0.1
   file-saver: 2.0.5
   jsbarcode: 3.11.5
@@ -8778,10 +8778,10 @@ packages:
       }
     dev: false
 
-  /@sensoro-design/icons/1.12.0_react-dom@17.0.2+react@17.0.2:
+  /@sensoro-design/icons/1.13.0_react-dom@17.0.2+react@17.0.2:
     resolution:
       {
-        integrity: sha512-3OcJ8nQbJ7Es8TPqRrDd1uXsrugCh94vnvFL5TxpXDQ3f4q5oJw0hDG1xx5dnBFUFNQchnLILScozbyb+S/KBw==,
+        integrity: sha512-XT9M5Q/J8s5t3aF++icZudERZUn32IjYyQnpNvbf9+RVUZVoMrv90blnVlIWG3E4TmvKKbT0I+FIpP34gvqwAw==,
       }
     peerDependencies:
       react: '>=16.0.0'
