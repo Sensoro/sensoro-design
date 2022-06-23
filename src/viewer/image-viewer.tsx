@@ -1,6 +1,8 @@
 import React from 'react';
 import classnames from '@pansy/classnames';
-import { CloseOutlined, RightOutlined, LeftOutlined } from '@ant-design/icons';
+import CloseOutlined from '@sensoro-design/icons/CloseOutlined';
+import LeftOutlined from '@sensoro-design/icons/LeftOutlined';
+import RightOutlined from '@sensoro-design/icons/RightOutlined';
 import { ImageViewerProps, Rect } from './types';
 import { createPortal } from 'react-dom';
 const prefixCls = 'sen-image-view';

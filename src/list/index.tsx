@@ -2,7 +2,7 @@ import React from 'react';
 import useScroll from './use-scroll';
 import { Spin } from 'antd';
 import classnames from '@pansy/classnames';
-import { LoadingOutlined } from '@ant-design/icons';
+import LoadingOutlined from '@sensoro-design/icons/LoadingOutlined';
 import Empty from '../empty';
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;

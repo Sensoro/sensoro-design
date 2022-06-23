@@ -7,7 +7,8 @@ import React, {
   useCallback,
   useImperativeHandle
 } from 'react';
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import LeftOutlined from '@sensoro-design/icons/LeftOutlined';
+import RightOutlined from '@sensoro-design/icons/RightOutlined';
 import debounce from 'lodash/debounce';
 import classNames from '@pansy/classnames';
 import ResizeObserver from 'resize-observer-polyfill';
@@ -70,16 +71,13 @@ const InternalScrollableBar: ScrollableBarType = (props, ref) => {
     };
   }, []);
 
-  useEffect(
-    () => {
-      if (props.autoplay && !isHover) {
-        startAutoplay();
-      } else {
-        closeAutoplay();
-      }
-    },
-    [props.autoplay, isHover]
-  )
+  useEffect(() => {
+    if (props.autoplay && !isHover) {
+      startAutoplay();
+    } else {
+      closeAutoplay();
+    }
+  }, [props.autoplay, isHover]);
 
   useEffect(() => {
     setCurrentKey(activeKey);
@@ -108,30 +106,27 @@ const InternalScrollableBar: ScrollableBarType = (props, ref) => {
 
     let direction = 'next';
 
-    autoPlayInterval.current = setInterval(
-      () => {
-        const { next, prev } = setNextPrev();
-        if (direction === 'next') {
-          if (next) {
-            handleNextClick();
-          } else {
-            direction = 'prev'
-          }
+    autoPlayInterval.current = setInterval(() => {
+      const { next, prev } = setNextPrev();
+      if (direction === 'next') {
+        if (next) {
+          handleNextClick();
         } else {
-          if (prev) {
-            handlePrevClick();
-          } else {
-            direction = 'next';
-          }
+          direction = 'prev';
         }
-      },
-      interval
-    )
-  }
+      } else {
+        if (prev) {
+          handlePrevClick();
+        } else {
+          direction = 'next';
+        }
+      }
+    }, interval);
+  };
 
   const closeAutoplay = () => {
     autoPlayInterval.current && clearInterval(autoPlayInterval.current);
-  }
+  };
 
   const handlePrevClick = (e?) => {
     onPrevClick?.(e);

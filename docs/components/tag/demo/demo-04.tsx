@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import PlusOutlined from '@ant-design/icons/PlusOutlined';
+import PlusOutlined from '@sensoro-design/icons/PlusOutlined';
 import { Tag } from '@sensoro/sensoro-design';
 
 const BasicExample: FC = () => {

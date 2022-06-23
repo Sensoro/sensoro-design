@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'antd';
 import classNames from '@pansy/classnames';
-import { ReloadOutlined } from '@ant-design/icons';
+import ReloadOutlined from '@sensoro-design/icons/ReloadOutlined';
 
 interface RetryProps {
   prefixCls?: string;

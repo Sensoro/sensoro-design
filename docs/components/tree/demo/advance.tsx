@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Tree } from '@sensoro/sensoro-design';
-import { PlusOutlined, CopyOutlined } from '@ant-design/icons';
+import PlusOutlined from '@sensoro-design/icons/PlusOutlined';
+import CopyOutlined from '@sensoro-design/icons/CopyOutlined';
 
 const treeData = [
   {

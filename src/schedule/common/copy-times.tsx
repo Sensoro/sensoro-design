@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox, Button } from 'antd';
-import { CopyOutlined } from '@ant-design/icons';
+import CopyOutlined from '@sensoro-design/icons/CopyOutlined';
 import { CheckboxGroupProps } from 'antd/es/checkbox';
 import { ConfigContext } from '../../config-provider';
 import Popmodal from '../../popmodal';

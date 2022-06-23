@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import classNames from '@pansy/classnames';
 import { useSize } from '@pansy/react-hooks';
-import { CloseOutlined, RightOutlined, LeftOutlined } from '@ant-design/icons';
+import LeftOutlined from '@sensoro-design/icons/LeftOutlined';
+import RightOutlined from '@sensoro-design/icons/RightOutlined';
+import CloseOutlined from '@sensoro-design/icons/CloseOutlined';
 import { Modal } from 'antd';
 import { PreviewImageProps } from './types';
 import { ConfigContext } from '../config-provider';

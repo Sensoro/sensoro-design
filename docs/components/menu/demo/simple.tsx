@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import { Menu } from '@sensoro/sensoro-design';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import AppstoreOutlined from '@sensoro-design/icons/AppstoreOutlined';
+import SettingOutlined from '@sensoro-design/icons/SettingOutlined';
+import AuthOutlined from '@sensoro-design/icons/AuthOutlined';
+
 const { SubMenu } = Menu;
 
 const BasicExample: FC = () => {
@@ -21,7 +24,7 @@ const BasicExample: FC = () => {
           key="sub1"
           title={
             <span>
-              <MailOutlined />
+              <AuthOutlined />
               <span>Navigation One</span>
             </span>
           }

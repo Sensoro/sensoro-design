@@ -2,7 +2,7 @@ import React, { isValidElement, useContext, useCallback } from 'react';
 import debounce from 'lodash/debounce';
 import { Tree as AntTree, Menu } from 'antd';
 import { TreeProps as AntTreeProps } from 'antd/es/tree';
-import { IconFontProps } from '@ant-design/icons/es/components/IconFont';
+import { IconFontProps } from '@sensoro-design/icons/es/components/IconFont';
 import { DataNode as RCTreeDataNode } from 'rc-tree/es/interface';
 import classNames from '@pansy/classnames';
 import Icon from '../icon';

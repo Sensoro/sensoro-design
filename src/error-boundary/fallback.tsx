@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Tooltip } from 'antd';
-import ExclamationCircleFilled from '@ant-design/icons/ExclamationCircleFilled';
+import ExclamationCircleFilled from '@sensoro-design/icons/ExclamationCircleFilled';
 import { ConfigContext } from '../config-provider';
 
 export interface FallbackProps {

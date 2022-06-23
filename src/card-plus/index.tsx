@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from '@pansy/classnames';
 import { Grid, Spin } from 'antd';
 import { SpinProps } from 'antd/es/spin';
-import { RightOutlined } from '@ant-design/icons';
+import RightOutlined from '@sensoro-design/icons/RightOutlined';
 import useMergedState from 'rc-util/es/hooks/useMergedState';
 import { ConfigContext } from '../config-provider';
 import { CardPlusType, CardPlusChildType, Gutter, Breakpoint } from './interface';

@@ -1,6 +1,6 @@
 import React, { FC, useState, memo, useEffect, useRef } from 'react';
 import moment, { Moment } from 'moment';
-import { InfoCircleFilled } from '@ant-design/icons';
+import InfoCircleFilled from '@sensoro-design/icons/InfoCircleFilled';
 import { Modal, Tag, DatePicker, Spin } from 'antd';
 import { SetMealInfo } from './types';
 
@@ -29,8 +29,8 @@ const dictionary = {
   6: '30*24报警录像',
   7: '24小时全天录像',
   8: '60*24全天录像',
-  9: '90*24全天录像',
-}
+  9: '90*24全天录像'
+};
 
 const SelectRangeDate: FC<SelectRangeDateProps> = (props) => {
   const {
@@ -45,7 +45,7 @@ const SelectRangeDate: FC<SelectRangeDateProps> = (props) => {
     setMeal,
     setMealLoading
   } = props;
-  const container = useRef<HTMLDivElement>(null)
+  const container = useRef<HTMLDivElement>(null);
   const [rangePicker, setRangePicker] = useState<[Moment, Moment]>();
   const [errorText, setErrorText] = useState<string>('');
 
@@ -95,7 +95,11 @@ const SelectRangeDate: FC<SelectRangeDateProps> = (props) => {
   };
 
   const disabledDate = (current) => {
-    return current && (current > moment() || current < moment().subtract(setMeal?.value ? setMeal.value : 0, 'days'));
+    return (
+      current &&
+      (current > moment() ||
+        current < moment().subtract(setMeal?.value ? setMeal.value : 0, 'days'))
+    );
   };
 
   return (
@@ -105,8 +109,7 @@ const SelectRangeDate: FC<SelectRangeDateProps> = (props) => {
       okText="开始检索"
       cancelText="取消"
       okButtonProps={{
-        disabled: !(rangePicker && rangePicker.length === 2) ||
-          (setMeal?.value <= 0),
+        disabled: !(rangePicker && rangePicker.length === 2) || setMeal?.value <= 0,
         loading
       }}
       width={460}
@@ -120,9 +123,7 @@ const SelectRangeDate: FC<SelectRangeDateProps> = (props) => {
           {setMealLoading}
           <div>
             {name}
-            {setMeal?.value > 0 && (
-              <Tag>{dictionary[setMeal.value]}</Tag>
-            )}
+            {setMeal?.value > 0 && <Tag>{dictionary[setMeal.value]}</Tag>}
           </div>
           <RangePicker
             //@ts-ignore
@@ -140,7 +141,6 @@ const SelectRangeDate: FC<SelectRangeDateProps> = (props) => {
           )}
         </Spin>
       </div>
-
     </Modal>
   );
 };

@@ -1,12 +1,7 @@
 import React, { FC } from 'react';
 import { Timeline } from '@sensoro/sensoro-design';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 
 const BasicExample: FC = () => {
-  const handleClick = (e) => {
-    console.log('click ', e);
-  };
-
   const groups = {
     '2020-10-10': [
       'Solve initial network problems 2015-09-01',

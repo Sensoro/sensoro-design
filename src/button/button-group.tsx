@@ -1,6 +1,6 @@
 import React from 'react';
 import { Space, Menu, Dropdown } from 'antd';
-import MoreOutlined from '@ant-design/icons/MoreOutlined';
+import MoreOutlined from '@sensoro-design/icons/MoreOutlined';
 import { Button } from './button';
 import { cloneElement } from '../_utils/reactNode';
 
