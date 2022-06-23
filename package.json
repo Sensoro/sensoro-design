@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "dumi dev",
-    "build": "npm run entry && lotus-tools build",
+    "build": "npm run entry && father-build",
     "site": "cross-env SITE_DEPLOY='TRUE' dumi build",
     "test": "walrus test",
     "entry": "walrus entry",
