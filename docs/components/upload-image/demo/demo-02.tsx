@@ -18,6 +18,13 @@ export default () => {
               url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
             },
             {
+              uid: '0012',
+              name: 'image.png',
+              status: 'done',
+              url:
+                'https://gw.alipayobjects.com/zos/antfincdn/x43I27A55%26/photo-1438109491414-7198515b166b.webp'
+            },
+            {
               uid: '002',
               name: 'test.mp4',
               status: 'done',

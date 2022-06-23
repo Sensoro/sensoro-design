@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageViewer from './image-viewer';
 import { Rect, ImageWallProps } from './types';
-import { createPortal } from 'react-dom';
+
 const useMeasureChildren = (count: number) => {
   const measureResults = [];
   for (let i = 0; i < count; ++i) {

@@ -8,7 +8,7 @@ import LoadingOutlined from '@sensoro-design/icons/LoadingOutlined';
 import groupBy from 'lodash/groupBy';
 import VideoOutlined from '@sensoro-design/icons/VideoOutlined';
 import { ConfigContext } from '../config-provider';
-import Viewer from '../viewer';
+import PreviewImage from '../preview-image';
 import Image from '../image';
 import Player from '../player';
 import { getSizeTipText, isImageUrl, isVideoUrl, getImgBase64 } from './utils';
@@ -45,8 +45,6 @@ export interface UploadImageProps<T = any> extends Omit<UploadProps<T>, 'onChang
   onRemove?: (file: UploadImageFile<T>) => void | boolean | Promise<void | boolean>;
 }
 
-const { ImageViewer } = Viewer;
-
 const UploadImage: React.FC<UploadImageProps> = (props) => {
   const {
     className,
@@ -61,6 +59,7 @@ const UploadImage: React.FC<UploadImageProps> = (props) => {
     ...rest
   } = props;
   const lock = useRef<boolean>(false);
+  const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState<boolean>(false);
   const [fileList, setFileList] = useState<UploadProps['fileList']>([]);
   const { getPrefixCls } = useContext(ConfigContext);
@@ -204,7 +203,7 @@ const UploadImage: React.FC<UploadImageProps> = (props) => {
 
   const resource = fileList
     .map((item) => ({ url: item.url || item.preview }))
-    .filter((item) => (item && isImageUrl(item as UploadFile)) || isVideoUrl(item as UploadFile));
+    .filter((item) => item && isImageUrl(item as UploadFile));
 
   return (
     <div
@@ -215,7 +214,9 @@ const UploadImage: React.FC<UploadImageProps> = (props) => {
       <Upload
         listType="picture-card"
         onChange={handleChange}
-        onPreview={() => {
+        onPreview={(file) => {
+          const index = resource.findIndex((item) => item.url === file.url);
+          setIndex(index ?? 0);
           setVisible(true);
         }}
         beforeUpload={beforeUpload}
@@ -243,8 +244,9 @@ const UploadImage: React.FC<UploadImageProps> = (props) => {
 
       {desc && <div className={`${prefixCls}-desc`}>{desc}</div>}
 
-      <ImageViewer
+      <PreviewImage
         visible={visible}
+        startIndex={index}
         onClose={() => {
           setVisible(false);
         }}

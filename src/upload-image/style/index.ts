@@ -1,4 +1,4 @@
 import './index.less';
-import '../../viewer/style';
+import '../../preview-image/style';
 import '../../player/style';
 import '../../image/style';
