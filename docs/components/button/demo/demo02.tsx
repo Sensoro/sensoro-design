@@ -5,7 +5,7 @@
 import React from 'react';
 import { useBoolean } from '@pansy/react-hooks';
 import { Space } from 'antd';
-import PlusOutlined from '@ant-design/icons/PlusOutlined';
+import PlusOutlined from '@sensoro-design/icons/PlusOutlined';
 import { Button } from '@sensoro/sensoro-design';
 
 export default () => {

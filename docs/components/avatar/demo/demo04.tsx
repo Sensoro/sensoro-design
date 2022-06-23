@@ -3,7 +3,7 @@
  * desc: 通常用于消息提示。
  */
 import { Badge, Space } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import UserOutlined from '@sensoro-design/icons/UserOutlined';
 import { Avatar } from '@sensoro/sensoro-design';
 
 export default () => {

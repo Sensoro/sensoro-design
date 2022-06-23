@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RightOutlined } from '@ant-design/icons';
+import RightOutlined from '@sensoro-design/icons/RightOutlined';
 import { CardPlus } from '@sensoro/sensoro-design';
 
 export default () => {

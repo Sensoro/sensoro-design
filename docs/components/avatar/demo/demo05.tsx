@@ -3,7 +3,8 @@
  * desc: 头像组合展现。
  */
 import { Divider, Tooltip } from 'antd';
-import { UserOutlined, AntDesignOutlined } from '@ant-design/icons';
+import UserOutlined from '@sensoro-design/icons/UserOutlined';
+import MolecularChainOutlined from '@sensoro-design/icons/MolecularChainOutlined';
 import { Avatar } from '@sensoro/sensoro-design';
 
 export default () => (
@@ -29,7 +30,7 @@ export default () => (
         style={{
           backgroundColor: '#1890ff'
         }}
-        icon={<AntDesignOutlined />}
+        icon={<MolecularChainOutlined />}
       />
     </Avatar.Group>
     <Divider />
@@ -60,7 +61,7 @@ export default () => (
         style={{
           backgroundColor: '#1890ff'
         }}
-        icon={<AntDesignOutlined />}
+        icon={<MolecularChainOutlined />}
       />
     </Avatar.Group>
     <Divider />
@@ -92,7 +93,7 @@ export default () => (
         style={{
           backgroundColor: '#1890ff'
         }}
-        icon={<AntDesignOutlined />}
+        icon={<MolecularChainOutlined />}
       />
     </Avatar.Group>
     <Divider />
@@ -126,7 +127,7 @@ export default () => (
         style={{
           backgroundColor: '#1890ff'
         }}
-        icon={<AntDesignOutlined />}
+        icon={<MolecularChainOutlined />}
       />
     </Avatar.Group>
   </>

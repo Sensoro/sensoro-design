@@ -6,7 +6,7 @@
  */
 import React, { useState } from 'react';
 import { Space } from 'antd';
-import PlusOutlined from '@ant-design/icons/PlusOutlined';
+import PlusOutlined from '@sensoro-design/icons/PlusOutlined';
 import { Button, Radio } from '@sensoro/sensoro-design';
 
 import type { ButtonSize } from 'antd/es/button';
