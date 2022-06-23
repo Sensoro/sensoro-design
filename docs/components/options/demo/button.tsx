@@ -1,6 +1,5 @@
 import React from 'react';
 import { Options, Button, Icon } from '@sensoro/sensoro-design';
-import { PlusOutlined } from '@ant-design/icons';
 
 const ops = [
   {

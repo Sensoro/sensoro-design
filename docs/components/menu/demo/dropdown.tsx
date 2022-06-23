@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Dropdown } from 'antd';
 import { Menu } from '@sensoro/sensoro-design';
-import { DownOutlined } from '@ant-design/icons';
+import DownOutlined from '@sensoro-design/icons/DownOutlined';
 const { SubMenu } = Menu;
 
 const menu = (
