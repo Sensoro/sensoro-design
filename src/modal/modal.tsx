@@ -10,7 +10,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
   const prefixCls = getPrefixCls('modal');
 
-  return <AntModal {...props} className={classNames(prefixCls, props.className)} />;
+  return <AntModal centered {...props} className={classNames(prefixCls, props.className)} />;
 };
 
 Modal.defaultProps = {
